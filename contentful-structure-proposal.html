@@ -171,10 +171,178 @@ li{margin-bottom:6px;color:var(--color-ink-muted)}
 footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--color-border);color:var(--color-ink-faint);font-size:var(--fs-xs);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
 footer .brand-foot{display:flex;align-items:center;gap:8px}
 footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:11px}
+
+/* ──────── Tab Navigation ──────── */
+.tabs{display:flex;gap:4px;margin-bottom:36px;padding-bottom:0;border-bottom:1px solid var(--color-border);position:sticky;top:0;background:var(--color-surface);z-index:50;padding-top:16px}
+.tab-link{padding:14px 22px;border:none;background:transparent;cursor:pointer;font-family:var(--font-sans);font-size:var(--fs-sm);font-weight:600;color:var(--color-ink-faint);border-bottom:3px solid transparent;transition:all 180ms;margin-bottom:-1px;letter-spacing:-0.005em}
+.tab-link:hover{color:var(--color-ink)}
+.tab-link.active{color:var(--color-primary-dark);border-bottom-color:var(--color-primary)}
+.tab-content{display:none}
+.tab-content.active{display:block;animation:fadeIn 240ms ease-out}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ──────── Migration phases ──────── */
+.phases{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:24px 0 8px;position:relative}
+@media(max-width:900px){.phases{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.phases{grid-template-columns:1fr}}
+.phase{background:#fff;border:1px solid var(--color-border);border-radius:var(--radius-card);padding:20px;position:relative}
+.phase.now{border-color:#f3b0b0;background:#fdf6f6}
+.phase.build{border-color:var(--color-amber-border);background:var(--color-amber-light)}
+.phase.bridge{border-color:#bce6c8;background:var(--color-primary-tint)}
+.phase.done{background:var(--color-ink);color:#fff;border-color:var(--color-ink)}
+.phase .num{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.7;margin-bottom:8px}
+.phase h3{font-size:var(--fs-h3);line-height:var(--lh-h3);margin:0 0 8px;font-weight:600}
+.phase.done h3{color:#fff}
+.phase p{font-size:var(--fs-sm);line-height:var(--lh-sm);margin:0;color:inherit}
+.phase.done p{color:rgba(255,255,255,0.82)}
+.phase .check{position:absolute;top:14px;right:14px;width:24px;height:24px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--color-primary);color:#fff;font-weight:700;font-size:13px}
+
+/* ──────── Matrix grid (4 columns) ──────── */
+.matrix{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:24px}
+@media(max-width:1024px){.matrix{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.matrix{grid-template-columns:1fr}}
+.matrix-col{background:#fff;border:1px solid var(--color-border);border-radius:var(--radius-card);overflow:hidden;display:flex;flex-direction:column}
+.matrix-col-head{padding:18px 20px;color:#fff;position:relative;min-height:108px}
+.matrix-col-head .cnt{position:absolute;top:16px;right:20px;font-size:28px;font-weight:700;line-height:1;opacity:0.95}
+.matrix-col-head .badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:rgba(255,255,255,0.18);padding:3px 8px;border-radius:var(--radius-pill);margin-bottom:8px}
+.matrix-col-head h3{color:#fff;font-size:18px;line-height:24px;margin:0 0 4px;font-weight:700}
+.matrix-col-head p{color:rgba(255,255,255,0.82);font-size:12px;line-height:16px;margin:0}
+.matrix-col.cf .matrix-col-head{background:var(--color-primary)}
+.matrix-col.both .matrix-col-head{background:var(--color-amber)}
+.matrix-col.both .matrix-col-head h3,.matrix-col.both .matrix-col-head p{color:#191919}
+.matrix-col.both .matrix-col-head p{color:rgba(25,25,25,0.7)}
+.matrix-col.both .matrix-col-head .badge{background:rgba(0,0,0,0.12);color:#191919}
+.matrix-col.platform .matrix-col-head{background:var(--color-ink)}
+.matrix-col.merchant .matrix-col-head{background:var(--color-primary-dark)}
+.matrix-col-body{padding:10px;display:flex;flex-direction:column;gap:8px;flex:1;background:#fafafa}
+.field{background:#fff;border:1px solid var(--color-border);border-left:3px solid transparent;border-radius:8px;padding:10px 12px}
+.matrix-col.cf .field{border-left-color:var(--color-primary)}
+.matrix-col.both .field{border-left-color:var(--color-amber)}
+.matrix-col.platform .field{border-left-color:var(--color-ink)}
+.matrix-col.merchant .field{border-left-color:var(--color-primary-dark)}
+.field .name{font-weight:600;font-size:13px;color:var(--color-ink);display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:3px}
+.field .type{font-size:9px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--color-ink-faint);background:#f4f4f4;padding:2px 6px;border-radius:4px;white-space:nowrap;font-family:"SF Mono",monospace}
+.field .desc{font-size:11.5px;line-height:1.45;color:var(--color-ink-muted);margin:0}
+.field .resolved{font-size:10px;color:var(--color-primary-dark);font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-top:4px;display:block}
+
+/* ──────── Three-systems explainer cards ──────── */
+.systems{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0 8px}
+@media(max-width:900px){.systems{grid-template-columns:1fr}}
+.sys-card{background:#fff;border:1px solid var(--color-border);border-radius:var(--radius-card);overflow:hidden}
+.sys-card-head{padding:18px 22px;color:#fff}
+.sys-card-head .lbl{display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:rgba(255,255,255,0.18);padding:3px 8px;border-radius:var(--radius-pill);margin-bottom:8px}
+.sys-card-head h3{color:#fff;font-size:20px;line-height:26px;margin:0;font-weight:700}
+.sys-card.platform .sys-card-head{background:var(--color-ink)}
+.sys-card.merchant .sys-card-head{background:var(--color-primary-dark)}
+.sys-card.cf .sys-card-head{background:var(--color-primary)}
+.sys-card-body{padding:20px 22px}
+.sys-card-body p{margin:0 0 10px;font-size:var(--fs-sm);line-height:var(--lh-sm);color:var(--color-ink-muted)}
+.sys-card-body p:last-child{margin-bottom:0}
+.sys-card-body strong{color:var(--color-ink)}
+
+/* ──────── Open questions cards ──────── */
+.questions{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:20px}
+@media(max-width:768px){.questions{grid-template-columns:1fr}}
+.question{background:#fffdf5;border:1px solid var(--color-amber-border);border-left:4px solid var(--color-amber);border-radius:var(--radius-card);padding:18px 22px}
+.question h4{margin:0 0 6px;font-size:var(--fs-body);font-weight:700;color:#78350f;display:flex;align-items:center;gap:8px}
+.question h4 .qmark{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--color-amber);color:#fff;font-weight:800;font-size:13px}
+.question .type{font-size:9px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--color-ink-faint);background:#f4f4f4;padding:2px 6px;border-radius:4px;font-family:"SF Mono",monospace;margin-left:auto}
+.question p{margin:0;font-size:var(--fs-sm);line-height:var(--lh-sm);color:var(--color-ink-muted)}
+.question p + p{margin-top:8px}
+
+/* ──────── Legend ──────── */
+.legend{display:flex;gap:18px;margin:16px 0 0;flex-wrap:wrap;font-size:13px;color:var(--color-ink-muted)}
+.legend-item{display:flex;align-items:center;gap:8px}
+.legend-dot{width:12px;height:12px;border-radius:3px}
+.legend-dot.cf{background:var(--color-primary)}
+.legend-dot.both{background:var(--color-amber)}
+.legend-dot.platform{background:var(--color-ink)}
+.legend-dot.merchant{background:var(--color-primary-dark)}
+
+/* ──────── Matrix tab cover (simpler than proposal cover) ──────── */
+.matrix-cover{background:var(--color-ink);color:#fff;padding:48px 36px;border-radius:var(--radius-card-lg);position:relative;overflow:hidden;margin-bottom:32px}
+.matrix-cover h1{color:#fff;font-size:36px;line-height:44px;font-weight:700;max-width:760px;letter-spacing:-0.01em}
+.matrix-cover .lede{color:rgba(255,255,255,0.82);font-size:18px;line-height:26px;margin-top:14px;max-width:740px;font-weight:400}
+.matrix-cover .ring{position:absolute;width:420px;height:420px;border-radius:50%;border:1px solid rgba(0,133,57,0.18);right:-180px;bottom:-180px;pointer-events:none}
+
+/* ──────── Role cards (5-row grid) ──────── */
+.roles-list{display:flex;flex-direction:column;gap:12px;margin:20px 0}
+.role{display:grid;grid-template-columns:140px 1fr;gap:24px;align-items:start;background:#fff;border:1px solid var(--color-border);border-left:4px solid var(--color-primary);border-radius:var(--radius-card);padding:18px 22px}
+@media(max-width:640px){.role{grid-template-columns:1fr;gap:8px}}
+.role.admin{border-left-color:var(--color-ink)}
+.role.editor{border-left-color:var(--color-primary)}
+.role.reviewer{border-left-color:var(--color-primary-light)}
+.role.service{border-left-color:var(--color-amber)}
+.role.delivery{border-left-color:var(--color-ink-faint)}
+.role .role-name{font-weight:700;font-size:var(--fs-sm);color:var(--color-ink);line-height:1.3}
+.role .role-tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-ink-faint);margin-top:4px}
+.role-body{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:768px){.role-body{grid-template-columns:1fr}}
+.role-body h5{font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-primary-dark);margin:0 0 6px}
+.role-body .cant h5{color:var(--color-danger)}
+.role-body ul{margin:0;padding-left:18px}
+.role-body li{font-size:13px;line-height:18px;color:var(--color-ink-muted);margin-bottom:3px}
+
+/* ──────── Persona walkthrough (Marie vs Lisa) ──────── */
+.walkthrough{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--color-border);border-radius:var(--radius-card);overflow:hidden;margin-top:20px}
+@media(max-width:768px){.walkthrough{grid-template-columns:1fr}}
+.walkthrough-col{padding:0;background:#fff}
+.walkthrough-col + .walkthrough-col{border-left:1px solid var(--color-border)}
+@media(max-width:768px){.walkthrough-col + .walkthrough-col{border-left:none;border-top:1px solid var(--color-border)}}
+.walkthrough-head{padding:20px 24px;background:var(--color-ink);color:#fff;display:flex;align-items:center;gap:14px}
+.walkthrough-col.alt .walkthrough-head{background:var(--color-primary-dark)}
+.walkthrough-head .avatar{width:42px;height:42px;border-radius:50%;background:var(--color-primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex-shrink:0}
+.walkthrough-col.alt .walkthrough-head .avatar{background:var(--color-primary-light)}
+.walkthrough-head .who{flex:1}
+.walkthrough-head .name{font-weight:700;font-size:16px;color:#fff;line-height:1.2}
+.walkthrough-head .meta{font-size:12px;color:rgba(255,255,255,0.78);margin-top:2px}
+.walkthrough-head .tagchip{font-family:"SF Mono",monospace;font-size:11px;background:rgba(255,255,255,0.15);padding:3px 8px;border-radius:4px;color:#fff;white-space:nowrap}
+.walkthrough-steps{padding:18px 24px}
+.walkthrough-step{padding:12px 0;border-bottom:1px solid var(--color-border)}
+.walkthrough-step:last-child{border-bottom:none}
+.walkthrough-step .step-label{font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-ink-faint);margin-bottom:4px}
+.walkthrough-step p{margin:0;font-size:13px;line-height:18px;color:var(--color-ink-muted)}
+
+/* ──────── Environments cards ──────── */
+.envs{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}
+@media(max-width:900px){.envs{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.envs{grid-template-columns:1fr}}
+.env{background:#fff;border:1px solid var(--color-border);border-radius:var(--radius-card);padding:18px 20px;border-top:3px solid var(--color-primary)}
+.env.master{border-top-color:var(--color-primary)}
+.env.staging{border-top-color:var(--color-amber)}
+.env.preview{border-top-color:var(--color-primary-light)}
+.env.feature{border-top-color:var(--color-ink-faint);border-top-style:dashed}
+.env .env-name{font-family:"SF Mono",monospace;font-weight:600;font-size:13px;color:var(--color-ink);background:#f4f4f4;padding:2px 8px;border-radius:4px;display:inline-block;margin-bottom:8px}
+.env h4{margin:0 0 4px;font-size:14px;font-weight:600}
+.env p{margin:0;font-size:12px;line-height:17px;color:var(--color-ink-muted)}
+
+/* ──────── Shared vs Scoped panels ──────── */
+.shared-scoped{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+@media(max-width:768px){.shared-scoped{grid-template-columns:1fr}}
+.ss-panel{background:#fff;border:1px solid var(--color-border);border-radius:var(--radius-card);overflow:hidden}
+.ss-panel-head{padding:16px 22px;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.ss-panel.shared .ss-panel-head{background:var(--color-ink)}
+.ss-panel.scoped .ss-panel-head{background:var(--color-primary)}
+.ss-panel-head h4{color:#fff;font-size:16px;margin:0;font-weight:700}
+.ss-panel-head .lbl{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:rgba(255,255,255,0.18);padding:3px 8px;border-radius:var(--radius-pill)}
+.ss-panel-body{padding:18px 22px;background:#fafafa}
+.ss-panel-body ul{margin:0;padding-left:20px}
+.ss-panel-body li{font-size:13px;line-height:19px;color:var(--color-ink-muted);margin-bottom:4px}
+.ss-panel-body strong{color:var(--color-ink)}
 </style>
 </head>
 <body>
 <div class="page">
+
+<!-- ═════════════ TAB NAVIGATION ═════════════ -->
+<nav class="tabs" role="tablist">
+  <button class="tab-link active" data-tab="proposal" role="tab">Proposal</button>
+  <button class="tab-link" data-tab="matrix" role="tab">Product implementation matrix</button>
+  <button class="tab-link" data-tab="spaces" role="tab">Spaces, roles &amp; permissions</button>
+</nav>
+
+<!-- ═════════════ TAB 1 — PROPOSAL ═════════════ -->
+<div id="tab-proposal" class="tab-content active">
 
 <!-- ═════════════ COVER ═════════════ -->
 <section class="cover">
@@ -778,6 +946,920 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
   <div class="brand-foot"><span class="h">H</span><span>Helloprint &middot; A content system that grows with us &mdash; and the agents that work alongside us &middot; v1.0 Draft &middot; Sebastiaan Ram &middot; 21 May 2026</span></div>
   <div>Companion document to: Contentful Greenfield Structure Proposal</div>
 </footer>
+
+</div><!-- end #tab-proposal -->
+
+<!-- ═════════════ TAB 2 — IMPLEMENTATION MATRIX ═════════════ -->
+<div id="tab-matrix" class="tab-content">
+
+<!-- Cover -->
+<section class="matrix-cover">
+  <div class="ring"></div>
+  <div style="position:relative;z-index:2">
+    <div class="micro" style="color:rgba(255,255,255,0.7);margin-bottom:12px">Implementation matrix &middot; v1.1 Draft &middot; Sebastiaan Ram</div>
+    <h1>Product implementation matrix</h1>
+    <p class="lede">Field-by-field, for the <strong>47 fields</strong> in today's <span class="mono" style="background:rgba(255,255,255,0.12);color:#fff">product</span> content type &mdash; where each one lives in the new architecture across <strong>three systems</strong>: Contentful, the Platform Catalogue, and the Merchant Catalogue.</p>
+  </div>
+</section>
+
+<!-- ─── The three systems ─── -->
+<section class="section" style="border-top:none;padding-top:24px">
+  <div class="section-tag">The model</div>
+  <h2>The three systems we're modelling against</h2>
+  <p class="section-lede">Before placing fields, let's name the systems. "PCM" was misleading shorthand &mdash; what we actually have is a <strong>multi-tenant catalog architecture</strong> with two distinct catalogue tiers, plus a per-merchant editorial layer.</p>
+
+  <div class="systems">
+    <div class="sys-card platform">
+      <div class="sys-card-head">
+        <span class="lbl">Tier 1 &middot; shared</span>
+        <h3>Platform Catalogue</h3>
+      </div>
+      <div class="sys-card-body">
+        <p><strong>What it is:</strong> Helloprint's master catalogue. Every product that <em>could</em> exist in any merchant's shop lives here.</p>
+        <p><strong>What it owns:</strong> Catalog facts that are the same regardless of who's selling &mdash; product master data, attribute structure, technical specs, submission rules, configurator schema, catalog imagery.</p>
+        <p><strong>Who writes to it:</strong> Helloprint's catalog team. One source for all merchants.</p>
+      </div>
+    </div>
+    <div class="sys-card merchant">
+      <div class="sys-card-head">
+        <span class="lbl">Tier 2 &middot; per merchant</span>
+        <h3>Merchant Catalogue</h3>
+      </div>
+      <div class="sys-card-body">
+        <p><strong>What it is:</strong> Each merchant's curated selection from the Platform Catalogue. Helloprint is a merchant. Allgifts, Drukwerkmax, Quinnstheprinters and every WLS shop are merchants too.</p>
+        <p><strong>What it owns:</strong> Which products this merchant has activated, availability per country/shop, merchant-specific pricing rules, promotions, search and filter rules.</p>
+        <p><strong>Who writes to it:</strong> The merchant. Activating a product here triggers a Contentful entry for it.</p>
+      </div>
+    </div>
+    <div class="sys-card cf">
+      <div class="sys-card-head">
+        <span class="lbl">Tier 3 &middot; per merchant</span>
+        <h3>Contentful</h3>
+      </div>
+      <div class="sys-card-body">
+        <p><strong>What it is:</strong> Editorial layer for one merchant's storefront. Each merchant has their own CF entries for the products they've activated in their Merchant Catalogue.</p>
+        <p><strong>What it owns:</strong> Page narrative, marketing copy, SEO, brand-specific overrides on default catalog values.</p>
+        <p><strong>Who writes to it:</strong> That merchant's content team.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout success" style="margin-top:24px">
+    <div class="title">The cleanest way to think about it</div>
+    <p>Activating a product in a <strong>Merchant Catalogue</strong> creates a corresponding entry in that merchant's <strong>Contentful</strong>. The CF entry inherits defaults from the <strong>Platform Catalogue</strong> &mdash; product name, default imagery, technical specs &mdash; and the merchant can override any of them per locale, market or campaign. Deactivating in the Merchant Catalogue archives the CF entry. One activation event, one editorial workspace.</p>
+  </div>
+</section>
+
+<!-- ─── Migration arc ─── -->
+<section class="section">
+  <div class="section-tag">Migration plan</div>
+  <h2>Four phases, no big-bang cutover</h2>
+  <p class="section-lede">We don't migrate inside the current Contentful space &mdash; we stand up <strong>new clean CF entries per merchant</strong> alongside it, build out the Platform/Merchant Catalogue separation, run both architectures in parallel, and only retire the old space once every frontend has moved across.</p>
+
+  <div class="phases">
+    <div class="phase now">
+      <div class="num">Phase 0 &middot; Today</div>
+      <h3>One bloated space</h3>
+      <p>Current Contentful space holds all 47 product fields, ~400k entries total, mixed catalog + editorial. The catalog tier exists but is mirrored into Contentful. Frontends read via 5 pipelines.</p>
+    </div>
+    <div class="phase build">
+      <div class="num">Phase 1 &middot; Build in parallel</div>
+      <h3>New clean CF + catalog split</h3>
+      <p>Stand up a new CF space with the <strong>15 editorial fields per merchant</strong> + the 2 override fields. Formalise the Platform Catalogue (master) vs Merchant Catalogue (per-merchant) split. Old space untouched.</p>
+    </div>
+    <div class="phase bridge">
+      <div class="num">Phase 2 &middot; Bridge</div>
+      <h3>Content Gateway up</h3>
+      <p>Build the Content Gateway that composes new CF + Platform Catalogue + Merchant Catalogue into one GraphQL endpoint. Migrate frontends one by one to read from the gateway.</p>
+    </div>
+    <div class="phase done">
+      <div class="num">Phase 3 &middot; Sunset</div>
+      <h3>Old space deprecated</h3>
+      <p>Once every frontend (storefronts, blog, B2B portal, Algolia indexer) reads exclusively from the gateway, set the old space to read-only, then archive it.</p>
+      <div class="check">&check;</div>
+    </div>
+  </div>
+
+  <div class="callout success" style="margin-top:28px">
+    <div class="title">Why this works without breaking anything</div>
+    <p>The frontends don't migrate from "old CF" to "new CF". They migrate from "old CF + 5 custom pipelines" to "one GraphQL gateway". From the frontend's perspective, the change is replacing many noisy reads with one clean read. The old Contentful space stops being read from naturally, not by force, as each frontend cuts over. When the last one moves, the old space can be deprecated with confidence because nothing depends on it anymore.</p>
+  </div>
+</section>
+
+<!-- ─── The matrix ─── -->
+<section class="section">
+  <div class="section-tag">The matrix</div>
+  <h2>Where every product field lives in the new world</h2>
+  <p class="section-lede">All 47 product fields, each placed in its destination across the three systems. Four fields with unresolved decisions are surfaced separately as Open Questions below the matrix.</p>
+
+  <div class="legend">
+    <div class="legend-item"><span class="legend-dot cf"></span>Contentful &middot; per-merchant editorial</div>
+    <div class="legend-item"><span class="legend-dot both"></span>Both &middot; Platform default + CF override</div>
+    <div class="legend-item"><span class="legend-dot platform"></span>Platform Catalogue &middot; shared master</div>
+    <div class="legend-item"><span class="legend-dot merchant"></span>Merchant Catalogue &middot; per-merchant commerce</div>
+  </div>
+
+  <div class="matrix">
+
+    <!-- ─── COLUMN 1: CONTENTFUL ─── -->
+    <div class="matrix-col cf">
+      <div class="matrix-col-head">
+        <div class="cnt">15</div>
+        <div class="badge">Stays in CF</div>
+        <h3>Contentful</h3>
+        <p>Per-merchant editorial content</p>
+      </div>
+      <div class="matrix-col-body">
+        <div class="field"><div class="name">Url <span class="type">short</span></div><p class="desc">Per-locale URL slug. Routing + SEO.</p></div>
+        <div class="field"><div class="name">Slug <span class="type">short</span></div><p class="desc">Canonical entry-title slug. Consolidate with Url in v2.</p></div>
+        <div class="field"><div class="name">Meta Title <span class="type">short</span></div><p class="desc">SEO &lt;title&gt; tag.</p></div>
+        <div class="field"><div class="name">Meta Description <span class="type">short</span></div><p class="desc">SEO meta description.</p></div>
+        <div class="field"><div class="name">Canonical Contenful <span class="type">short</span></div><p class="desc">Canonical URL override. Fix the typo in v2.</p></div>
+        <div class="field"><div class="name">Intro Paragraph <span class="type">long</span></div><p class="desc">Opening narrative paragraph.</p></div>
+        <div class="field"><div class="name">Description <span class="type">long</span></div><p class="desc">Long-form PDP narrative.</p></div>
+        <div class="field"><div class="name">USP &amp; Pros/Cons <span class="type">refs</span></div><p class="desc">Merge USP and Pros &amp; Cons into one editorial block type. Pure marketing copy.</p></div>
+        <div class="field"><div class="name">Faq Item <span class="type">refs</span></div><p class="desc">FAQ entries on the PDP.</p></div>
+        <div class="field"><div class="name">Question and answer <span class="type">refs</span></div><p class="desc">Additional Q&amp;A blocks. Review for deprecation in v2.</p></div>
+        <div class="field"><div class="name">Info Icons <span class="type">refs</span></div><p class="desc">Feature icon references shown on PDP.</p></div>
+        <div class="field"><div class="name">Highlight Labels <span class="type">refs</span></div><p class="desc">Marketing badges (NEW, BESTSELLER, etc.).</p></div>
+        <div class="field"><div class="name">Content blocks <span class="type">refs</span></div><p class="desc">Modular content blocks for the PDP.</p></div>
+        <div class="field"><div class="name">Videos (WIP) <span class="type">refs</span></div><p class="desc">Marketing video references.</p></div>
+      </div>
+    </div>
+
+    <!-- ─── COLUMN 2: BOTH ─── -->
+    <div class="matrix-col both">
+      <div class="matrix-col-head">
+        <div class="cnt">2</div>
+        <div class="badge">Platform + CF override</div>
+        <h3>Both</h3>
+        <p>Platform default, CF can overwrite</p>
+      </div>
+      <div class="matrix-col-body">
+        <div class="field"><div class="name">Title <span class="type">short</span></div><p class="desc">PDP page title. Default is the Platform Catalogue product name; the merchant's CF can override per brand or market when they want a different headline.</p><span class="resolved">See spotlight below &darr;</span></div>
+        <div class="field"><div class="name">Product Images <span class="type">media</span></div><p class="desc">Default gallery lives in the Platform Catalogue. Merchant CF can hold an override gallery for brand-specific or campaign-specific shots.</p><span class="resolved">See spotlight below &darr;</span></div>
+      </div>
+    </div>
+
+    <!-- ─── COLUMN 3: PLATFORM CATALOGUE ─── -->
+    <div class="matrix-col platform">
+      <div class="matrix-col-head">
+        <div class="cnt">19</div>
+        <div class="badge">Moves to Platform</div>
+        <h3>Platform Catalogue</h3>
+        <p>Shared master &mdash; same for every merchant</p>
+      </div>
+      <div class="matrix-col-body">
+        <div class="field"><div class="name">Name <span class="type">short</span></div><p class="desc">Product name. The single source of truth, used by every merchant.</p></div>
+        <div class="field"><div class="name">Product Keys Specs <span class="type">refs</span></div><p class="desc">Structured spec rows (weight, dimensions, material).</p></div>
+        <div class="field"><div class="name">Submission specs <span class="type">refs</span></div><p class="desc">Artwork submission tech specs (DPI, bleed, format).</p></div>
+        <div class="field"><div class="name">Templates <span class="type">refs</span></div><p class="desc">Print / production template references.</p></div>
+        <div class="field"><div class="name">Default Funnel Template <span class="type">short</span></div><p class="desc">Default configurator/funnel template.</p></div>
+        <div class="field"><div class="name">Preset Path <span class="type">list</span></div><p class="desc">Preset configurator dimension path.</p></div>
+        <div class="field"><div class="name">Recommended Path <span class="type">short</span></div><p class="desc">Recommended configurator path.</p></div>
+        <div class="field"><div class="name">Attribute Groups <span class="type">refs</span></div><p class="desc">Configurator attribute structure (Platform-owned).</p></div>
+        <div class="field"><div class="name">Direct Main Category <span class="type">ref</span></div><p class="desc">Primary catalog category.</p></div>
+        <div class="field"><div class="name">Internal Category <span class="type">ref</span></div><p class="desc">Internal catalog taxonomy.</p></div>
+        <div class="field"><div class="name">Other Categories <span class="type">refs</span></div><p class="desc">Additional catalog cross-listings.</p></div>
+        <div class="field"><div class="name">masterProduct <span class="type">ref</span></div><p class="desc">Parent/master product link (variant hierarchy).</p></div>
+        <div class="field"><div class="name">Stock product <span class="type">bool</span></div><p class="desc">Stock product flag &mdash; catalog property.</p></div>
+        <div class="field"><div class="name">Custom Size Dimension <span class="type">short</span></div><p class="desc">Per-product custom dimension override.</p></div>
+        <div class="field"><div class="name">Canva Product Catalogue <span class="type">ref</span></div><p class="desc">Canva integration reference.</p></div>
+        <div class="field"><div class="name">Catalog image <span class="type">media</span></div><p class="desc">Catalog/spec image (separate from the merchant-overridable gallery).</p></div>
+        <div class="field"><div class="name">Icon <span class="type">media</span></div><p class="desc">Product icon(s). Catalog-side imagery.</p></div>
+        <div class="field"><div class="name">PDP Configuration <span class="type">ref</span></div><p class="desc">PDP setup config &mdash; catalog-side, not editorial.</p></div>
+        <div class="field"><div class="name">Product info <span class="type">long</span></div><p class="desc">Factual product information. Catalog reference text, not editorial copy.</p></div>
+      </div>
+    </div>
+
+    <!-- ─── COLUMN 4: MERCHANT CATALOGUE ─── -->
+    <div class="matrix-col merchant">
+      <div class="matrix-col-head">
+        <div class="cnt">7</div>
+        <div class="badge">Moves to Merchant</div>
+        <h3>Merchant Catalogue</h3>
+        <p>Per-merchant commerce config</p>
+      </div>
+      <div class="matrix-col-body">
+        <div class="field"><div class="name">Available <span class="type">bool</span></div><p class="desc">Is this product activated in this merchant's shop?</p></div>
+        <div class="field"><div class="name">Unavailable <span class="type">ref</span></div><p class="desc">Availability setting per country / shop within this merchant.</p></div>
+        <div class="field"><div class="name">Promo Discount <span class="type">refs</span></div><p class="desc">Merchant-specific promotional discounts.</p></div>
+        <div class="field"><div class="name">Filter Settings <span class="type">refs</span></div><p class="desc">Filter configuration for this merchant's PLP / search.</p></div>
+        <div class="field"><div class="name">Filter page settings <span class="type">bool</span></div><p class="desc">Per-merchant filter behaviour toggle.</p></div>
+        <div class="field"><div class="name">Product Feed <span class="type">ref</span></div><p class="desc">Per-merchant feed config (each shop has its own Google Shopping feed).</p></div>
+        <div class="field"><div class="name">Search boost <span class="type">bool</span></div><p class="desc">Per-merchant search ranking lever. Or move functionality entirely to Algolia rules &mdash; see Open Questions.</p></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── Open Questions ─── -->
+<section class="section">
+  <div class="section-tag">Open questions</div>
+  <h2>Four fields without a decision yet</h2>
+  <p class="section-lede">These are not catalog-vs-editorial debates &mdash; they're "do we still need this field?" or "where does it logically belong?" questions. Surface them to the team before the matrix is finalised.</p>
+
+  <div class="questions">
+    <div class="question">
+      <h4><span class="qmark">?</span>Meta Robot Content <span class="type">short</span></h4>
+      <p>Per-page indexing directive (e.g. <span class="mono">noindex,follow</span>).</p>
+      <p><strong>The question:</strong> Should this be in Contentful at all? Most products use the same value across all locales. Could be a Platform Catalogue default with a CF override only when a merchant specifically needs <span class="mono">noindex</span> for a particular page. Or could leave Contentful entirely and live in a routing / SEO config layer.</p>
+    </div>
+    <div class="question">
+      <h4><span class="qmark">?</span>Search Name <span class="type">short</span></h4>
+      <p>Algolia-friendly product name override.</p>
+      <p><strong>The question:</strong> Do we still need this? With the new model, <em>Title</em> already covers public name (with the Platform default + CF override pattern). Search Name may be redundant. Recommend deprecating unless a concrete use case surfaces.</p>
+    </div>
+    <div class="question">
+      <h4><span class="qmark">?</span>Search Tags <span class="type">list</span></h4>
+      <p>Algolia keywords list.</p>
+      <p><strong>The question:</strong> Stays in Contentful for now, but possibly belongs elsewhere &mdash; Platform Catalogue (if keywords are catalog-wide) or Merchant Catalogue (if each merchant tunes their own keywords). Worth deciding before migration.</p>
+    </div>
+    <div class="question">
+      <h4><span class="qmark">?</span>Search settings <span class="type">bool</span></h4>
+      <p>Search visibility toggle.</p>
+      <p><strong>The question:</strong> Same as Search Tags &mdash; could stay in CF, but might fit better in Merchant Catalogue as a per-merchant search behaviour setting alongside Search boost. Pick one home.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Spotlight: Title + Product Images ─── -->
+<section class="section">
+  <div class="section-tag">Spotlight</div>
+  <h2>How the "Both" pattern works &mdash; Title and Product Images</h2>
+  <p class="section-lede">Two fields share this pattern. Both have a sensible default coming from the Platform Catalogue, and both can be overridden by a merchant in their own Contentful when they want their own voice or visuals.</p>
+
+  <div class="diagram-wrap">
+  <svg viewBox="0 0 1040 340" xmlns="http://www.w3.org/2000/svg" role="img">
+    <defs>
+      <marker id="arrSpot" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#008539"/></marker>
+    </defs>
+
+    <!-- Platform source (default) -->
+    <rect x="40" y="70" width="260" height="140" rx="14" fill="#191919"/>
+    <text x="60" y="100" font-family="Inter" font-size="11" font-weight="700" fill="#fff" letter-spacing="0.08em">PLATFORM CATALOGUE &mdash; DEFAULT</text>
+    <text x="60" y="126" font-family="Inter" font-size="13" font-weight="700" fill="#fff">Title: "Folding Box"</text>
+    <text x="60" y="146" font-family="Inter" font-size="13" font-weight="700" fill="#fff">Product Images: spec shots</text>
+    <text x="60" y="170" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.78)">One source, used by every merchant</text>
+    <text x="60" y="186" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.78)">Always present, never empty</text>
+
+    <!-- Merchant CF override -->
+    <rect x="340" y="70" width="300" height="140" rx="14" fill="#fff" stroke="#f59e0b" stroke-width="2"/>
+    <text x="360" y="100" font-family="Inter" font-size="11" font-weight="700" fill="#78350f" letter-spacing="0.08em">MERCHANT CF &mdash; OPTIONAL OVERRIDE</text>
+    <text x="360" y="126" font-family="Inter" font-size="13" font-weight="700" fill="#191919">Title: "Eco-friendly Mailing Box"</text>
+    <text x="360" y="146" font-family="Inter" font-size="13" font-weight="700" fill="#191919">Product Images: lifestyle shoot</text>
+    <text x="360" y="170" font-family="Inter" font-size="11" fill="#555">Allgifts wants their own headline + photography</text>
+    <text x="360" y="186" font-family="Inter" font-size="11" fill="#555">Set only when the merchant chooses to</text>
+
+    <!-- Gateway -->
+    <rect x="680" y="70" width="320" height="140" rx="14" fill="#008539"/>
+    <text x="700" y="100" font-family="Inter" font-size="11" font-weight="700" fill="#fff" letter-spacing="0.08em">CONTENT GATEWAY &mdash; RESOLVES</text>
+    <text x="700" y="126" font-family="Inter" font-size="13" font-weight="700" fill="#fff">CF override first, then Platform</text>
+    <text x="700" y="150" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.85)">Merchant has an override? Use that.</text>
+    <text x="700" y="168" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.85)">No override? Fall back to Platform default.</text>
+    <text x="700" y="186" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.85)">Resolved per locale, per market.</text>
+
+    <!-- Arrows into gateway -->
+    <line x1="300" y1="130" x2="680" y2="120" stroke="#008539" stroke-width="2" marker-end="url(#arrSpot)"/>
+    <line x1="640" y1="130" x2="680" y2="150" stroke="#008539" stroke-width="2" marker-end="url(#arrSpot)"/>
+
+    <!-- Frontend -->
+    <rect x="380" y="252" width="280" height="64" rx="14" fill="#fff" stroke="#e5e5e5"/>
+    <text x="520" y="276" font-family="Inter" font-size="13" font-weight="700" fill="#191919" text-anchor="middle">Storefront receives one Title + one image set</text>
+    <text x="520" y="296" font-family="Inter" font-size="11" fill="#555" text-anchor="middle">Doesn't know or care whether they came from CF or Platform</text>
+
+    <!-- Arrow to frontend -->
+    <line x1="840" y1="210" x2="660" y2="252" stroke="#008539" stroke-width="2" marker-end="url(#arrSpot)"/>
+  </svg>
+  <div class="diagram-caption">FIG. M-1 &mdash; The Both pattern. Platform Catalogue provides defaults that always exist; Merchant CF holds optional overrides; the Gateway picks the most specific available value, per locale and per market.</div>
+  </div>
+
+  <div class="grid-2" style="margin-top:24px">
+    <div class="card">
+      <h4>Why both, not one</h4>
+      <p class="body">Helloprint sells the same physical "Folding Box" as Allgifts and Drukwerkmax. The product is identical. But each merchant might want a different headline or different lifestyle photography to match their brand. That's the override use case: same SKU, different presentation.</p>
+    </div>
+    <div class="card">
+      <h4>The override is the exception</h4>
+      <p class="body">Most products in most merchants won't override anything &mdash; they'll just use the Platform defaults. The override only exists where a merchant cares enough to provide their own value. This keeps Merchant CF spaces lean and avoids forcing every merchant to manage values they don't have a strong opinion on.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── What this unlocks ─── -->
+<section class="section">
+  <div class="section-tag">What this unlocks</div>
+  <h2>The new Contentful, by the numbers</h2>
+
+  <table>
+    <thead><tr><th>Dimension</th><th>Today (old space)</th><th>New architecture</th></tr></thead>
+    <tbody>
+      <tr><td>Fields on the product type in CF</td><td>47</td><td>15 editorial + 2 overrides = 17 max</td></tr>
+      <tr><td>Fields shown by default in a merchant's CF entry</td><td>47, most of which they shouldn't touch</td><td>15 &mdash; all editorial, all worth their attention</td></tr>
+      <tr><td>Product entries per merchant</td><td>Shared across all merchants in one space (~14k entries)</td><td>One CF entry per <em>activated</em> product in that merchant's Merchant Catalogue. Most merchants will have hundreds, not thousands.</td></tr>
+      <tr><td>Total entries in the CF space</td><td>~400,710 (all content types combined)</td><td>~30&ndash;50k once catalog data is in the Platform Catalogue</td></tr>
+      <tr><td>Sources of truth per concept</td><td>2 in sync (CF mirror + catalog)</td><td>1 per concept &mdash; Platform owns shared data, Merchant owns commerce, CF owns editorial</td></tr>
+      <tr><td>What writes back into Contentful from the catalog tier</td><td>~25 fields synced via Contentful Worker on every change</td><td>0 &mdash; CF only holds editorial values and overrides</td></tr>
+      <tr><td>Onboarding a new JV merchant</td><td>New locales, new worker config, new pipeline</td><td>Activate them in the Merchant Catalogue. Their CF entries are auto-created with Platform defaults.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout success" style="margin-top:24px">
+    <div class="title">The shape of a product in the new world</div>
+    <p>A merchant's CF entry for a product has 15 fields that are all editorial decisions worth a human's attention &mdash; plus 2 optional override fields (Title, Product Images) for when the merchant wants to deviate from the Platform default. Everything else is read from the Platform Catalogue or Merchant Catalogue at runtime by the Content Gateway. No machine-written blobs, no hidden legacy fields, no orphan catalog config.</p>
+  </div>
+</section>
+
+<!-- ─── What's next ─── -->
+<section class="section">
+  <div class="section-tag">What's next</div>
+  <h2>The other content types follow the same pattern</h2>
+  <p class="section-lede">Products are the biggest piece &mdash; both in entry count and in the catalog/editorial confusion. Once the pattern is proven on products, the rest of the content types map across with much less drama.</p>
+
+  <div class="grid-3">
+    <div class="card">
+      <h4>Pages (PLP, landings, home)</h4>
+      <p class="body">Editorial content with no catalog overlap. Lift-and-shift into the new CF space with consolidated field names. Estimated: ~2k entries, ~30 fields per page type after consolidation.</p>
+    </div>
+    <div class="card">
+      <h4>Blocks (hero, media, rich-text)</h4>
+      <p class="body">Pure editorial. Rename the cryptic <span class="mono">homeBlockTypeBJ</span>/<span class="mono">homeBlockTypeBk</span> to descriptive types (<span class="mono">heroBlock</span>, <span class="mono">richTextBlock</span>, etc.). Migrate references.</p>
+    </div>
+    <div class="card">
+      <h4>FAQs, USPs, pros &amp; cons</h4>
+      <p class="body">Small editorial fragments. Migrate as-is &mdash; the structure is already right.</p>
+    </div>
+    <div class="card">
+      <h4>Theme translations (<span class="mono">themeTemplate</span>)</h4>
+      <p class="body">Leaves CF entirely. Becomes UI strings managed in the Platform Catalogue alongside attribute translations, or moves to a dedicated System layer depending on whether it's catalog UI or general UI. Decision pending.</p>
+    </div>
+    <div class="card">
+      <h4>Blog (<span class="mono">pageArticle</span>)</h4>
+      <p class="body">Move to a dedicated Editorial space (or stay in the new CF main space with a brand tag). Distinct lifecycle from product pages, distinct team.</p>
+    </div>
+    <div class="card">
+      <h4>Configurator options &amp; attributes</h4>
+      <p class="body">The bulk of today's 400k entries (<span class="mono">pcmOptionsAttribute</span>, <span class="mono">attributeGroup</span>, <span class="mono">CombbinedOptionsAttribute</span>). All move to the Platform Catalogue with the rest of the shared catalog data. Not migrated into the new CF space.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="title" style="color:var(--color-ink)">A separate matrix for each content type</div>
+    <p style="color:var(--color-ink)">This tab will gain new sections as we agree on each content type. The next likely one is <strong>pageProduct</strong> &mdash; the PDP wrapper that links to a product reference. After that, blocks and the editorial page types. Same shape, same exercise: every field placed deliberately.</p>
+  </div>
+</section>
+
+</div><!-- end #tab-matrix -->
+
+<!-- ═════════════ TAB 3 — SPACES, ROLES & PERMISSIONS ═════════════ -->
+<div id="tab-spaces" class="tab-content">
+
+<!-- Cover -->
+<section class="matrix-cover">
+  <div class="ring"></div>
+  <div style="position:relative;z-index:2">
+    <div class="micro" style="color:rgba(255,255,255,0.7);margin-bottom:12px">Implementation &middot; spaces, environments, roles &middot; v1.0 Draft</div>
+    <h1>One shared space,<br/>scoped by merchant tags.</h1>
+    <p class="lede">How Marie at Helloprint, Lisa at Allgifts, and Pieter at Drukwerkmax can all work in the same Contentful workspace without ever stepping on each other's content &mdash; and how a JV partner gets their own clean editorial workspace without us provisioning a new CF space per brand.</p>
+  </div>
+</section>
+
+<!-- The decision -->
+<section class="section" style="border-top:none;padding-top:24px">
+  <div class="section-tag">The decision</div>
+  <h2>Why one shared space, not one per merchant</h2>
+  <p class="section-lede">Two viable models. We recommend the simpler one with a clear escape hatch when isolation becomes a hard requirement.</p>
+
+  <div class="grid-2">
+    <div class="card" style="border-left:4px solid var(--color-primary)">
+      <span class="chip brand">Recommended</span>
+      <h3 style="margin-top:8px">One shared CF space</h3>
+      <p class="body">All merchants work in the same space. Their content is separated by <span class="mono">merchant:*</span> tags and editors are scoped by role policies that filter on those tags.</p>
+      <ul class="tick">
+        <li>One subscription tier &mdash; cost doesn't multiply by merchant count</li>
+        <li>One content model to maintain &mdash; add a field once, every merchant benefits</li>
+        <li>One set of integrations (Gateway, Algolia, cache) &mdash; they filter by tag</li>
+        <li>Onboarding a new merchant is a tag + a role &mdash; ~5 minutes of admin work</li>
+        <li>JVs still see a clean workspace via role policies, not via separate spaces</li>
+      </ul>
+    </div>
+    <div class="card" style="border-left:4px solid var(--color-ink-faint)">
+      <span class="chip outline">Escape hatch</span>
+      <h3 style="margin-top:8px">Per-JV dedicated space</h3>
+      <p class="body">If a JV partner contractually requires legal isolation, a different billing structure, or wants their own admin team &mdash; promote them to a dedicated space. Same content model, pushed via Contentful Migration scripts.</p>
+      <ul>
+        <li>Decided per JV, not as the default</li>
+        <li>Maintained model parity via CI/CD migration scripts</li>
+        <li>Higher operational cost &mdash; only worth it for hard requirements</li>
+        <li>Promotion path: stay tag-scoped first, split only when needed</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Topology -->
+<section class="section">
+  <div class="section-tag">Topology</div>
+  <h2>The one-space topology, visualised</h2>
+  <p class="section-lede">Everyone reads and writes to the same Contentful space, but role policies act as filters so each editor only ever sees their own merchant's content. The Platform Catalogue feeds shared defaults; the Merchant Catalogue triggers entry creation per merchant.</p>
+
+  <div class="diagram-wrap">
+  <svg viewBox="0 0 1040 560" xmlns="http://www.w3.org/2000/svg" role="img">
+    <defs>
+      <marker id="arrTopo" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#008539"/></marker>
+      <marker id="arrTopoGrey" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f59e0b"/></marker>
+    </defs>
+
+    <!-- Editor personas (top) -->
+    <g>
+      <circle cx="120" cy="50" r="22" fill="#008539"/>
+      <text x="120" y="57" font-family="Inter" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">M</text>
+      <text x="120" y="92" font-family="Inter" font-size="12" font-weight="700" fill="#191919" text-anchor="middle">Marie</text>
+      <text x="120" y="106" font-family="Inter" font-size="10" fill="#555" text-anchor="middle">Helloprint Editor</text>
+      <rect x="78" y="116" width="84" height="18" rx="9" fill="#e8f5e9" stroke="#bce6c8"/>
+      <text x="120" y="128" font-family="SF Mono, monospace" font-size="9" fill="#006B2D" text-anchor="middle">merchant:helloprint</text>
+
+      <circle cx="360" cy="50" r="22" fill="#006B2D"/>
+      <text x="360" y="57" font-family="Inter" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">L</text>
+      <text x="360" y="92" font-family="Inter" font-size="12" font-weight="700" fill="#191919" text-anchor="middle">Lisa</text>
+      <text x="360" y="106" font-family="Inter" font-size="10" fill="#555" text-anchor="middle">Allgifts Editor</text>
+      <rect x="322" y="116" width="76" height="18" rx="9" fill="#e8f5e9" stroke="#bce6c8"/>
+      <text x="360" y="128" font-family="SF Mono, monospace" font-size="9" fill="#006B2D" text-anchor="middle">merchant:allgifts</text>
+
+      <circle cx="600" cy="50" r="22" fill="#191919"/>
+      <text x="600" y="57" font-family="Inter" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">P</text>
+      <text x="600" y="92" font-family="Inter" font-size="12" font-weight="700" fill="#191919" text-anchor="middle">Pieter</text>
+      <text x="600" y="106" font-family="Inter" font-size="10" fill="#555" text-anchor="middle">Drukwerkmax Editor</text>
+      <rect x="544" y="116" width="112" height="18" rx="9" fill="#e8f5e9" stroke="#bce6c8"/>
+      <text x="600" y="128" font-family="SF Mono, monospace" font-size="9" fill="#006B2D" text-anchor="middle">merchant:drukwerkmax</text>
+
+      <circle cx="840" cy="50" r="22" fill="#555"/>
+      <text x="840" y="57" font-family="Inter" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">T</text>
+      <text x="840" y="92" font-family="Inter" font-size="12" font-weight="700" fill="#191919" text-anchor="middle">Tom</text>
+      <text x="840" y="106" font-family="Inter" font-size="10" fill="#555" text-anchor="middle">WLS shop owner</text>
+      <rect x="804" y="116" width="72" height="18" rx="9" fill="#e8f5e9" stroke="#bce6c8"/>
+      <text x="840" y="128" font-family="SF Mono, monospace" font-size="9" fill="#006B2D" text-anchor="middle">merchant:wls-XX</text>
+
+      <circle cx="960" cy="50" r="22" fill="#f59e0b"/>
+      <text x="960" y="57" font-family="Inter" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">A</text>
+      <text x="960" y="92" font-family="Inter" font-size="12" font-weight="700" fill="#191919" text-anchor="middle">Admin</text>
+      <text x="960" y="106" font-family="Inter" font-size="10" fill="#555" text-anchor="middle">Platform team</text>
+      <rect x="924" y="116" width="72" height="18" rx="9" fill="#fef3c7" stroke="#fcd34d"/>
+      <text x="960" y="128" font-family="SF Mono, monospace" font-size="9" fill="#78350f" text-anchor="middle">role:admin</text>
+    </g>
+
+    <!-- The CF space -->
+    <rect x="40" y="160" width="960" height="220" rx="16" fill="#fff" stroke="#008539" stroke-width="2"/>
+    <text x="60" y="186" font-family="Inter" font-size="13" font-weight="700" fill="#008539" letter-spacing="0.05em">CONTENTFUL SPACE &middot; HELLOPRINT NETWORK CONTENT</text>
+    <text x="60" y="204" font-family="Inter" font-size="11" fill="#555">One space &middot; four merchant tags &middot; one content model &middot; environments: master, staging, preview, feat-*</text>
+
+    <!-- Lane: Helloprint -->
+    <rect x="60" y="220" width="220" height="140" rx="10" fill="#fafafa" stroke="#e5e5e5"/>
+    <text x="76" y="240" font-family="SF Mono, monospace" font-size="11" font-weight="700" fill="#191919">merchant:helloprint</text>
+    <text x="76" y="256" font-family="Inter" font-size="10" fill="#555">~5,000 product entries</text>
+    <rect x="76" y="270" width="78" height="22" rx="4" fill="#fff" stroke="#bce6c8"/>
+    <text x="115" y="285" font-family="Inter" font-size="10" fill="#006B2D" text-anchor="middle">posters NL</text>
+    <rect x="160" y="270" width="78" height="22" rx="4" fill="#fff" stroke="#bce6c8"/>
+    <text x="199" y="285" font-family="Inter" font-size="10" fill="#006B2D" text-anchor="middle">flyers DE</text>
+    <rect x="76" y="298" width="78" height="22" rx="4" fill="#fff" stroke="#bce6c8"/>
+    <text x="115" y="313" font-family="Inter" font-size="10" fill="#006B2D" text-anchor="middle">stickers ES</text>
+    <rect x="160" y="298" width="78" height="22" rx="4" fill="#fff" stroke="#bce6c8"/>
+    <text x="199" y="313" font-family="Inter" font-size="10" fill="#006B2D" text-anchor="middle">+4,997 more</text>
+    <rect x="76" y="326" width="162" height="22" rx="4" fill="#fff" stroke="#bce6c8" stroke-dasharray="3,3"/>
+    <text x="157" y="341" font-family="Inter" font-size="10" fill="#555" text-anchor="middle" font-style="italic">all tagged merchant:helloprint</text>
+
+    <!-- Lane: Allgifts -->
+    <rect x="300" y="220" width="220" height="140" rx="10" fill="#fafafa" stroke="#e5e5e5"/>
+    <text x="316" y="240" font-family="SF Mono, monospace" font-size="11" font-weight="700" fill="#191919">merchant:allgifts</text>
+    <text x="316" y="256" font-family="Inter" font-size="10" fill="#555">~3,000 product entries</text>
+    <rect x="316" y="270" width="78" height="22" rx="4" fill="#fff" stroke="#bce6c8"/>
+    <text x="355" y="285" font-family="Inter" font-size="10" fill="#006B2D" text-anchor="middle">mugs NL</text>
+    <rect x="400" y="270" width="78" height="22" rx="4" fill="#fff" stroke="#bce6c8"/>
+    <text x="439" y="285" font-family="Inter" font-size="10" fill="#006B2D" text-anchor="middle">notebooks BE</text>
+    <rect x="316" y="298" width="78" height="22" rx="4" fill="#fff" stroke="#bce6c8"/>
+    <text x="355" y="313" font-family="Inter" font-size="10" fill="#006B2D" text-anchor="middle">bags DE</text>
+    <rect x="400" y="298" width="78" height="22" rx="4" fill="#fff" stroke="#bce6c8"/>
+    <text x="439" y="313" font-family="Inter" font-size="10" fill="#006B2D" text-anchor="middle">+2,997 more</text>
+    <rect x="316" y="326" width="162" height="22" rx="4" fill="#fff" stroke="#bce6c8" stroke-dasharray="3,3"/>
+    <text x="397" y="341" font-family="Inter" font-size="10" fill="#555" text-anchor="middle" font-style="italic">all tagged merchant:allgifts</text>
+
+    <!-- Lane: Drukwerkmax -->
+    <rect x="540" y="220" width="220" height="140" rx="10" fill="#fafafa" stroke="#e5e5e5"/>
+    <text x="556" y="240" font-family="SF Mono, monospace" font-size="11" font-weight="700" fill="#191919">merchant:drukwerkmax</text>
+    <text x="556" y="256" font-family="Inter" font-size="10" fill="#555">~2,500 product entries</text>
+    <rect x="556" y="270" width="78" height="22" rx="4" fill="#fff" stroke="#bce6c8"/>
+    <text x="595" y="285" font-family="Inter" font-size="10" fill="#006B2D" text-anchor="middle">brochures NL</text>
+    <rect x="640" y="270" width="78" height="22" rx="4" fill="#fff" stroke="#bce6c8"/>
+    <text x="679" y="285" font-family="Inter" font-size="10" fill="#006B2D" text-anchor="middle">canvas BE</text>
+    <rect x="556" y="298" width="78" height="22" rx="4" fill="#fff" stroke="#bce6c8"/>
+    <text x="595" y="313" font-family="Inter" font-size="10" fill="#006B2D" text-anchor="middle">posters NL</text>
+    <rect x="640" y="298" width="78" height="22" rx="4" fill="#fff" stroke="#bce6c8"/>
+    <text x="679" y="313" font-family="Inter" font-size="10" fill="#006B2D" text-anchor="middle">+2,497 more</text>
+    <rect x="556" y="326" width="162" height="22" rx="4" fill="#fff" stroke="#bce6c8" stroke-dasharray="3,3"/>
+    <text x="637" y="341" font-family="Inter" font-size="10" fill="#555" text-anchor="middle" font-style="italic">all tagged merchant:drukwerkmax</text>
+
+    <!-- Lane: WLS -->
+    <rect x="780" y="220" width="220" height="140" rx="10" fill="#fafafa" stroke="#e5e5e5"/>
+    <text x="796" y="240" font-family="SF Mono, monospace" font-size="11" font-weight="700" fill="#191919">merchant:wls-*</text>
+    <text x="796" y="256" font-family="Inter" font-size="10" fill="#555">~1,500 entries per shop</text>
+    <rect x="796" y="270" width="78" height="22" rx="4" fill="#fff" stroke="#bce6c8"/>
+    <text x="835" y="285" font-family="Inter" font-size="10" fill="#006B2D" text-anchor="middle">homepage</text>
+    <rect x="880" y="270" width="78" height="22" rx="4" fill="#fff" stroke="#bce6c8"/>
+    <text x="919" y="285" font-family="Inter" font-size="10" fill="#006B2D" text-anchor="middle">about</text>
+    <rect x="796" y="298" width="78" height="22" rx="4" fill="#fff" stroke="#bce6c8"/>
+    <text x="835" y="313" font-family="Inter" font-size="10" fill="#006B2D" text-anchor="middle">legal</text>
+    <rect x="880" y="298" width="78" height="22" rx="4" fill="#fff" stroke="#bce6c8"/>
+    <text x="919" y="313" font-family="Inter" font-size="10" fill="#006B2D" text-anchor="middle">products</text>
+    <rect x="796" y="326" width="162" height="22" rx="4" fill="#fff" stroke="#bce6c8" stroke-dasharray="3,3"/>
+    <text x="877" y="341" font-family="Inter" font-size="10" fill="#555" text-anchor="middle" font-style="italic">scoped per WLS shop</text>
+
+    <!-- Arrows from editors to their lanes -->
+    <line x1="120" y1="140" x2="170" y2="220" stroke="#008539" stroke-width="2" marker-end="url(#arrTopo)"/>
+    <line x1="360" y1="140" x2="410" y2="220" stroke="#008539" stroke-width="2" marker-end="url(#arrTopo)"/>
+    <line x1="600" y1="140" x2="650" y2="220" stroke="#008539" stroke-width="2" marker-end="url(#arrTopo)"/>
+    <line x1="840" y1="140" x2="877" y2="220" stroke="#008539" stroke-width="2" marker-end="url(#arrTopo)"/>
+    <line x1="960" y1="140" x2="660" y2="200" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrTopoGrey)" opacity="0.8"/>
+
+    <!-- Catalog tier -->
+    <rect x="40" y="410" width="470" height="120" rx="14" fill="#191919"/>
+    <text x="60" y="436" font-family="Inter" font-size="13" font-weight="700" fill="#fff" letter-spacing="0.05em">PLATFORM CATALOGUE</text>
+    <text x="60" y="454" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.78)">Master catalog &middot; shared across all merchants</text>
+    <text x="60" y="476" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.85)">19 fields per product: Name, attributes, specs,</text>
+    <text x="60" y="492" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.85)">submission specs, taxonomy, catalog imagery&hellip;</text>
+    <text x="60" y="514" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.6)" font-style="italic">Read-only to all merchant editors. Written by catalog team only.</text>
+
+    <rect x="530" y="410" width="470" height="120" rx="14" fill="#006B2D"/>
+    <text x="550" y="436" font-family="Inter" font-size="13" font-weight="700" fill="#fff" letter-spacing="0.05em">MERCHANT CATALOGUES</text>
+    <text x="550" y="454" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.78)">One per merchant &middot; what each merchant activated</text>
+    <text x="550" y="476" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.85)">7 fields per product: activation, availability,</text>
+    <text x="550" y="492" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.85)">promos, filter and search rules per merchant&hellip;</text>
+    <text x="550" y="514" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.6)" font-style="italic">Activation here triggers CF entry creation, tagged with that merchant.</text>
+
+    <line x1="275" y1="410" x2="275" y2="360" stroke="#008539" stroke-width="2" marker-end="url(#arrTopo)" opacity="0.6"/>
+    <line x1="765" y1="410" x2="765" y2="360" stroke="#008539" stroke-width="2" marker-end="url(#arrTopo)" opacity="0.6"/>
+  </svg>
+  <div class="diagram-caption">FIG. S-1 &mdash; The shared-space topology. Four merchant lanes inside one CF space, scoped by tag. Editors connect to their lane through their role policy (solid green arrows). The Admin role can read across all lanes (dashed amber). The Platform Catalogue and Merchant Catalogues feed defaults and trigger entry creation respectively.</div>
+  </div>
+</section>
+
+<!-- Environments -->
+<section class="section">
+  <div class="section-tag">Environments</div>
+  <h2>Four environments, one per purpose</h2>
+  <p class="section-lede">All four environments share the same content types and roles. Names mean what they say &mdash; no more "sandbox-that's-actually-production".</p>
+
+  <div class="envs">
+    <div class="env master">
+      <span class="env-name">master</span>
+      <h4>Production</h4>
+      <p>What every live storefront reads from via the Content Gateway. Cache invalidation fires from here.</p>
+    </div>
+    <div class="env staging">
+      <span class="env-name">staging</span>
+      <h4>Pre-production</h4>
+      <p>CI smoke tests and staging gateway. Content-model changes land here first, validated before merge to master.</p>
+    </div>
+    <div class="env preview">
+      <span class="env-name">preview</span>
+      <h4>Editor drafts</h4>
+      <p>Editors validate their drafts in context before approving. Surfaces unpublished entries to a preview Gateway endpoint.</p>
+    </div>
+    <div class="env feature">
+      <span class="env-name">feat-&lt;ticket&gt;</span>
+      <h4>Short-lived forks</h4>
+      <p>Per-ticket environment for content-model migrations. Merged back via Contentful Merge App when done.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Roles -->
+<section class="section">
+  <div class="section-tag">Roles</div>
+  <h2>Five roles, each with a clear job</h2>
+  <p class="section-lede">Contentful's Roles + Policies feature lets us scope a role by content type, tag, locale, environment and action. Five archetypes cover every persona.</p>
+
+  <div class="roles-list">
+
+    <div class="role admin">
+      <div>
+        <div class="role-name">Platform Admin</div>
+        <div class="role-tag">Helloprint platform / content-eng team</div>
+      </div>
+      <div class="role-body">
+        <div class="can"><h5>Can do</h5><ul>
+          <li>Full read/write in every environment</li>
+          <li>Manage content types, locales, tags, taxonomy</li>
+          <li>Create and assign roles</li>
+          <li>Approve content-model migrations</li>
+        </ul></div>
+        <div class="cant"><h5>Cannot do</h5><ul>
+          <li>(Nothing restricted at this level)</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <div class="role editor">
+      <div>
+        <div class="role-name">Merchant Editor &mdash; &lt;merchant&gt;</div>
+        <div class="role-tag">One role per merchant: Helloprint, Allgifts, Drukwerkmax, &hellip;</div>
+      </div>
+      <div class="role-body">
+        <div class="can"><h5>Can do</h5><ul>
+          <li>Read entries tagged with their merchant</li>
+          <li>Create, update, publish those entries</li>
+          <li>Edit the 15 editorial fields + 2 override fields</li>
+          <li>Work in master and preview environments</li>
+        </ul></div>
+        <div class="cant"><h5>Cannot do</h5><ul>
+          <li>See other merchants' content (filtered by policy)</li>
+          <li>Edit Platform Catalogue values (read-only)</li>
+          <li>Edit content types, locales, or tags</li>
+          <li>Touch staging or feat-* environments</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <div class="role reviewer">
+      <div>
+        <div class="role-name">Merchant Reviewer &mdash; &lt;merchant&gt;</div>
+        <div class="role-tag">Senior editors who approve drafts</div>
+      </div>
+      <div class="role-body">
+        <div class="can"><h5>Can do</h5><ul>
+          <li>Read all their merchant's content</li>
+          <li>Approve drafts via Contentful Tasks</li>
+        </ul></div>
+        <div class="cant"><h5>Cannot do</h5><ul>
+          <li>Publish directly &mdash; only approve</li>
+          <li>Edit content</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <div class="role service">
+      <div>
+        <div class="role-name">Catalog Service Account</div>
+        <div class="role-tag">API token &middot; programmatic only</div>
+      </div>
+      <div class="role-body">
+        <div class="can"><h5>Can do</h5><ul>
+          <li>Create CF entries when a merchant activates a product</li>
+          <li>Tag entries with the right merchant</li>
+          <li>Update Platform-default fields on broadcast</li>
+          <li>Archive entries on deactivation</li>
+        </ul></div>
+        <div class="cant"><h5>Cannot do</h5><ul>
+          <li>Edit editorial fields &mdash; humans own those</li>
+          <li>Operate as a human role &mdash; API-only</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <div class="role delivery">
+      <div>
+        <div class="role-name">Read-only Delivery Account</div>
+        <div class="role-tag">API token &middot; used by the Content Gateway</div>
+      </div>
+      <div class="role-body">
+        <div class="can"><h5>Can do</h5><ul>
+          <li>Read all entries across all environments</li>
+          <li>Read taxonomy and tags for resolution logic</li>
+        </ul></div>
+        <div class="cant"><h5>Cannot do</h5><ul>
+          <li>Write anything &mdash; reads only</li>
+        </ul></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Marie vs Lisa walkthrough -->
+<section class="section">
+  <div class="section-tag">A day in the life</div>
+  <h2>Marie at Helloprint vs Lisa at Allgifts &mdash; same task, scoped views</h2>
+  <p class="section-lede">Both employees are updating the PDP for the same SKU (a Folding Box C5). They're working in the same Contentful space at the same time. Neither knows the other exists.</p>
+
+  <div class="walkthrough">
+
+    <div class="walkthrough-col">
+      <div class="walkthrough-head">
+        <div class="avatar">M</div>
+        <div class="who">
+          <div class="name">Marie &middot; Helloprint Content NL</div>
+          <div class="meta">Role: Merchant Editor &mdash; Helloprint</div>
+        </div>
+        <div class="tagchip">merchant:helloprint</div>
+      </div>
+      <div class="walkthrough-steps">
+        <div class="walkthrough-step">
+          <div class="step-label">Logs in</div>
+          <p>Lands in Contentful. Her role applies tag filter <span class="mono">merchant:helloprint</span>. Sees ~5,000 product entries (Helloprint's activated products).</p>
+        </div>
+        <div class="walkthrough-step">
+          <div class="step-label">Searches "folding box"</div>
+          <p>Returns ~12 Helloprint product entries. Allgifts entries are invisible &mdash; her role filters them out.</p>
+        </div>
+        <div class="walkthrough-step">
+          <div class="step-label">Opens the entry</div>
+          <p>15 editorial + 2 override fields. Sidebar shows Platform Catalogue default <em>Name: "Corrugated Cardboard Folding Box C5 245x180x170mm"</em>. Read-only.</p>
+        </div>
+        <div class="walkthrough-step">
+          <div class="step-label">Overrides Title</div>
+          <p>Sets Title override to <em>"Folding Box (C5) &mdash; Bulk-printed Mailing Box"</em>. Saved with tag <span class="mono">merchant:helloprint</span>.</p>
+        </div>
+        <div class="walkthrough-step">
+          <div class="step-label">Edits Description</div>
+          <p>Updates the long-form copy in Helloprint's brand voice.</p>
+        </div>
+        <div class="walkthrough-step">
+          <div class="step-label">Tries to edit Submission specs</div>
+          <p>Field is read-only &mdash; surfaced from Platform Catalogue, not editable by her role.</p>
+        </div>
+        <div class="walkthrough-step">
+          <div class="step-label">Publishes</div>
+          <p>Cache invalidation fires for <span class="mono">merchant:helloprint + product:c5-folding-box</span>. Helloprint storefronts re-render. Allgifts unaffected.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="walkthrough-col alt">
+      <div class="walkthrough-head">
+        <div class="avatar">L</div>
+        <div class="who">
+          <div class="name">Lisa &middot; Allgifts Brand Lead</div>
+          <div class="meta">Role: Merchant Editor &mdash; Allgifts</div>
+        </div>
+        <div class="tagchip">merchant:allgifts</div>
+      </div>
+      <div class="walkthrough-steps">
+        <div class="walkthrough-step">
+          <div class="step-label">Logs in</div>
+          <p>Lands in Contentful. Her role applies tag filter <span class="mono">merchant:allgifts</span>. Sees ~3,000 product entries (Allgifts' activated products). She's in the same CF space as Marie but doesn't know it.</p>
+        </div>
+        <div class="walkthrough-step">
+          <div class="step-label">Searches "folding box"</div>
+          <p>Returns ~8 Allgifts product entries. Helloprint and Drukwerkmax entries are invisible.</p>
+        </div>
+        <div class="walkthrough-step">
+          <div class="step-label">Opens the entry</div>
+          <p>Same 15 + 2 fields. Same sidebar showing the same Platform Catalogue default. The Platform layer is shared; everything else is scoped to her.</p>
+        </div>
+        <div class="walkthrough-step">
+          <div class="step-label">Overrides Title</div>
+          <p>Sets Title override to <em>"Eco-friendly Mailing Box C5"</em>. Saved with tag <span class="mono">merchant:allgifts</span>. Two separate overrides for the same SKU; neither sees the other.</p>
+        </div>
+        <div class="walkthrough-step">
+          <div class="step-label">Edits Description</div>
+          <p>Updates the long-form copy in Allgifts' brand voice.</p>
+        </div>
+        <div class="walkthrough-step">
+          <div class="step-label">Tries to edit Submission specs</div>
+          <p>Same &mdash; read-only for her role too. Submission specs come from the shared Platform Catalogue.</p>
+        </div>
+        <div class="walkthrough-step">
+          <div class="step-label">Publishes</div>
+          <p>Cache invalidation fires for <span class="mono">merchant:allgifts + product:c5-folding-box</span>. Allgifts storefronts re-render. Helloprint untouched.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Activation flow -->
+<section class="section">
+  <div class="section-tag">Activation flow</div>
+  <h2>How a CF entry comes to exist in the first place</h2>
+  <p class="section-lede">A merchant activating a product in their Merchant Catalogue triggers the creation of a corresponding CF entry &mdash; scoped to them via the merchant tag, scaffolded for editorial fill-in.</p>
+
+  <div class="diagram-wrap">
+  <svg viewBox="0 0 1040 200" xmlns="http://www.w3.org/2000/svg" role="img">
+    <defs>
+      <marker id="arrFlow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#008539"/></marker>
+    </defs>
+
+    <rect x="20" y="40" width="180" height="120" rx="12" fill="#006B2D"/>
+    <text x="40" y="68" font-family="Inter" font-size="11" font-weight="700" fill="rgba(255,255,255,0.85)" letter-spacing="0.06em">STEP 1</text>
+    <text x="40" y="92" font-family="Inter" font-size="13" font-weight="700" fill="#fff">Merchant activates</text>
+    <text x="40" y="114" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.85)">Lisa opens Allgifts'</text>
+    <text x="40" y="130" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.85)">Merchant Catalogue,</text>
+    <text x="40" y="146" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.85)">activates "Folding Box C5"</text>
+
+    <rect x="225" y="40" width="170" height="120" rx="12" fill="#fff" stroke="#e5e5e5"/>
+    <text x="245" y="68" font-family="Inter" font-size="11" font-weight="700" fill="#555" letter-spacing="0.06em">STEP 2</text>
+    <text x="245" y="92" font-family="Inter" font-size="13" font-weight="700" fill="#191919">Activation event</text>
+    <text x="245" y="114" font-family="Inter" font-size="11" fill="#555">Pub/sub message fires</text>
+    <text x="245" y="130" font-family="Inter" font-size="11" fill="#555">with productId +</text>
+    <text x="245" y="146" font-family="Inter" font-size="11" fill="#555">merchantId</text>
+
+    <rect x="420" y="40" width="180" height="120" rx="12" fill="#fef3c7" stroke="#fcd34d"/>
+    <text x="440" y="68" font-family="Inter" font-size="11" font-weight="700" fill="#78350f" letter-spacing="0.06em">STEP 3</text>
+    <text x="440" y="92" font-family="Inter" font-size="13" font-weight="700" fill="#191919">Service Account</text>
+    <text x="440" y="114" font-family="Inter" font-size="11" fill="#555">Creates CF entry with</text>
+    <text x="440" y="130" font-family="Inter" font-size="11" fill="#555">tag merchant:allgifts</text>
+    <text x="440" y="146" font-family="Inter" font-size="11" fill="#555">Empty editorial fields</text>
+
+    <rect x="625" y="40" width="180" height="120" rx="12" fill="#fff" stroke="#008539" stroke-width="2"/>
+    <text x="645" y="68" font-family="Inter" font-size="11" font-weight="700" fill="#006B2D" letter-spacing="0.06em">STEP 4</text>
+    <text x="645" y="92" font-family="Inter" font-size="13" font-weight="700" fill="#191919">Editor task</text>
+    <text x="645" y="114" font-family="Inter" font-size="11" fill="#555">Lisa gets a Contentful</text>
+    <text x="645" y="130" font-family="Inter" font-size="11" fill="#555">Task: "New product</text>
+    <text x="645" y="146" font-family="Inter" font-size="11" fill="#555">ready for editorial"</text>
+
+    <rect x="830" y="40" width="190" height="120" rx="12" fill="#008539"/>
+    <text x="850" y="68" font-family="Inter" font-size="11" font-weight="700" fill="rgba(255,255,255,0.85)" letter-spacing="0.06em">STEP 5</text>
+    <text x="850" y="92" font-family="Inter" font-size="13" font-weight="700" fill="#fff">Live</text>
+    <text x="850" y="114" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.85)">Lisa fills + publishes.</text>
+    <text x="850" y="130" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.85)">Product appears on</text>
+    <text x="850" y="146" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.85)">Allgifts storefront.</text>
+
+    <line x1="200" y1="100" x2="225" y2="100" stroke="#008539" stroke-width="2" marker-end="url(#arrFlow)"/>
+    <line x1="395" y1="100" x2="420" y2="100" stroke="#008539" stroke-width="2" marker-end="url(#arrFlow)"/>
+    <line x1="600" y1="100" x2="625" y2="100" stroke="#008539" stroke-width="2" marker-end="url(#arrFlow)"/>
+    <line x1="805" y1="100" x2="830" y2="100" stroke="#008539" stroke-width="2" marker-end="url(#arrFlow)"/>
+  </svg>
+  <div class="diagram-caption">FIG. S-2 &mdash; The activation flow. One click in the Merchant Catalogue results in a scaffolded CF entry waiting for the merchant's editor. Deactivating archives the entry (keeps history for audit and re-activation).</div>
+  </div>
+</section>
+
+<!-- Shared vs Scoped -->
+<section class="section">
+  <div class="section-tag">Shared vs scoped</div>
+  <h2>What ties them together, what doesn't</h2>
+
+  <div class="shared-scoped">
+    <div class="ss-panel shared">
+      <div class="ss-panel-head">
+        <h4>Shared across all merchants</h4>
+        <span class="lbl">Platform</span>
+      </div>
+      <div class="ss-panel-body">
+        <ul>
+          <li><strong>The product itself</strong> &mdash; one SKU, one set of attributes, one set of submission specs, one configurator schema. Marie and Lisa edit PDPs for the same Folding Box.</li>
+          <li><strong>The taxonomy</strong> &mdash; both merchants categorise products the same way. Categories live in the Platform Catalogue.</li>
+          <li><strong>The catalog imagery</strong> &mdash; default spec shots from the supplier. Used as fallback unless the merchant overrides them.</li>
+          <li><strong>The content model</strong> &mdash; same fields, same locales, same content types across every merchant.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ss-panel scoped">
+      <div class="ss-panel-head">
+        <h4>Scoped per merchant</h4>
+        <span class="lbl">Merchant + CF</span>
+      </div>
+      <div class="ss-panel-body">
+        <ul>
+          <li><strong>The editorial content</strong> &mdash; Title override, Description, USP, FAQ, Highlight Labels. Each merchant writes their own.</li>
+          <li><strong>The activation state</strong> &mdash; each merchant's Merchant Catalogue independently controls whether the product is sold by them.</li>
+          <li><strong>The cache invalidation</strong> &mdash; when Marie publishes, Lisa's storefronts don't blink.</li>
+          <li><strong>The search rules</strong> &mdash; each merchant tunes their own Algolia behaviour, search boost, filter settings.</li>
+          <li><strong>The locale visibility</strong> &mdash; not every merchant sells in every market.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Locales note -->
+<section class="section">
+  <div class="section-tag">A small but important detail</div>
+  <h2>Locales become pure language codes</h2>
+  <p class="section-lede">In the new model, locales are just BCP-47 language identifiers &mdash; <span class="mono">nl</span>, <span class="mono">nl-BE</span>, <span class="mono">en-GB</span>, <span class="mono">fr</span>, <span class="mono">de</span>, <span class="mono">es</span>, <span class="mono">it</span>. They are no longer used to carry merchant identity.</p>
+
+  <div class="callout success">
+    <div class="title">The custom brand-encoded locales all retire</div>
+    <p>Today's brand-suffixed locales &mdash; <span class="mono">nl-AGNL</span>, <span class="mono">nl-AGBE</span>, <span class="mono">de-AGDE</span>, <span class="mono">nl-DWM</span>, <span class="mono">en-brandon</span>, <span class="mono">en-WLS</span> and friends &mdash; all go away. Their job (carrying merchant identity) is now done by the <span class="mono">merchant:*</span> tag. When Lisa works on an Allgifts product for Belgium, she's editing the <span class="mono">nl-BE</span> locale of an entry tagged <span class="mono">merchant:allgifts</span>. Two clean axes instead of one overloaded string.</p>
+  </div>
+</section>
+
+<!-- Closing -->
+<section class="section">
+  <div class="section-tag">Summary</div>
+  <h2>One space, ten merchants, no chaos</h2>
+
+  <div class="callout">
+    <div class="title" style="color:var(--color-ink)">The whole thing in one sentence</div>
+    <p style="color:var(--color-ink)">Helloprint, Allgifts, Drukwerkmax, Brandon, Quinns and every WLS shop share <strong>one Contentful space</strong>, <strong>one content model</strong>, and <strong>one set of integrations</strong> &mdash; but through tag-based role policies, each editor only ever sees their own merchant's content, while the Platform Catalogue underpins all of them with shared catalog facts. Onboarding a new merchant takes a tag and a role. Promoting a JV to their own dedicated space stays available as an escape hatch when isolation becomes a hard requirement.</p>
+  </div>
+</section>
+
+</div><!-- end #tab-spaces -->
+
+<!-- ═════════════ Tab switching JS ═════════════ -->
+<script>
+document.querySelectorAll('.tab-link').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('.tab-link').forEach(function(b){ b.classList.remove('active'); });
+    document.querySelectorAll('.tab-content').forEach(function(c){ c.classList.remove('active'); });
+    btn.classList.add('active');
+    var target = document.getElementById('tab-' + btn.dataset.tab);
+    if(target){ target.classList.add('active'); window.scrollTo({top:0,behavior:'smooth'}); }
+  });
+});
+</script>
 
 </div>
 </body>
