@@ -356,7 +356,7 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
     <div class="meta">
       <div><strong>Author</strong>Sebastiaan Ram</div>
       <div><strong>Version</strong>1.0 Draft</div>
-      <div><strong>Who needs to agree</strong>Content, Localisation, PCM, Eng, Brand</div>
+      <div><strong>Who needs to agree</strong>Content, Localisation, Catalog, Eng, Brand</div>
       <div><strong>Reading time</strong>~12 minutes</div>
     </div>
   </div>
@@ -365,7 +365,7 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
 <!-- ═════════════ TL;DR ═════════════ -->
 <div class="tldr">
   <h3>The one-paragraph version</h3>
-  <p>Helloprint is entering a phase where both humans <em>and</em> AI agents need to work fluently with the same content layer &mdash; editors writing copy, JV partners shipping pages, translators localising labels, agents running GP optimisations, drafting brand-aligned content, audit&shy;ing configurators, opening tickets. The content system we have was designed for human editors alone, and it's starting to creak under that double load. Four design choices, taken together, give us a system fit for both: (1) make a clean distinction between <strong>structured catalog data</strong> and <strong>narrative editorial content</strong>; (2) put catalog translations where the catalog data lives &mdash; in PCM, which we already own and build ourselves; (3) decouple language, brand and market so they're three independent axes instead of one overloaded locale code; (4) give JV and WLS partners scoped workspaces inside Contentful through brand tags and role-based permissions. The headline effects: a Contentful workspace that's ~10% of its current size, JV partners shipping without engineering tickets, a translation workflow built for translators, brand and market becoming configuration changes rather than projects &mdash; and a single, agent-readable content layer that lets our AI skills compose safely on top of it.</p>
+  <p>Helloprint is entering a phase where both humans <em>and</em> AI agents need to work fluently with the same content layer &mdash; editors writing copy, JV partners shipping pages, translators localising labels, agents running GP optimisations, drafting brand-aligned content, audit&shy;ing configurators, opening tickets. The content system we have was designed for human editors alone, and it's starting to creak under that double load. Four design choices, taken together, give us a system fit for both: (1) make a clean distinction between <strong>structured catalog data</strong> and <strong>narrative editorial content</strong>; (2) put catalog translations where the catalog data lives &mdash; in the Platform Catalogue, which we already own and build ourselves; (3) decouple language, brand and market so they're three independent axes instead of one overloaded locale code; (4) give JV and WLS partners scoped workspaces inside Contentful through brand tags and role-based permissions. The headline effects: a Contentful workspace that's ~10% of its current size, JV partners shipping without engineering tickets, a translation workflow built for translators, brand and market becoming configuration changes rather than projects &mdash; and a single, agent-readable content layer that lets our AI skills compose safely on top of it.</p>
 </div>
 
 <!-- ═════════════ 01 PROBLEM ═════════════ -->
@@ -383,7 +383,7 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
   <div class="card">
     <span class="chip brand">Pressure 2</span>
     <h3 style="margin-top:8px">More markets, more locales</h3>
-    <p class="body">Fourteen country shops already, more to come, with brand-specific variants on top. Our locale codes now carry three different concepts (language, country, brand) in one string. Every new market is a coordinated change across Contentful, PCM, Algolia, Presta and the worker.</p>
+    <p class="body">Fourteen country shops already, more to come, with brand-specific variants on top. Our locale codes now carry three different concepts (language, country, brand) in one string. Every new market is a coordinated change across Contentful, the Platform Catalogue, Algolia, Presta and the worker.</p>
   </div>
   <div class="card">
     <span class="chip brand">Pressure 3</span>
@@ -429,18 +429,18 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
     <h3 style="margin-top:8px">Structured catalog labels</h3>
     <p class="body" style="margin-bottom:10px"><strong>Examples:</strong> &ldquo;A4&rdquo;. &ldquo;Glossy lamination&rdquo;. &ldquo;qty 250&rdquo;. &ldquo;4 days delivery&rdquo;. <strong>And also: customer-friendly display names</strong> like &ldquo;Thin Paper (135gsm)&rdquo; that marketing writes once per option.</p>
     <p class="body" style="margin-bottom:10px"><strong>How it behaves:</strong> Maps 1:1 to a catalog row. Written once per option and reused everywhere. Translation is a label, not a paragraph &mdash; same term in different languages. Whether a supplier imported it or marketing wrote it doesn't change the shape.</p>
-    <p class="body"><strong>What it needs:</strong> A structured database, a translation memory, bulk import/export, an editor optimised for "many rows, short text". Exactly what PCM is designed for.</p>
+    <p class="body"><strong>What it needs:</strong> A structured database, a translation memory, bulk import/export, an editor optimised for "many rows, short text". Exactly what the Platform Catalogue is designed for.</p>
   </div>
 </div>
 
 <div class="callout">
   <div class="title" style="color:var(--color-ink)">The analogy that sticks</div>
-  <p style="color:var(--color-ink)"><strong>Contentful is the storefront. PCM is the warehouse.</strong> The storefront shows you words, photos, stories. The warehouse keeps an inventory of what we sell, how it's named, how big it is, and what it costs. The warehouse needs a label on every shelf &mdash; both the technical SKU and the customer-friendly name. Today we're stocking the storefront <em>and</em> labelling the warehouse from the same room. That's why the room is so crowded.</p>
+  <p style="color:var(--color-ink)"><strong>Contentful is the storefront. Platform Catalogue is the warehouse.</strong> The storefront shows you words, photos, stories. The warehouse keeps an inventory of what we sell, how it's named, how big it is, and what it costs. The warehouse needs a label on every shelf &mdash; both the technical SKU and the customer-friendly name. Today we're stocking the storefront <em>and</em> labelling the warehouse from the same room. That's why the room is so crowded.</p>
 </div>
 
 <div class="callout note">
   <div class="title">The key clarification: "human-written" doesn't equal "editorial"</div>
-  <p>It's tempting to draw the line at "humans write it" vs "machines import it". That's not the right line. Marketing humans write customer-friendly display names &mdash; one per option &mdash; and those are still structured catalog labels, not narrative content. The right line is <em>shape</em>: 1:1 with a catalog row goes to PCM; one-of-many in a page goes to Contentful.</p>
+  <p>It's tempting to draw the line at "humans write it" vs "machines import it". That's not the right line. Marketing humans write customer-friendly display names &mdash; one per option &mdash; and those are still structured catalog labels, not narrative content. The right line is <em>shape</em>: 1:1 with a catalog row goes to the Platform Catalogue; one-of-many in a page goes to Contentful.</p>
 </div>
 </section>
 
@@ -473,7 +473,7 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
 
 <h3 style="margin-top:24px">Look at what that display name actually IS</h3>
 <ul class="tick">
-  <li>It maps <strong>1:1</strong> to a specific PCM attribute option &mdash; one customer name per supplier name.</li>
+  <li>It maps <strong>1:1</strong> to a specific Platform Catalogue attribute option &mdash; one customer name per supplier name.</li>
   <li>It's never written from scratch &mdash; it's a marketing-friendly label for a structured catalog row.</li>
   <li>It has translations (NL, FR, DE, ES, IT) just like the technical name does &mdash; same structure, same shape.</li>
   <li>It belongs to the <em>catalog</em>, not to any particular page. The same display name appears wherever that option is shown.</li>
@@ -481,8 +481,8 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
 </ul>
 
 <div class="callout success" style="margin-top:24px">
-  <div class="title">The answer: it belongs in PCM, right next to the supplier value</div>
-  <p>Every attribute option row in PCM gets two display fields &mdash; <span class="mono">supplierName</span> ("135gsm Machine Coated") and <span class="mono">displayName</span> ("Thin Paper (135gsm)") &mdash; plus per-locale display names for translation. Marketing edits the display name in the PCM UI. Localisation translates it there. Contentful doesn't need to know either name; it just references the option by ID and the Content Gateway brings the right display name in for the requested locale.</p>
+  <div class="title">The answer: it belongs in the Platform Catalogue, right next to the supplier value</div>
+  <p>Every attribute option row in the Platform Catalogue gets two display fields &mdash; <span class="mono">supplierName</span> ("135gsm Machine Coated") and <span class="mono">displayName</span> ("Thin Paper (135gsm)") &mdash; plus per-locale display names for translation. Marketing edits the display name in the Platform Catalogue UI. Localisation translates it there. Contentful doesn't need to know either name; it just references the option by ID and the Content Gateway brings the right display name in for the requested locale.</p>
 </div>
 
 <h3 style="margin-top:24px">Why this matters beyond paper materials</h3>
@@ -490,7 +490,7 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
 
 <div class="callout">
   <div class="title" style="color:var(--color-ink)">A quick mental check</div>
-  <p style="color:var(--color-ink)">If you're unsure whether a piece of content belongs in Contentful or PCM, ask one question: <em>"If I rename this, do I rename a row in a database, or do I rewrite a paragraph?"</em> If it's a row, it's catalog data &mdash; even if marketing wrote the new name. If it's a paragraph, it's editorial &mdash; even if the words came from a brief template.</p>
+  <p style="color:var(--color-ink)">If you're unsure whether a piece of content belongs in Contentful or the Platform Catalogue, ask one question: <em>"If I rename this, do I rename a row in a database, or do I rewrite a paragraph?"</em> If it's a row, it's catalog data &mdash; even if marketing wrote the new name. If it's a paragraph, it's editorial &mdash; even if the words came from a brief template.</p>
 </div>
 </section>
 
@@ -518,7 +518,7 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
   <text x="74" y="166" font-family="Inter" font-size="11" font-weight="600" fill="#555">~90% &mdash; PRODUCT ATTRIBUTES</text>
   <text x="74" y="184" font-family="Inter" font-size="10" fill="#555">pcmOptionsAttribute &middot; pcmAttributesGroup &middot; CombbinedOptionsAttribute</text>
   <text x="74" y="200" font-family="Inter" font-size="10" fill="#555">option values, paper types, sizes, quantities, finishings</text>
-  <text x="74" y="216" font-family="Inter" font-size="10" fill="#555">Machine-written. Imported from PCM. Translated in Contentful.</text>
+  <text x="74" y="216" font-family="Inter" font-size="10" fill="#555">Machine-written. Imported from the Platform Catalogue. Translated in Contentful.</text>
 
   <line x1="60" y1="244" x2="480" y2="244" stroke="#e5e5e5" stroke-dasharray="3,3"/>
 
@@ -529,7 +529,7 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
 
   <text x="60" y="356" font-family="Inter" font-size="11" fill="#8a1f1f" font-weight="600">&times;  Editors search past 360k entries to find their work</text>
   <text x="60" y="372" font-family="Inter" font-size="11" fill="#8a1f1f" font-weight="600">&times;  Translators face product labels in a tool with no TM</text>
-  <text x="60" y="388" font-family="Inter" font-size="11" fill="#8a1f1f" font-weight="600">&times;  PCM keeps its own parallel locale map (drift)</text>
+  <text x="60" y="388" font-family="Inter" font-size="11" fill="#8a1f1f" font-weight="600">&times;  Catalog keeps its own parallel locale map (drift)</text>
 
   <!-- Tomorrow -->
   <text x="580" y="36" font-family="Inter" font-size="14" font-weight="700" fill="#008539">TOMORROW</text>
@@ -549,9 +549,9 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
   <text x="600" y="272" font-family="Inter" font-size="11" fill="#191919">Blog &amp; editorial</text>
   <text x="600" y="320" font-family="Inter" font-size="10" fill="#555" font-style="italic">"Things humans write"</text>
 
-  <!-- PCM (taller, includes display names + translation feature) -->
+  <!-- Platform Catalogue (taller, includes display names + translation feature) -->
   <rect x="820" y="76" width="220" height="270" rx="14" fill="#fff" stroke="#008539" stroke-width="2"/>
-  <text x="840" y="104" font-family="Inter" font-size="13" font-weight="700" fill="#008539">PCM</text>
+  <text x="840" y="104" font-family="Inter" font-size="13" font-weight="700" fill="#008539">Platform Catalogue</text>
   <text x="840" y="122" font-family="Inter" font-size="11" fill="#555">source of truth for catalog</text>
   <text x="840" y="146" font-family="Inter" font-size="11" fill="#191919">Product master data, SKUs</text>
   <text x="840" y="164" font-family="Inter" font-size="11" fill="#191919">Attribute &amp; option definitions</text>
@@ -594,19 +594,19 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
   <div class="card">
     <span class="chip red">Reason 2</span>
     <h3 style="margin-top:8px">Translators don't have the right tools</h3>
-    <p class="body">Contentful is a CMS. It has no translation memory, no glossary enforcement, no &ldquo;don't translate this brand name&rdquo; rules. So we translate &ldquo;A4&rdquo; over and over. We accidentally translate &ldquo;Helloprint&rdquo; into &ldquo;Bonjour-impression&rdquo;. Errors land in production. A purpose-built translation editor &mdash; the kind we can build into PCM in a few sprints &mdash; gets us all of this for the structured, repetitive catalog labels that need it most.</p>
+    <p class="body">Contentful is a CMS. It has no translation memory, no glossary enforcement, no &ldquo;don't translate this brand name&rdquo; rules. So we translate &ldquo;A4&rdquo; over and over. We accidentally translate &ldquo;Helloprint&rdquo; into &ldquo;Bonjour-impression&rdquo;. Errors land in production. A purpose-built translation editor &mdash; the kind we can build into the Platform Catalogue in a few sprints &mdash; gets us all of this for the structured, repetitive catalog labels that need it most.</p>
   </div>
 
   <div class="card">
     <span class="chip red">Reason 3</span>
     <h3 style="margin-top:8px">We pay for storage we don't use as content</h3>
-    <p class="body">Contentful plans are priced on entries, API calls, environments and seats. 90% of our entries are machine data that doesn't need a CMS &mdash; but we pay CMS prices for them. PCM already has this data; we're paying to host a copy.</p>
+    <p class="body">Contentful plans are priced on entries, API calls, environments and seats. 90% of our entries are machine data that doesn't need a CMS &mdash; but we pay CMS prices for them. The Platform Catalogue already has this data; we're paying to host a copy.</p>
   </div>
 
   <div class="card">
     <span class="chip red">Reason 4</span>
     <h3 style="margin-top:8px">Two systems quietly disagree</h3>
-    <p class="body">PCM has the canonical product. Contentful has a copy. PCM also maintains its own locale mapping (per the runbook: &ldquo;PCM maintains their own mapping of Contentful locales&rdquo;). Two sources of truth, kept in sync by humans and Slack messages. When they drift, customers see wrong prices or missing options.</p>
+    <p class="body">The Platform Catalogue has the canonical product. Contentful has a copy. The catalog system also maintains its own locale mapping (per the runbook: the catalog "maintains their own mapping of Contentful locales"). Two sources of truth, kept in sync by humans and Slack messages. When they drift, customers see wrong prices or missing options.</p>
   </div>
 
   <div class="card">
@@ -618,13 +618,13 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
   <div class="card">
     <span class="chip red">Reason 6</span>
     <h3 style="margin-top:8px">Adding a new option is a five-step ritual</h3>
-    <p class="body">Today, adding &ldquo;Soft-touch lamination&rdquo; means: import to PCM &rarr; create Contentful entries (one per locale) &rarr; trigger Contentful Worker &rarr; sync to <span class="mono">_commondata</span> &rarr; rebuild Algolia. With PCM owning attributes, the same change is: add one row in PCM. Done.</p>
+    <p class="body">Today, adding &ldquo;Soft-touch lamination&rdquo; means: import to the Platform Catalogue &rarr; create Contentful entries (one per locale) &rarr; trigger Contentful Worker &rarr; sync to <span class="mono">_commondata</span> &rarr; rebuild Algolia. With the Platform Catalogue owning attributes, the same change is: add one row in the Platform Catalogue. Done.</p>
   </div>
 </div>
 
 <div class="callout success" style="margin-top:28px">
   <div class="title">Why this route fits Helloprint's AI-native transition</div>
-  <p>Every one of the changes above also moves us closer to a content layer agents can work with confidently. Three things specifically: <strong>(1) clear semantic boundaries</strong> &mdash; a tag like <span class="mono">brand:allgifts</span> is something an LLM understands natively, whereas the locale string <span class="mono">nl-AGBE</span> requires it to learn a Helloprint-specific convention; <strong>(2) single write paths</strong> &mdash; an agent updating a display name writes to one place (PCM) and the change propagates, rather than orchestrating writes across five systems with risk of partial failure; <strong>(3) a federated Content Gateway</strong> &mdash; one introspectable GraphQL endpoint is the natural surface for agentic skills like GP-optimization, configurator analysis, brand-voice enforcement and SEO content generation, which today have to build bespoke integrations against each pipeline. The cleaner the schema, the safer and faster the agents.</p>
+  <p>Every one of the changes above also moves us closer to a content layer agents can work with confidently. Three things specifically: <strong>(1) clear semantic boundaries</strong> &mdash; a tag like <span class="mono">brand:allgifts</span> is something an LLM understands natively, whereas the locale string <span class="mono">nl-AGBE</span> requires it to learn a Helloprint-specific convention; <strong>(2) single write paths</strong> &mdash; an agent updating a display name writes to one place (Platform Catalogue) and the change propagates, rather than orchestrating writes across five systems with risk of partial failure; <strong>(3) a federated Content Gateway</strong> &mdash; one introspectable GraphQL endpoint is the natural surface for agentic skills like GP-optimization, configurator analysis, brand-voice enforcement and SEO content generation, which today have to build bespoke integrations against each pipeline. The cleaner the schema, the safer and faster the agents.</p>
 </div>
 </section>
 
@@ -653,7 +653,7 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
     </ul>
   </div>
   <div class="card-stack">
-    <h4 style="color:#8a1f1f;margin-bottom:12px">Moves to PCM (the catalog brain)</h4>
+    <h4 style="color:#8a1f1f;margin-bottom:12px">Moves to the Platform Catalogue (the catalog brain)</h4>
     <ul class="cross">
       <li>Product master data (SKUs, codes)</li>
       <li>Attribute group definitions ("Paper material", "Size")</li>
@@ -672,8 +672,8 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
 <!-- ═════════════ 06 TRANSLATIONS ═════════════ -->
 <section class="section">
 <div class="section-tag">07 &middot; Translations &mdash; the biggest question, answered head-on</div>
-<h2>Translations don't disappear. They live where the data lives &mdash; inside PCM.</h2>
-<p class="section-lede">This is the fear we hear most: &ldquo;If product attributes leave Contentful, how do we translate them?&rdquo; The honest answer is that we build a small, focused translation editor into PCM itself. We already own and build PCM &mdash; adding a translation feature to it is faster, cheaper and more controllable than introducing a third-party tool.</p>
+<h2>Translations don't disappear. They live where the data lives &mdash; inside the Platform Catalogue.</h2>
+<p class="section-lede">This is the fear we hear most: &ldquo;If product attributes leave Contentful, how do we translate them?&rdquo; The honest answer is that we build a small, focused translation editor into the Platform Catalogue itself. We already own and build Platform Catalogue &mdash; adding a translation feature to it is faster, cheaper and more controllable than introducing a third-party tool.</p>
 
 <div class="grid-2">
   <div class="card">
@@ -685,12 +685,12 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
       <li>No "do not translate" rules</li>
       <li>No machine-translation pre-fill</li>
       <li>Translators see the labels but not the customer-facing context</li>
-      <li>Drift between Contentful and PCM's own locale mapping &mdash; two sources of truth</li>
+      <li>Drift between Contentful and Platform Catalogue's own locale mapping &mdash; two sources of truth</li>
     </ul>
   </div>
   <div class="card">
     <span class="chip brand">Tomorrow</span>
-    <h3 style="margin-top:8px">Translations natively in PCM</h3>
+    <h3 style="margin-top:8px">Translations natively in the Platform Catalogue</h3>
     <ul class="tick">
       <li>Translation memory built-in &mdash; "A4" translated once, reused everywhere</li>
       <li>Glossary table &mdash; "Helloprint", "DTP", brand names protected</li>
@@ -703,13 +703,13 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
 </div>
 
 <div class="callout success">
-  <div class="title">Why PCM-native is the right call (and not a TMS like CrowdIn)</div>
-  <p>Catalog labels are short (1&ndash;5 words), highly repetitive ("A4", "Glossy"), and translated by internal Helloprint staff who already know the catalog. A full-fat third-party TMS is built for a different problem &mdash; long-form content translated at distance by external agencies. For our use case, the few features that matter (TM, glossary, bulk edit) cost a handful of sprints to build natively in PCM &mdash; and we avoid an extra vendor, a per-word bill, sync plumbing, and a second tool for translators to learn.</p>
+  <div class="title">Why Platform Catalogue-native is the right call (and not a TMS like CrowdIn)</div>
+  <p>Catalog labels are short (1&ndash;5 words), highly repetitive ("A4", "Glossy"), and translated by internal Helloprint staff who already know the catalog. A full-fat third-party TMS is built for a different problem &mdash; long-form content translated at distance by external agencies. For our use case, the few features that matter (TM, glossary, bulk edit) cost a handful of sprints to build natively in the Platform Catalogue &mdash; and we avoid an extra vendor, a per-word bill, sync plumbing, and a second tool for translators to learn.</p>
 </div>
 
 <div class="callout success">
   <div class="title">Bonus: translations stay visible inside Contentful</div>
-  <p>For editors who want context, we install a Contentful Sidebar App that reads the live PCM translations. When you open a product page in Contentful, the sidebar shows the option labels for the current locale, with a one-click link to open that row in PCM's translation editor. You see everything; you can only edit the right thing in the right place.</p>
+  <p>For editors who want context, we install a Contentful Sidebar App that reads the live Platform Catalogue translations. When you open a product page in Contentful, the sidebar shows the option labels for the current locale, with a one-click link to open that row in the Platform Catalogue's translation editor. You see everything; you can only edit the right thing in the right place.</p>
 </div>
 
 <div class="callout note">
@@ -734,12 +734,12 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
     <div class="today">
       <h4>Today</h4>
       <p>Opens Contentful &rarr; types "Thin Paper" &rarr; gets 60+ results, the same label repeated across products, locales and brand variants.</p>
-      <p>Edits one entry. Realises it won't propagate to the other variants. Edits the next. Realises some are tagged with PCM IDs she doesn't recognise. Pings engineering.</p>
+      <p>Edits one entry. Realises it won't propagate to the other variants. Edits the next. Realises some are tagged with Platform Catalogue IDs she doesn't recognise. Pings engineering.</p>
       <p>An hour later, eight entries updated, three brand variants still wrong, no confidence the change has reached production. The Algolia index won't pick it up until the worker reruns.</p>
     </div>
     <div class="tomorrow">
       <h4>Tomorrow</h4>
-      <p>Opens PCM &rarr; finds the "135gsm Machine Coated" attribute option. The <span class="mono">supplierName</span> stays (factories still need it). She edits one field: <span class="mono">displayName</span> from "Thin Paper (135gsm)" to "Lightweight (135gsm)".</p>
+      <p>Opens Platform Catalogue &rarr; finds the "135gsm Machine Coated" attribute option. The <span class="mono">supplierName</span> stays (factories still need it). She edits one field: <span class="mono">displayName</span> from "Thin Paper (135gsm)" to "Lightweight (135gsm)".</p>
       <p>The translation editor shows the five locale versions in one screen. She updates NL. Localisation gets a task for the other four locales, with TM suggesting matches.</p>
       <p>Saves. The Content Gateway picks it up. Live across every product, every brand variant that uses this option. Total time: 4 minutes. Zero engineering tickets.</p>
     </div>
@@ -762,8 +762,8 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
     </div>
     <div class="tomorrow">
       <h4>Tomorrow</h4>
-      <p>Opens the PCM translation editor &mdash; the same tool the catalog team uses for everything else. The new string is grouped under "Paper materials &mdash; finishings", with TM suggestions from past translations pre-filled.</p>
-      <p>Picks the right one. PCM's glossary warns him if "Helloprint" looks like it's about to be translated.</p>
+      <p>Opens the Platform Catalogue translation editor &mdash; the same tool the catalog team uses for everything else. The new string is grouped under "Paper materials &mdash; finishings", with TM suggestions from past translations pre-filled.</p>
+      <p>Picks the right one. Platform Catalogue's glossary warns him if "Helloprint" looks like it's about to be translated.</p>
       <p>One translation propagates everywhere automatically &mdash; brand variants are handled at the content level (Contentful), so he doesn't duplicate work per brand.</p>
       <p>Total time: 30 seconds per string instead of 3 minutes. One tool. No vendor portal to log into.</p>
     </div>
@@ -805,12 +805,12 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
   <tbody>
     <tr><td>Entries in Contentful</td><td>~400,710</td><td>~40,000 (90% reduction)</td></tr>
     <tr><td>Search noise for editors</td><td>"posters" returns 1,400+ results</td><td>"posters" returns ~10 results &mdash; all editable pages</td></tr>
-    <tr><td>Adding a new paper option</td><td>5-step ritual across PCM, CF, worker, GitLab, Algolia</td><td>1 PCM row</td></tr>
+    <tr><td>Adding a new paper option</td><td>5-step ritual across Platform Catalogue, CF, worker, GitLab, Algolia</td><td>1 Platform Catalogue row</td></tr>
     <tr><td>Translating "A4"</td><td>Translated repeatedly, no consistency check</td><td>Translated once, reused via TM, glossary enforces consistency</td></tr>
-    <tr><td>Onboarding a new JV partner</td><td>6 new locales, worker config, PCM mapping, Algolia, Presta</td><td>1 brand tag, 1 set of role permissions, optional overrides</td></tr>
+    <tr><td>Onboarding a new JV partner</td><td>6 new locales, worker config, catalog locale mapping, Algolia, Presta</td><td>1 brand tag, 1 set of role permissions, optional overrides</td></tr>
     <tr><td>JV editor workspace size</td><td>~400k entries, filtered weakly</td><td>~5k entries, scoped to their brand</td></tr>
-    <tr><td>Translation tooling</td><td>Plain text fields in a CMS</td><td>Purpose-built translation editor inside PCM &mdash; TM, glossary, bulk edit, no vendor</td></tr>
-    <tr><td>Sources of truth for catalog</td><td>2 (PCM + Contentful, kept in sync)</td><td>1 (PCM)</td></tr>
+    <tr><td>Translation tooling</td><td>Plain text fields in a CMS</td><td>Purpose-built translation editor inside the Platform Catalogue &mdash; TM, glossary, bulk edit, no vendor</td></tr>
+    <tr><td>Sources of truth for catalog</td><td>2 (Platform Catalogue + Contentful, kept in sync)</td><td>1 (Platform Catalogue)</td></tr>
     <tr><td>Contentful cost bracket</td><td>Driven by 400k entries</td><td>Comfortable in a smaller tier &mdash; or supports the multi-space split without bill increase</td></tr>
     <tr><td>Readiness for agentic workflows</td><td>Agents face 5 pipelines, custom locale resolver, dual sources of truth</td><td>Agents query one Content Gateway, write to one source per concept, reason over semantic tags &mdash; AI-native by design</td></tr>
   </tbody>
@@ -830,16 +830,16 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
 
 <div class="grid-3">
   <div class="card">
-    <h4 style="color:#8a1f1f">PCM needs to build a translation editor</h4>
-    <p class="body">PCM has product data and a Contentful locale mapping, but doesn't yet have a first-class translation editor with TM, glossary and bulk operations. This is the largest piece of engineering work in the proposal &mdash; roughly a quarter of one engineer's time, depending on what's already there. The upside: we own it forever and can shape it to fit how our translators actually work.</p>
+    <h4 style="color:#8a1f1f">Platform Catalogue needs to build a translation editor</h4>
+    <p class="body">Platform Catalogue has product data and a Contentful locale mapping, but doesn't yet have a first-class translation editor with TM, glossary and bulk operations. This is the largest piece of engineering work in the proposal &mdash; roughly a quarter of one engineer's time, depending on what's already there. The upside: we own it forever and can shape it to fit how our translators actually work.</p>
   </div>
   <div class="card">
     <h4 style="color:#8a1f1f">Algolia indexer rewires</h4>
-    <p class="body">Today the indexer pulls from Contentful via the worker and the GitLab <span class="mono">_commondata</span> repo. Tomorrow it pulls product data and translations from PCM, and page data from Contentful. The plumbing is straightforward but it's the most-touched pipeline. Expect a few sprints.</p>
+    <p class="body">Today the indexer pulls from Contentful via the worker and the GitLab <span class="mono">_commondata</span> repo. Tomorrow it pulls product data and translations from the Platform Catalogue, and page data from Contentful. The plumbing is straightforward but it's the most-touched pipeline. Expect a few sprints.</p>
   </div>
   <div class="card">
     <h4 style="color:#8a1f1f">Translators switch tools for catalog work</h4>
-    <p class="body">Today they translate catalog labels inside Contentful. Tomorrow they translate them inside PCM. Same kind of work, different home &mdash; and the new home has TM, glossary and bulk edit. Page copy still lives in Contentful, so editorial translators stay where they are. The Sidebar App means you can still see the PCM translations from inside Contentful when you need context.</p>
+    <p class="body">Today they translate catalog labels inside Contentful. Tomorrow they translate them inside the Platform Catalogue. Same kind of work, different home &mdash; and the new home has TM, glossary and bulk edit. Page copy still lives in Contentful, so editorial translators stay where they are. The Sidebar App means you can still see the Platform Catalogue translations from inside Contentful when you need context.</p>
   </div>
 </div>
 </section>
@@ -853,14 +853,14 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
   <summary>"But we like the Contentful UI for editing translations. Why give that up?"</summary>
   <div class="answer">
     <p>You keep it for the content that benefits from it: page copy, FAQs, hero blocks, narrative descriptions. That's all the rich-text and contextual work where the CF editor shines.</p>
-    <p>For option labels, the Contentful UI is actually quite poor &mdash; one entry at a time, no TM, no glossary, no batch view. PCM's new translation editor is built specifically for this kind of structured, repetitive content. Same translator, better tool for the job.</p>
+    <p>For option labels, the Contentful UI is actually quite poor &mdash; one entry at a time, no TM, no glossary, no batch view. Platform Catalogue's new translation editor is built specifically for this kind of structured, repetitive content. Same translator, better tool for the job.</p>
   </div>
 </details>
 
 <details class="faq">
-  <summary>"What if PCM goes down? Does the website break?"</summary>
+  <summary>"What if Platform Catalogue goes down? Does the website break?"</summary>
   <div class="answer">
-    <p>Same as today, but slightly safer. Today, if PCM goes down, new products and price updates stop. With the new model, the Content Gateway caches the last known good product data at the edge, so the site keeps rendering existing products with the most recent attributes. PCM being source-of-truth doesn't mean PCM has to be hit on every page request.</p>
+    <p>Same as today, but slightly safer. Today, if the Platform Catalogue goes down, new products and price updates stop. With the new model, the Content Gateway caches the last known good product data at the edge, so the site keeps rendering existing products with the most recent attributes. The Platform Catalogue being source-of-truth doesn't mean it has to be hit on every page request.</p>
   </div>
 </details>
 
@@ -874,21 +874,21 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
 <details class="faq">
   <summary>"WLS partners need homepage / about / legal pages. Does this still work?"</summary>
   <div class="answer">
-    <p>Yes. WLS partners get a more constrained role &mdash; they can edit their homepage, about and legal pages, all tagged with their brand. They can't touch the catalog (which is in PCM anyway) or Helloprint's editorial content. Exactly the model you described.</p>
+    <p>Yes. WLS partners get a more constrained role &mdash; they can edit their homepage, about and legal pages, all tagged with their brand. They can't touch the catalog (which is in the Platform Catalogue anyway) or Helloprint's editorial content. Exactly the model you described.</p>
   </div>
 </details>
 
 <details class="faq">
   <summary>"What about all the historic translations we've built up in Contentful for option labels?"</summary>
   <div class="answer">
-    <p>We migrate them. The first import into PCM's translation table uses our existing Contentful translations as the seed, and the TM is populated from that same export. Nothing is lost &mdash; everything we've translated becomes the foundation that makes future translations faster. This is a one-time migration script, run once during cutover.</p>
+    <p>We migrate them. The first import into the Platform Catalogue's translation table uses our existing Contentful translations as the seed, and the TM is populated from that same export. Nothing is lost &mdash; everything we've translated becomes the foundation that makes future translations faster. This is a one-time migration script, run once during cutover.</p>
   </div>
 </details>
 
 <details class="faq">
   <summary>"How long until we see the benefit?"</summary>
   <div class="answer">
-    <p>Editorial benefit (cleaner Contentful for editors) appears the moment the catalog data leaves &mdash; that can be a single migration sprint. Translation benefit needs PCM's new translation editor to be built &mdash; bigger, probably a quarter for a solid first version. JV-partner benefit appears when the brand tag and role-based permissions are in place &mdash; can be done independently in parallel.</p>
+    <p>Editorial benefit (cleaner Contentful for editors) appears the moment the catalog data leaves &mdash; that can be a single migration sprint. Translation benefit needs Platform Catalogue's new translation editor to be built &mdash; bigger, probably a quarter for a solid first version. JV-partner benefit appears when the brand tag and role-based permissions are in place &mdash; can be done independently in parallel.</p>
   </div>
 </details>
 
@@ -902,7 +902,7 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
 <details class="faq">
   <summary>"Who owns this if we say yes?"</summary>
   <div class="answer">
-    <p>Three owners. PCM team owns the catalog data and the new translation editor. Content engineering owns the new content model and the Content Gateway. Localisation owns the translator workflow inside PCM &mdash; what the editor looks like, how reviews work, how bulk operations behave. One product owner across all three to keep them honest about sequencing.</p>
+    <p>Three owners. The Catalog team owns the Platform Catalogue data and the new translation editor. Content engineering owns the new content model and the Content Gateway. Localisation owns the translator workflow inside the Platform Catalogue &mdash; what the editor looks like, how reviews work, how bulk operations behave. One product owner across all three to keep them honest about sequencing.</p>
   </div>
 </details>
 
@@ -924,21 +924,21 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
 <div class="grid-3">
   <div class="card">
     <h4>Decision 1 &middot; The principle</h4>
-    <p class="body">Agree, in principle, that product attributes belong in PCM and editorial content belongs in Contentful. If we agree on the principle, we can plan the &ldquo;how&rdquo; together.</p>
+    <p class="body">Agree, in principle, that product attributes belong in the Platform Catalogue and editorial content belongs in Contentful. If we agree on the principle, we can plan the &ldquo;how&rdquo; together.</p>
   </div>
   <div class="card">
-    <h4>Decision 2 &middot; The PCM scoping</h4>
-    <p class="body">Authorise a one-week spike with the PCM team to scope what the translation editor needs to look like &mdash; locale model, TM lookup, glossary, bulk operations, API contract. Nothing built yet; just a clear picture of the work.</p>
+    <h4>Decision 2 &middot; The Platform Catalogue scoping</h4>
+    <p class="body">Authorise a one-week spike with the Catalog team to scope what the Platform Catalogue translation editor needs to look like &mdash; locale model, TM lookup, glossary, bulk operations, API contract. Nothing built yet; just a clear picture of the work.</p>
   </div>
   <div class="card">
     <h4>Decision 3 &middot; The pilot product</h4>
-    <p class="body">Pick one product (suggested: <em>Posters</em>) to pilot the new model end-to-end &mdash; catalog and translations in PCM, copy in Contentful. If it works for Posters, it works for the rest.</p>
+    <p class="body">Pick one product (suggested: <em>Posters</em>) to pilot the new model end-to-end &mdash; catalog and translations in the Platform Catalogue, copy in Contentful. If it works for Posters, it works for the rest.</p>
   </div>
 </div>
 
 <div class="callout success">
   <div class="title">If we agree, the order of operations is&hellip;</div>
-  <p>Week 1: PCM translation-editor scoping spike. Week 2&ndash;3: Posters pilot in a Contentful sandbox env, with translations served from a thin PCM translation API. Week 4: Demo to the whole team with a real PDP composed from PCM + Contentful. From there, we plan the full migration with confidence and a working reference implementation.</p>
+  <p>Week 1: Platform Catalogue translation-editor scoping spike. Week 2&ndash;3: Posters pilot in a Contentful sandbox env, with translations served from a thin the Platform Catalogue translation API. Week 4: Demo to the whole team with a real PDP composed from the Platform Catalogue + Contentful. From there, we plan the full migration with confidence and a working reference implementation.</p>
 </div>
 </section>
 
@@ -966,7 +966,7 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
 <section class="section" style="border-top:none;padding-top:24px">
   <div class="section-tag">The model</div>
   <h2>The three systems we're modelling against</h2>
-  <p class="section-lede">Before placing fields, let's name the systems. "PCM" was misleading shorthand &mdash; what we actually have is a <strong>multi-tenant catalog architecture</strong> with two distinct catalogue tiers, plus a per-merchant editorial layer.</p>
+  <p class="section-lede">Before placing fields, let's name the systems precisely. What we have is a <strong>multi-tenant catalog architecture</strong> with two distinct catalogue tiers, plus a per-merchant editorial layer.</p>
 
   <div class="systems">
     <div class="sys-card platform">
@@ -1675,7 +1675,7 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
         </div>
         <div class="walkthrough-step">
           <div class="step-label">Tries to edit Submission specs</div>
-          <p>Field is read-only &mdash; surfaced from Platform Catalogue, not editable by her role.</p>
+          <p>Field is read-only &mdash; surfaced from the Platform Catalogue, not editable by her role.</p>
         </div>
         <div class="walkthrough-step">
           <div class="step-label">Publishes</div>
