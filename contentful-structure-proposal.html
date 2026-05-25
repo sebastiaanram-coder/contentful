@@ -316,6 +316,65 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
 .env h4{margin:0 0 4px;font-size:14px;font-weight:600}
 .env p{margin:0;font-size:12px;line-height:17px;color:var(--color-ink-muted)}
 
+/* ──────── Migration tab specifics ──────── */
+.principles{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:24px 0}
+@media(max-width:1024px){.principles{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.principles{grid-template-columns:1fr}}
+.principle{background:#fff;border:1px solid var(--color-border);border-top:3px solid var(--color-primary);border-radius:var(--radius-card);padding:18px}
+.principle .num{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-primary-dark);margin-bottom:6px}
+.principle h4{font-size:14px;font-weight:700;margin:0 0 6px;line-height:1.3}
+.principle p{font-size:12px;line-height:17px;color:var(--color-ink-muted);margin:0}
+
+.phases-mig{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin:24px 0;position:relative}
+@media(max-width:1024px){.phases-mig{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.phases-mig{grid-template-columns:1fr}}
+.phase-mig{background:#fff;border:1px solid var(--color-border);border-radius:var(--radius-card);padding:14px;display:flex;flex-direction:column;gap:6px}
+.phase-mig.p0{border-top:3px solid var(--color-ink)}
+.phase-mig.p1{border-top:3px solid #6b21a8;background:#faf5ff}
+.phase-mig.p2{border-top:3px solid var(--color-amber)}
+.phase-mig.p3{border-top:3px solid var(--color-primary-light)}
+.phase-mig.p4{border-top:3px solid var(--color-primary)}
+.phase-mig.p5{border-top:3px solid var(--color-primary-dark)}
+.phase-mig.p6{border-top:3px solid #555;border-style:dashed}
+.phase-mig .num{font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-ink-faint)}
+.phase-mig h5{font-size:13px;font-weight:700;margin:0;line-height:1.3;color:var(--color-ink)}
+.phase-mig .dur{font-size:11px;color:var(--color-ink-faint);font-style:italic}
+.phase-mig p{font-size:11.5px;line-height:15px;color:var(--color-ink-muted);margin:0}
+
+.kept-ditched{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+@media(max-width:768px){.kept-ditched{grid-template-columns:1fr}}
+.kd-col{background:#fff;border:1px solid var(--color-border);border-radius:var(--radius-card);overflow:hidden}
+.kd-head{padding:16px 22px;color:#fff;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:space-between}
+.kd-col.kept .kd-head{background:var(--color-primary-dark)}
+.kd-col.ditched .kd-head{background:var(--color-danger)}
+.kd-head .icon{width:22px;height:22px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800}
+.kd-body{padding:16px 22px;background:#fafafa}
+.kd-body ul{margin:0;padding-left:18px}
+.kd-body li{font-size:13px;line-height:18px;color:var(--color-ink-muted);margin-bottom:6px}
+
+.gates-table{width:100%;border-collapse:collapse;margin-top:16px;font-size:13px}
+.gates-table thead th{background:var(--color-ink);color:#fff;padding:10px 14px;text-align:left;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase}
+.gates-table tbody td{padding:11px 14px;border-bottom:1px solid var(--color-border);vertical-align:top;color:var(--color-ink-muted)}
+.gates-table tbody tr:last-child td{border-bottom:none}
+.gates-table .sev{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;letter-spacing:0.04em}
+.gates-table .sev.must{background:#fee2e2;color:#9f1239}
+.gates-table .sev.should{background:#fef3c7;color:#92400e}
+.gates-table .sev.mix{background:#fff7ed;color:#c2410c}
+
+.geo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+@media(max-width:900px){.geo-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.geo-grid{grid-template-columns:1fr}}
+.geo-card{background:#faf5ff;border:1px solid #e9d5ff;border-left:3px solid #a855f7;border-radius:var(--radius-card);padding:16px 18px}
+.geo-card h5{font-size:13px;font-weight:700;margin:0 0 6px;color:#6b21a8;letter-spacing:-0.005em}
+.geo-card p{font-size:12px;line-height:17px;color:var(--color-ink-muted);margin:0}
+
+.scope-stat{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0}
+@media(max-width:900px){.scope-stat{grid-template-columns:repeat(2,1fr)}}
+.stat-card{background:#fff;border:1px solid var(--color-border);border-radius:var(--radius-card);padding:18px 20px}
+.stat-card .lbl{font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-ink-faint);margin-bottom:4px}
+.stat-card .num-big{font-size:26px;font-weight:700;color:var(--color-ink);line-height:1.1}
+.stat-card .sub{font-size:11px;color:var(--color-ink-faint);margin-top:4px}
+
 /* ──────── Shared vs Scoped panels ──────── */
 .shared-scoped{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
 @media(max-width:768px){.shared-scoped{grid-template-columns:1fr}}
@@ -336,13 +395,22 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
 
 <!-- ═════════════ TAB NAVIGATION ═════════════ -->
 <nav class="tabs" role="tablist">
-  <button class="tab-link active" data-tab="proposal" role="tab">Proposal</button>
-  <button class="tab-link" data-tab="matrix" role="tab">Product implementation matrix</button>
-  <button class="tab-link" data-tab="spaces" role="tab">Spaces, roles &amp; permissions</button>
+  <button class="tab-link active" data-tab="strategy" role="tab">Strategy</button>
+  <button class="tab-link" data-tab="scratch" role="tab">Starting from scratch</button>
+  <button class="tab-link" data-tab="setup" role="tab">The new setup</button>
+  <button class="tab-link" data-tab="implementation-matrix" role="tab">Content matrix &amp; migration</button>
 </nav>
 
 <!-- ═════════════ TAB 1 — PROPOSAL ═════════════ -->
-<div id="tab-proposal" class="tab-content active">
+
+<!-- ═════════════ TAB 2 — IMPLEMENTATION MATRIX ═════════════ -->
+
+<!-- ═════════════ TAB 3 — SPACES, ROLES & PERMISSIONS ═════════════ -->
+
+<!-- ═════════════ TAB 4 — CONTENT MIGRATION & REWRITE ═════════════ -->
+
+
+<div id="tab-strategy" class="tab-content active">
 
 <!-- ═════════════ COVER ═════════════ -->
 <section class="cover">
@@ -490,9 +558,10 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
   <div class="card">
     <span class="chip outline">Factual Content</span>
     <h3 style="margin-top:8px">Structured, shared</h3>
-    <p class="body" style="margin-bottom:10px"><strong>Examples:</strong> &ldquo;A4&rdquo;. &ldquo;Glossy lamination&rdquo;. &ldquo;qty 250&rdquo;. &ldquo;4 days delivery&rdquo;. Print specs, artwork requirements (bleed, DPI, format). <strong>And also:</strong> customer-friendly display names like &ldquo;Thin Paper (135gsm)&rdquo;.</p>
+    <p class="body" style="margin-bottom:10px"><strong>Examples:</strong> The supplier value "135gsm Machine Coated". Print specs and artwork requirements (bleed, DPI, format). Dimensions, materials, options that come from the factory. Catalog imagery.</p>
     <p class="body" style="margin-bottom:10px"><strong>How it behaves:</strong> Maps 1:1 to a catalog row. Written once per option and reused by every merchant. Cannot be overridden per merchant at the Platform level.</p>
-    <p class="body"><strong>Where it lives:</strong> In the Platform Catalog, maintained by the Helloprint Platform team.</p>
+    <p class="body" style="margin-bottom:10px"><strong>Where it lives:</strong> In the <strong>Platform Catalog</strong>, maintained by the Helloprint Platform team.</p>
+    <p class="body" style="background:#f8f8f8;padding:10px 12px;border-radius:8px;font-size:12.5px"><strong>Note:</strong> The customer-friendly <em>display name</em> for an attribute option (e.g. "Thin Paper (135gsm)") is also structured but it's per merchant &mdash; lives in the <strong>Merchant Catalog</strong>, not Platform.</p>
   </div>
 </div>
 
@@ -545,12 +614,12 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
 
 <div class="callout">
   <div class="title" style="color:var(--color-ink)">The analogy that sticks</div>
-  <p style="color:var(--color-ink)"><strong>Contentful is the storefront. The Platform Catalog is the warehouse.</strong> The storefront shows you words, photos, stories &mdash; one per merchant. The warehouse keeps an inventory of what we sell, how it's named, how big it is, and what it costs &mdash; shared across all merchants. The warehouse needs a label on every shelf, both the technical SKU code and the customer-friendly name. Today we're stocking the storefront <em>and</em> labelling the warehouse from the same room. That's why the room is so crowded.</p>
+  <p style="color:var(--color-ink)"><strong>Three layers, three jobs.</strong> The Platform Catalog is the warehouse &mdash; one inventory of what we sell, shared across every merchant. The Merchant Catalog is each merchant's shelf labels &mdash; how they choose to name and present the warehouse stock to their customers. Contentful is each merchant's storefront copy &mdash; the words, the photos, the stories around the products. Today we're trying to do all three jobs from one room. That's why it's crowded.</p>
 </div>
 
 <div class="callout note">
-  <div class="title">The key clarification: "human-written" doesn't equal "Commercial"</div>
-  <p>It's tempting to draw the line at "humans write it" vs "machines import it". That's not the right line. Marketing humans write customer-friendly display names &mdash; one per option &mdash; and those are still Factual Content (structured catalog labels), not Commercial Content. The right line is <em>shape</em>: 1:1 with a catalog row goes to the Platform Catalog; one-of-many on a page goes to Contentful.</p>
+  <div class="title">The key clarification: "human-written" doesn't equal "narrative"</div>
+  <p>It's tempting to draw the line at "humans write it" vs "machines import it". That's not the right line. Marketing humans write customer-friendly display names &mdash; one per option, per merchant &mdash; and those are still structured catalog content (1:1 with a row), they live in the Merchant Catalog. The right line is <em>shape</em>: 1:1 with a catalog row goes to a catalog tier (Platform or Merchant depending on whether it's shared or per-merchant); one-of-many on a page goes to Contentful.</p>
 </div>
 </section>
 
@@ -583,16 +652,16 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
 
 <h3 style="margin-top:24px">Look at what that display name actually IS</h3>
 <ul class="tick">
-  <li>It maps <strong>1:1</strong> to a specific Platform Catalog attribute option &mdash; one customer name per supplier name.</li>
+  <li>It maps <strong>1:1</strong> to a specific Platform Catalog attribute option &mdash; one merchant's customer name per supplier value.</li>
   <li>It's never written from scratch &mdash; it's a marketing-friendly label for a structured catalog row.</li>
   <li>It has translations (NL, FR, DE, ES, IT) just like the technical name does &mdash; same structure, same shape.</li>
   <li>It belongs to the <em>catalog</em>, not to any particular page. The same display name appears wherever that option is shown.</li>
-  <li>It changes when product naming strategy changes &mdash; an event in the catalog, not in Commercial Content.</li>
+  <li>It changes when a merchant's product naming strategy changes &mdash; an event in the Merchant Catalog, owned by that merchant.</li>
 </ul>
 
 <div class="callout success" style="margin-top:24px">
-  <div class="title">The answer: it belongs in the Platform Catalog, right next to the supplier value</div>
-  <p>Every attribute option row in the Platform Catalog gets two display fields &mdash; <span class="mono">supplierName</span> ("135gsm Machine Coated") and <span class="mono">displayName</span> ("Thin Paper (135gsm)") &mdash; plus per-locale display names for translation. Marketing edits the display name in the Platform Catalog UI. Localisation translates it there. Contentful doesn't need to know either name; it just references the option by ID and the Content Gateway brings the right display name in for the requested locale.</p>
+  <div class="title">The answer: split it across Platform and Merchant Catalog</div>
+  <p>The Platform Catalog row holds the <span class="mono">supplierName</span> &mdash; "135gsm Machine Coated". That's the factual, supplier-given value, shared across every merchant. The customer-friendly <span class="mono">displayName</span> &mdash; "Thin Paper (135gsm)" &mdash; and all its per-locale translations live in each merchant's <strong>Merchant Catalog</strong>, because that's where commercial content per merchant belongs. Helloprint Ecommerce can call it "Thin Paper (135gsm)"; Allgifts can call it "Lightweight Eco Paper (135gsm)"; both reference the same Platform Catalog option by ID. The Content Gateway resolves which display name to serve based on which merchant is requesting.</p>
 </div>
 
 <h3 style="margin-top:24px">Why this matters beyond paper materials</h3>
@@ -600,7 +669,7 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
 
 <div class="callout">
   <div class="title" style="color:var(--color-ink)">A quick mental check</div>
-  <p style="color:var(--color-ink)">If you're unsure whether a piece of content belongs in Contentful or the Platform Catalog, ask one question: <em>"If I rename this, do I rename a row in a database, or do I rewrite a paragraph?"</em> If it's a row, it's catalog data &mdash; even if marketing wrote the new name. If it's a paragraph, it's editorial &mdash; even if the words came from a brief template.</p>
+  <p style="color:var(--color-ink)">If you're unsure where a piece of content belongs, ask two questions in sequence. <em>"Is it 1:1 with a catalog row, or one-of-many on a page?"</em> &mdash; row goes to a catalog tier, paragraph goes to Contentful. Then if it's a catalog row: <em>"Is it the same for every merchant, or can it differ per merchant?"</em> &mdash; same for everyone = Platform Catalog, per-merchant = Merchant Catalog.</p>
 </div>
 </section>
 
@@ -659,21 +728,22 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
   <text x="600" y="272" font-family="Inter" font-size="11" fill="#191919">Blog &amp; editorial</text>
   <text x="600" y="320" font-family="Inter" font-size="10" fill="#555" font-style="italic">"Things humans write"</text>
 
-  <!-- Platform Catalog (taller, includes display names + translation feature) -->
-  <rect x="820" y="76" width="220" height="270" rx="14" fill="#fff" stroke="#008539" stroke-width="2"/>
+  <!-- Platform Catalog -->
+  <rect x="820" y="76" width="220" height="124" rx="14" fill="#fff" stroke="#008539" stroke-width="2"/>
   <text x="840" y="104" font-family="Inter" font-size="13" font-weight="700" fill="#008539">Platform Catalog</text>
-  <text x="840" y="122" font-family="Inter" font-size="11" fill="#555">source of truth for catalog</text>
-  <text x="840" y="146" font-family="Inter" font-size="11" fill="#191919">Product master data, SKUs</text>
-  <text x="840" y="164" font-family="Inter" font-size="11" fill="#191919">Attribute &amp; option definitions</text>
-  <text x="840" y="182" font-family="Inter" font-size="11" fill="#191919">supplierName ("135gsm MC")</text>
-  <text x="840" y="200" font-family="Inter" font-size="11" font-weight="600" fill="#006B2D">displayName ("Thin Paper")</text>
-  <text x="840" y="218" font-family="Inter" font-size="11" fill="#191919">Pricing &amp; product imagery</text>
-  <rect x="830" y="232" width="200" height="74" rx="8" fill="#e8f5e9" stroke="#bce6c8"/>
-  <text x="840" y="250" font-family="Inter" font-size="11" font-weight="700" fill="#006B2D">Translation editor (built-in)</text>
-  <text x="840" y="266" font-family="Inter" font-size="10" fill="#333">Per-locale displayName + TM</text>
-  <text x="840" y="280" font-family="Inter" font-size="10" fill="#333">Glossary &middot; bulk import/export</text>
-  <text x="840" y="294" font-family="Inter" font-size="10" fill="#333">Owned by us &middot; no extra vendor</text>
-  <text x="840" y="320" font-family="Inter" font-size="10" fill="#555" font-style="italic">"Catalog labels &amp; data"</text>
+  <text x="840" y="122" font-family="Inter" font-size="10" fill="#555">Shared master</text>
+  <text x="840" y="146" font-family="Inter" font-size="11" fill="#191919">supplierName "135gsm MC"</text>
+  <text x="840" y="164" font-family="Inter" font-size="11" fill="#191919">Specs, dimensions, materials</text>
+  <text x="840" y="182" font-family="Inter" font-size="11" fill="#191919">SKUs &amp; submission specs</text>
+
+  <!-- Merchant Catalog (NEW, holds displayName + per-merchant commerce) -->
+  <rect x="820" y="216" width="220" height="130" rx="14" fill="#fff" stroke="#006B2D" stroke-width="2"/>
+  <text x="840" y="244" font-family="Inter" font-size="13" font-weight="700" fill="#006B2D">Merchant Catalog</text>
+  <text x="840" y="262" font-family="Inter" font-size="10" fill="#555">Per merchant</text>
+  <text x="840" y="284" font-family="Inter" font-size="11" font-weight="600" fill="#006B2D">displayName "Thin Paper"</text>
+  <text x="840" y="300" font-family="Inter" font-size="10" fill="#333">+ per-locale translations</text>
+  <text x="840" y="318" font-family="Inter" font-size="11" fill="#191919">Availability, promos, search</text>
+  <text x="840" y="336" font-family="Inter" font-size="10" fill="#555" font-style="italic">"Per-merchant catalog"</text>
 
   <!-- Stitch together -->
   <rect x="580" y="368" width="460" height="74" rx="12" fill="#008539"/>
@@ -682,9 +752,10 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
   <text x="810" y="430" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.85)" text-anchor="middle">They don't know which came from which.</text>
 
   <line x1="690" y1="346" x2="690" y2="368" stroke="#008539" stroke-width="1.5" marker-end="url(#arrG)"/>
+  <line x1="930" y1="200" x2="930" y2="368" stroke="#008539" stroke-width="1.5" marker-end="url(#arrG)" opacity="0.4" stroke-dasharray="3,3"/>
   <line x1="930" y1="346" x2="930" y2="368" stroke="#008539" stroke-width="1.5" marker-end="url(#arrG)"/>
 </svg>
-<div class="diagram-caption">FIG. 1 &mdash; Same content, two homes that fit it better. Frontends still see one response thanks to the Content Gateway.</div>
+<div class="diagram-caption">FIG. 1 &mdash; Same content, three homes that fit it better. Platform Catalog holds shared factual data; Merchant Catalog holds per-merchant commercial labels; Contentful holds narrative copy. Frontends still see one response thanks to the Content Gateway.</div>
 </div>
 </section>
 
@@ -763,18 +834,23 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
     </ul>
   </div>
   <div class="card-stack">
-    <h4 style="color:#8a1f1f;margin-bottom:12px">Moves to the Platform Catalog (the catalog brain)</h4>
+    <h4 style="color:#8a1f1f;margin-bottom:12px">Moves to the catalog tiers (Platform + Merchant)</h4>
+    <p class="body" style="margin-bottom:10px"><strong>To the Platform Catalog</strong> (shared across merchants):</p>
     <ul class="cross">
       <li>Product master data (SKUs, codes)</li>
       <li>Attribute group definitions ("Paper material", "Size")</li>
-      <li>Option values, both names: <strong>supplierName</strong> ("135gsm Machine Coated") and <strong>displayName</strong> ("Thin Paper (135gsm)")</li>
-      <li>Pricing tables and quantity breaks</li>
-      <li>Per-locale translations of displayName (NL/FR/DE/ES/IT)</li>
+      <li>Supplier values: <strong>supplierName</strong> ("135gsm Machine Coated")</li>
+      <li>Technical specifications, submission specs</li>
       <li>Product imagery (catalog/spec shots)</li>
-      <li>Technical specifications</li>
-      <li>Delivery and turnaround data</li>
     </ul>
-    <p class="body" style="margin-top:14px"><strong>All of this is 1:1 with a catalog row.</strong> Whether a supplier sent it or marketing wrote it, the shape is the same &mdash; structured, repeated, tied to an option.</p>
+    <p class="body" style="margin-bottom:10px;margin-top:14px"><strong>To each Merchant Catalog</strong> (per merchant):</p>
+    <ul class="cross">
+      <li>Customer-friendly <strong>displayName</strong> ("Thin Paper (135gsm)")</li>
+      <li>Per-locale translations of displayName (NL/FR/DE/ES/IT)</li>
+      <li>Availability per country, Transfer Pricing, promos</li>
+      <li>Per-merchant search and filter rules</li>
+    </ul>
+    <p class="body" style="margin-top:14px"><strong>All of this is 1:1 with a catalog row.</strong> Some values are the same for every merchant (Platform); others differ per merchant (Merchant Catalog).</p>
   </div>
 </div>
 </section>
@@ -782,8 +858,8 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
 <!-- ═════════════ 06 TRANSLATIONS ═════════════ -->
 <section class="section">
 <div class="section-tag">07 &middot; Translations &mdash; the biggest question, answered head-on</div>
-<h2>Translations don't disappear. They live where the data lives &mdash; inside the Platform Catalog.</h2>
-<p class="section-lede">This is the fear we hear most: &ldquo;If product attributes leave Contentful, how do we translate them?&rdquo; The honest answer is that we build a small, focused translation editor into the Platform Catalog itself. We already own and build Platform Catalog &mdash; adding a translation feature to it is faster, cheaper and more controllable than introducing a third-party tool.</p>
+<h2>Translations don't disappear. They live where the data lives.</h2>
+<p class="section-lede">This is the fear we hear most: &ldquo;If product attributes leave Contentful, how do we translate them?&rdquo; The honest answer is that translations live next to the values they translate. Factual translations (a spec value that's the same everywhere) sit in the Platform Catalog. Commercial translations (display names that can differ per merchant) sit in the Merchant Catalog. Page narrative translations stay in Contentful. Each layer gets a focused editor &mdash; built into the system that already owns that data, owned by us, no third-party tool.</p>
 
 <div class="grid-2">
   <div class="card">
@@ -800,7 +876,7 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
   </div>
   <div class="card">
     <span class="chip brand">Tomorrow</span>
-    <h3 style="margin-top:8px">Translations natively in the Platform Catalog</h3>
+    <h3 style="margin-top:8px">Translations natively in the catalog tier</h3>
     <ul class="tick">
       <li>Translation memory built-in &mdash; "A4" translated once, reused everywhere</li>
       <li>Glossary table &mdash; "Helloprint", "DTP", brand names protected</li>
@@ -813,13 +889,13 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
 </div>
 
 <div class="callout success">
-  <div class="title">Why Platform Catalog-native is the right call (and not a TMS like CrowdIn)</div>
-  <p>Catalog labels are short (1&ndash;5 words), highly repetitive ("A4", "Glossy"), and translated by internal Helloprint staff who already know the catalog. A full-fat third-party TMS is built for a different problem &mdash; long-form content translated at distance by external agencies. For our use case, the few features that matter (TM, glossary, bulk edit) cost a handful of sprints to build natively in the Platform Catalog &mdash; and we avoid an extra vendor, a per-word bill, sync plumbing, and a second tool for translators to learn.</p>
+  <div class="title">Why catalog-native is the right call (and not a TMS like CrowdIn)</div>
+  <p>Catalog labels are short (1&ndash;5 words), highly repetitive ("A4", "Glossy"), and translated by internal Helloprint staff who already know the catalog. A full-fat third-party TMS is built for a different problem &mdash; long-form content translated at distance by external agencies. For our use case, the few features that matter (TM, glossary, bulk edit) cost a handful of sprints to build natively in the catalog tier &mdash; in the Merchant Catalog for commercial display names, in the Platform Catalog for factual specs &mdash; and we avoid an extra vendor, a per-word bill, sync plumbing, and a second tool for translators to learn.</p>
 </div>
 
 <div class="callout success">
   <div class="title">Bonus: translations stay visible inside Contentful</div>
-  <p>For editors who want context, we install a Contentful Sidebar App that reads the live Platform Catalog translations. When you open a product page in Contentful, the sidebar shows the option labels for the current locale, with a one-click link to open that row in the Platform Catalog's translation editor. You see everything; you can only edit the right thing in the right place.</p>
+  <p>For editors who want context, we install a Contentful Sidebar App that reads the live Merchant Catalog display names (and the underlying Platform Catalog supplier values for reference). When you open a product page in Contentful, the sidebar shows the option labels for the current locale, with a one-click link to open that row in the Merchant Catalog's translation editor. You see everything; you can only edit the right thing in the right place.</p>
 </div>
 
 <div class="callout note">
@@ -849,9 +925,9 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
     </div>
     <div class="tomorrow">
       <h4>Tomorrow</h4>
-      <p>Opens Platform Catalog &rarr; finds the "135gsm Machine Coated" attribute option. The <span class="mono">supplierName</span> stays (factories still need it). She edits one field: <span class="mono">displayName</span> from "Thin Paper (135gsm)" to "Lightweight (135gsm)".</p>
-      <p>The translation editor shows the five locale versions in one screen. She updates NL. Localisation gets a task for the other four locales, with TM suggesting matches.</p>
-      <p>Saves. The Content Gateway picks it up. Live across every product, every brand variant that uses this option. Total time: 4 minutes. Zero engineering tickets.</p>
+      <p>Opens her Merchant Catalog (Helloprint Ecommerce's) &rarr; finds the "135gsm Machine Coated" attribute option (the Platform supplier value is read-only here). She edits one field: <span class="mono">displayName</span> from "Thin Paper (135gsm)" to "Lightweight (135gsm)".</p>
+      <p>The Merchant Catalog's translation editor shows the five locale versions in one screen. She updates NL. Localisation gets a task for the other four locales, with TM suggesting matches from prior translations.</p>
+      <p>Saves. The Content Gateway picks it up. Live on every Helloprint Ecommerce storefront and every product that uses this option. Allgifts' and Drukwerkmax's display names are unaffected &mdash; each merchant owns its own Merchant Catalog. Total time: 4 minutes. Zero engineering tickets.</p>
     </div>
   </div>
 </div>
@@ -872,8 +948,8 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
     </div>
     <div class="tomorrow">
       <h4>Tomorrow</h4>
-      <p>Opens the Platform Catalog translation editor &mdash; the same tool the catalog team uses for everything else. The new string is grouped under "Paper materials &mdash; finishings", with TM suggestions from past translations pre-filled.</p>
-      <p>Picks the right one. Platform Catalog's glossary warns him if "Helloprint" looks like it's about to be translated.</p>
+      <p>Opens the Merchant Catalog translation editor for his merchant &mdash; the same tool the merchant's catalog team uses for everything else. The new string is grouped under "Paper materials &mdash; finishings", with TM suggestions from past translations pre-filled (across merchants, where they exist).</p>
+      <p>Picks the right one. The glossary warns him if "Helloprint" looks like it's about to be translated.</p>
       <p>One translation propagates everywhere automatically &mdash; brand variants are handled at the content level (Contentful), so he doesn't duplicate work per brand.</p>
       <p>Total time: 30 seconds per string instead of 3 minutes. One tool. No vendor portal to log into.</p>
     </div>
@@ -940,16 +1016,16 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
 
 <div class="grid-3">
   <div class="card">
-    <h4 style="color:#8a1f1f">Platform Catalog needs to build a translation editor</h4>
-    <p class="body">Platform Catalog has product data and a Contentful locale mapping, but doesn't yet have a first-class translation editor with TM, glossary and bulk operations. This is the largest piece of engineering work in the proposal &mdash; roughly a quarter of one engineer's time, depending on what's already there. The upside: we own it forever and can shape it to fit how our translators actually work.</p>
+    <h4 style="color:#8a1f1f">Catalog tiers need translation editors</h4>
+    <p class="body">The Platform Catalog needs one for factual translations (shared spec values across all merchants). The Merchant Catalog needs one for commercial translations (per-merchant display names). Neither has a first-class translation editor today with TM, glossary and bulk operations. This is the largest piece of engineering work in the proposal &mdash; the architecture can share a translation engine across both tiers. The upside: we own them forever and can shape them to fit how our translators actually work.</p>
   </div>
   <div class="card">
     <h4 style="color:#8a1f1f">Algolia indexer rewires</h4>
-    <p class="body">Today the indexer pulls from Contentful via the worker and the GitLab <span class="mono">_commondata</span> repo. Tomorrow it pulls product data and translations from the Platform Catalog, and page data from Contentful. The plumbing is straightforward but it's the most-touched pipeline. Expect a few sprints.</p>
+    <p class="body">Today the indexer pulls from Contentful via the worker and the GitLab <span class="mono">_commondata</span> repo. Tomorrow it pulls product data from the Platform Catalog, per-merchant display names and availability from the Merchant Catalog, and page data from Contentful. The plumbing is straightforward but it's the most-touched pipeline. Expect a few sprints.</p>
   </div>
   <div class="card">
     <h4 style="color:#8a1f1f">Translators switch tools for catalog work</h4>
-    <p class="body">Today they translate catalog labels inside Contentful. Tomorrow they translate them inside the Platform Catalog. Same kind of work, different home &mdash; and the new home has TM, glossary and bulk edit. Page copy still lives in Contentful, so editorial translators stay where they are. The Sidebar App means you can still see the Platform Catalog translations from inside Contentful when you need context.</p>
+    <p class="body">Today they translate catalog labels inside Contentful. Tomorrow they translate them in the Merchant Catalog (for commercial display names) or Platform Catalog (for factual specs). Same kind of work, two homes that match the data they translate &mdash; and both have TM, glossary and bulk edit. Page copy still lives in Contentful, so editorial translators stay where they are. The Sidebar App means you can still see the catalog translations from inside Contentful when you need context.</p>
   </div>
 </div>
 </section>
@@ -970,7 +1046,7 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
 <details class="faq">
   <summary>"What if Platform Catalog goes down? Does the website break?"</summary>
   <div class="answer">
-    <p>Same as today, but slightly safer. Today, if the Platform Catalog goes down, new products and price updates stop. With the new model, the Content Gateway caches the last known good product data at the edge, so the site keeps rendering existing products with the most recent attributes. The Platform Catalog being source-of-truth doesn't mean it has to be hit on every page request.</p>
+    <p>Same as today, but slightly safer. Today, if a catalog tier goes down, new products and price updates stop. With the new model, the Content Gateway caches the last known good product data at the edge, so the site keeps rendering existing products with the most recent attributes. The catalog tiers being source-of-truth doesn't mean they have to be hit on every page request.</p>
   </div>
 </details>
 
@@ -991,14 +1067,14 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
 <details class="faq">
   <summary>"What about all the historic translations we've built up in Contentful for option labels?"</summary>
   <div class="answer">
-    <p>We migrate them. The first import into the Platform Catalog's translation table uses our existing Contentful translations as the seed, and the TM is populated from that same export. Nothing is lost &mdash; everything we've translated becomes the foundation that makes future translations faster. This is a one-time migration script, run once during cutover.</p>
+    <p>We migrate them. The first import into the catalog translation tables (Platform for factual specs, Merchant for display names) uses our existing Contentful translations as the seed, and the TM is populated from that same export. Nothing is lost &mdash; everything we've translated becomes the foundation that makes future translations faster. This is a one-time migration script, run once during cutover.</p>
   </div>
 </details>
 
 <details class="faq">
   <summary>"How long until we see the benefit?"</summary>
   <div class="answer">
-    <p>Editorial benefit (cleaner Contentful for editors) appears the moment the catalog data leaves &mdash; that can be a single migration sprint. Translation benefit needs Platform Catalog's new translation editor to be built &mdash; bigger, probably a quarter for a solid first version. JV-partner benefit appears when the brand tag and role-based permissions are in place &mdash; can be done independently in parallel.</p>
+    <p>Editorial benefit (cleaner Contentful for editors) appears the moment the catalog data leaves &mdash; that can be a single migration sprint. Translation benefit needs the catalog-tier translation editors to be built &mdash; bigger, probably a quarter for a solid first version. JV-partner benefit appears when the brand tag and role-based permissions are in place &mdash; can be done independently in parallel.</p>
   </div>
 </details>
 
@@ -1012,7 +1088,7 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
 <details class="faq">
   <summary>"Who owns this if we say yes?"</summary>
   <div class="answer">
-    <p>Three owners. The Catalog team owns the Platform Catalog data and the new translation editor. Content engineering owns the new content model and the Content Gateway. Localisation owns the translator workflow inside the Platform Catalog &mdash; what the editor looks like, how reviews work, how bulk operations behave. One product owner across all three to keep them honest about sequencing.</p>
+    <p>Three owners. The Catalog team owns the Platform Catalog data, the Merchant Catalog setup, and the new translation editors. Content engineering owns the new content model and the Content Gateway. Localisation owns the translator workflow inside the catalog tiers &mdash; what the editor looks like, how reviews work, how bulk operations behave. One product owner across all three to keep them honest about sequencing.</p>
   </div>
 </details>
 
@@ -1034,21 +1110,21 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
 <div class="grid-3">
   <div class="card">
     <h4>Decision 1 &middot; The principle</h4>
-    <p class="body">Agree, in principle, that product attributes belong in the Platform Catalog and Commercial Content belongs in Contentful. If we agree on the principle, we can plan the &ldquo;how&rdquo; together.</p>
+    <p class="body">Agree, in principle, on the three-layer split: factual product data in the Platform Catalog, commercial catalog data (display names, availability, pricing) in each Merchant Catalog, page narrative in Contentful. If we agree on the principle, we can plan the &ldquo;how&rdquo; together.</p>
   </div>
   <div class="card">
-    <h4>Decision 2 &middot; The Platform Catalog scoping</h4>
-    <p class="body">Authorise a one-week spike with the Catalog team to scope what the Platform Catalog translation editor needs to look like &mdash; locale model, TM lookup, glossary, bulk operations, API contract. Nothing built yet; just a clear picture of the work.</p>
+    <h4>Decision 2 &middot; The catalog-tier scoping</h4>
+    <p class="body">Authorise a scoping spike with the Catalog team to scope what the translation editors need to look like in both the Platform Catalog (factual translations) and the Merchant Catalog (commercial display names). Locale model, TM lookup, glossary, bulk operations, API contract. Nothing built yet; just a clear picture of the work.</p>
   </div>
   <div class="card">
     <h4>Decision 3 &middot; The pilot product</h4>
-    <p class="body">Pick one product (suggested: <em>Posters</em>) to pilot the new model end-to-end &mdash; catalog and translations in the Platform Catalog, copy in Contentful. If it works for Posters, it works for the rest.</p>
+    <p class="body">Pick one product (suggested: <em>Posters</em>) to pilot the new model end-to-end &mdash; factual data in the Platform Catalog, per-merchant display names and availability in the Merchant Catalog, page copy in Contentful. If it works for Posters, it works for the rest.</p>
   </div>
 </div>
 
 <div class="callout success">
   <div class="title">If we agree, the order of operations is&hellip;</div>
-  <p>Week 1: Platform Catalog translation-editor scoping spike. Week 2&ndash;3: Posters pilot in a Contentful sandbox env, with translations served from a thin the Platform Catalog translation API. Week 4: Demo to the whole team with a real PDP composed from the Platform Catalog + Contentful. From there, we plan the full migration with confidence and a working reference implementation.</p>
+  <p>Phase 0: catalog-tier translation-editor scoping spike. Phase 1: Posters pilot in a sandbox environment, with display names served from a thin Merchant Catalog translation API and factual specs from the Platform Catalog. Phase 2: demo to the whole team with a real PDP composed from all three layers + Contentful. From there, we plan the full migration with confidence and a working reference implementation.</p>
 </div>
 </section>
 
@@ -1057,381 +1133,375 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
   <div>Companion document to: Contentful Greenfield Structure Proposal</div>
 </footer>
 
-</div><!-- end #tab-proposal -->
+</div><!-- end #tab-strategy -->
 
-<!-- ═════════════ TAB 2 — IMPLEMENTATION MATRIX ═════════════ -->
-<div id="tab-matrix" class="tab-content">
+<div id="tab-scratch" class="tab-content">
 
 <!-- Cover -->
 <section class="matrix-cover">
   <div class="ring"></div>
   <div style="position:relative;z-index:2">
-    <div class="micro" style="color:rgba(255,255,255,0.7);margin-bottom:12px">Implementation matrix &middot; v1.1 Draft &middot; Sebastiaan Ram</div>
-    <h1>Product implementation matrix</h1>
-    <p class="lede">Field-by-field, for the <strong>47 fields</strong> in today's <span class="mono" style="background:rgba(255,255,255,0.12);color:#fff">product</span> content type &mdash; where each one lives in the new architecture across <strong>three systems</strong>: Contentful, the Platform Catalog, and the Merchant Catalog.</p>
+    <div class="micro" style="color:rgba(255,255,255,0.7);margin-bottom:12px">Companion to the PDP / PLP / FLP requirements docs &middot; v1.0 Draft</div>
+    <h1>Rebuilding content from the ground up.</h1>
+    <p class="lede">A response to Hans's <em>"full rebuild, not a part"</em> directive. We don't migrate the old content. We migrate the signals legacy gave us &mdash; search intent, translation memory, URL equity &mdash; and regenerate every piece of copy from scratch against the SEO/AEO contracts in the requirements docs. Six phases, AI-native content pipeline.</p>
   </div>
 </section>
 
-<!-- ─── The three systems ─── -->
+<!-- Principles -->
 <section class="section" style="border-top:none;padding-top:24px">
-  <div class="section-tag">The model</div>
-  <h2>The three systems we're modelling against</h2>
-  <p class="section-lede">Before placing fields, let's name the systems precisely. What we have is a <strong>multi-tenant catalog architecture</strong> with two distinct catalog tiers, plus a per-merchant Commercial Content layer.</p>
-
-  <div class="systems">
-    <div class="sys-card platform">
-      <div class="sys-card-head">
-        <span class="lbl">Tier 1 &middot; shared</span>
-        <h3>Platform Catalog</h3>
-      </div>
-      <div class="sys-card-body">
-        <p><strong>What it is:</strong> Helloprint's master catalog. Every product that <em>could</em> exist in any merchant's shop lives here.</p>
-        <p><strong>What it owns:</strong> Catalog facts that are the same regardless of who's selling &mdash; product master data, attribute structure, technical specs, submission rules, configurator schema, catalog imagery.</p>
-        <p><strong>Who writes to it:</strong> Helloprint's catalog team. One source for all merchants.</p>
-      </div>
+  <div class="section-tag">Principles</div>
+  <h2>Five principles before the plan</h2>
+  <div class="principles">
+    <div class="principle">
+      <div class="num">Principle 1</div>
+      <h4>Legacy is corpus, not truth</h4>
+      <p>Legacy tells us which topics drove traffic, which keywords ranked, which URLs have backlinks. It does not tell us what to write. We mine the signals and throw the prose away.</p>
     </div>
-    <div class="sys-card merchant">
-      <div class="sys-card-head">
-        <span class="lbl">Tier 2 &middot; per merchant</span>
-        <h3>Merchant Catalog</h3>
-      </div>
-      <div class="sys-card-body">
-        <p><strong>What it is:</strong> Each merchant's curated selection from the Platform Catalog. Helloprint is a merchant. Allgifts, Drukwerkmax, Quinnstheprinters and every WLS shop are merchants too.</p>
-        <p><strong>What it owns:</strong> Which Catalog Products this merchant has activated, availability per country of delivery, the merchant's <strong>Transfer Pricing</strong> arrangement (product per SKU + shipping + services fee), promos, search and filter rules.</p>
-        <p><strong>Who writes to it:</strong> The merchant. Activating a product here triggers a Contentful entry for it.</p>
-      </div>
+    <div class="principle">
+      <div class="num">Principle 2</div>
+      <h4>Requirements docs are the spec</h4>
+      <p>Every PDP, PLP and FLP has explicit content modules, structure rules, character budgets, schema. MUST fails the deploy. SHOULD soft-warns. The pipeline enforces.</p>
     </div>
-    <div class="sys-card cf">
-      <div class="sys-card-head">
-        <span class="lbl">Tier 3 &middot; per merchant</span>
-        <h3>Contentful</h3>
-      </div>
-      <div class="sys-card-body">
-        <p><strong>What it is:</strong> Commercial Content layer for one merchant's storefront. Each merchant has their own CF entries for the products they've activated in their Merchant Catalog.</p>
-        <p><strong>What it owns:</strong> Page narrative, marketing copy, SEO, brand-specific overrides on default catalog values.</p>
-        <p><strong>Who writes to it:</strong> That merchant's content team.</p>
-      </div>
+    <div class="principle">
+      <div class="num">Principle 3</div>
+      <h4>Content goes where the architecture says</h4>
+      <p>Factual Content (specs, dimensions, materials) stays in the Platform Catalog &mdash; shared across all merchants. Commercial Content (intro, description, FAQ, SEO text) lives per-merchant in CF.</p>
     </div>
-  </div>
-
-  <div class="callout success" style="margin-top:24px">
-    <div class="title">The cleanest way to think about it</div>
-    <p>Activating a product in a <strong>Merchant Catalog</strong> creates a corresponding entry in that merchant's <strong>Contentful</strong>. The CF entry inherits defaults from the <strong>Platform Catalog</strong> &mdash; product name, default imagery, technical specs &mdash; and the merchant can override any of them per locale, market or campaign. Deactivating in the Merchant Catalog archives the CF entry. One activation event, one editorial workspace.</p>
+    <div class="principle">
+      <div class="num">Principle 4</div>
+      <h4>Generate at scale, review at the margin</h4>
+      <p>~5,000 SKUs &times; 11 locales &times; 5 merchants = hundreds of thousands of content blocks. AI generates draft 1. Humans review only where signal warrants.</p>
+    </div>
+    <div class="principle">
+      <div class="num">Principle 5</div>
+      <h4>GEO/AEO is table stakes</h4>
+      <p>First-sentence extractability. Schema = exact HTML mirror. Self-canonical on noindex. Forbidden vocab gates. Built to be ingested by GPTBot, ClaudeBot, PerplexityBot first.</p>
+    </div>
   </div>
 </section>
 
-<!-- ─── Migration arc ─── -->
+<!-- The 6 phases -->
 <section class="section">
   <div class="section-tag">Migration plan</div>
-  <h2>Four phases, no big-bang cutover</h2>
-  <p class="section-lede">We don't migrate inside the current Contentful space &mdash; we stand up <strong>new clean CF entries per merchant</strong> alongside it, build out the Platform/Merchant Catalog separation, run both architectures in parallel, and only retire the old space once every frontend has moved across.</p>
+  <h2>Six phases, sequenced for delivery</h2>
+  <p class="section-lede">Phases 0 and 1 run in parallel. Phases 4 and 5 overlap. The whole programme is sequenced so each phase ships value standalone and the next builds on it.</p>
 
-  <div class="phases">
-    <div class="phase now">
-      <div class="num">Phase 0 &middot; Today</div>
-      <h3>One bloated space</h3>
-      <p>Current Contentful space holds all 47 product fields, ~400k entries total, mixed catalog + editorial. The catalog tier exists but is mirrored into Contentful. Frontends read via 5 pipelines.</p>
+  <div class="phases-mig">
+    <div class="phase-mig p0">
+      <div class="num">Phase 0</div>
+      <h5>Foundations</h5>
+      <p>Content models, target_keywords field, indexation governance, build gates, AI pipeline scaffold, TM seed. No content yet.</p>
     </div>
-    <div class="phase build">
-      <div class="num">Phase 1 &middot; Build in parallel</div>
-      <h3>New clean CF + catalog split</h3>
-      <p>Stand up a new CF space with the <strong>15 editorial fields per merchant</strong> + the 2 override fields. Formalise the Platform Catalog (master) vs Merchant Catalog (per-merchant) split. Old space untouched.</p>
+    <div class="phase-mig p1">
+      <div class="num">Phase 1 &middot; parallel</div>
+      <h5>Signal harvest</h5>
+      <p>URL inventory, equity-bearing list, target-keyword extraction, FAQ topic mining, cannibalisation map, TM snapshot. Mine legacy for everything except prose.</p>
     </div>
-    <div class="phase bridge">
-      <div class="num">Phase 2 &middot; Bridge</div>
-      <h3>Content Gateway up</h3>
-      <p>Build the Content Gateway that composes new CF + Platform Catalog + Merchant Catalog into one GraphQL endpoint. Migrate frontends one by one to read from the gateway.</p>
+    <div class="phase-mig p2">
+      <div class="num">Phase 2</div>
+      <h5>Pilot end-to-end</h5>
+      <p>One product (Posters). All blocks via AI pipeline. Hand-verify every MUST. Demo + sign-off. Codify learnings into pipeline.</p>
     </div>
-    <div class="phase done">
-      <div class="num">Phase 3 &middot; Sunset</div>
-      <h3>Old space deprecated</h3>
-      <p>Once every frontend (storefronts, blog, B2B portal, Algolia indexer) reads exclusively from the gateway, set the old space to read-only, then archive it.</p>
-      <div class="check">&check;</div>
+    <div class="phase-mig p3">
+      <div class="num">Phase 3</div>
+      <h5>Top 50, manual review</h5>
+      <p>AI draft + human review per merchant × locale. Gates SOFT-WARN per V1 contract. Productmanager E-E-A-T test on 10 of 50.</p>
     </div>
-  </div>
-
-  <div class="callout success" style="margin-top:28px">
-    <div class="title">Why this works without breaking anything</div>
-    <p>The frontends don't migrate from "old CF" to "new CF". They migrate from "old CF + 5 custom pipelines" to "one GraphQL gateway". From the frontend's perspective, the change is replacing many noisy reads with one clean read. The old Contentful space stops being read from naturally, not by force, as each frontend cuts over. When the last one moves, the old space can be deprecated with confidence because nothing depends on it anymore.</p>
-  </div>
-</section>
-
-<!-- ─── The matrix ─── -->
-<section class="section">
-  <div class="section-tag">The matrix</div>
-  <h2>Where every product field lives in the new world</h2>
-  <p class="section-lede">All 47 product fields, each placed in its destination across the three systems. Four fields with unresolved decisions are surfaced separately as Open Questions below the matrix.</p>
-
-  <div class="legend">
-    <div class="legend-item"><span class="legend-dot cf"></span>Contentful &middot; per-merchant editorial</div>
-    <div class="legend-item"><span class="legend-dot both"></span>Both &middot; Platform default + CF override</div>
-    <div class="legend-item"><span class="legend-dot platform"></span>Platform Catalog &middot; shared master</div>
-    <div class="legend-item"><span class="legend-dot merchant"></span>Merchant Catalog &middot; per-merchant commerce</div>
-  </div>
-
-  <div class="matrix">
-
-    <!-- ─── COLUMN 1: CONTENTFUL ─── -->
-    <div class="matrix-col cf">
-      <div class="matrix-col-head">
-        <div class="cnt">15</div>
-        <div class="badge">Stays in CF</div>
-        <h3>Contentful</h3>
-        <p>Per-merchant Commercial Content</p>
-      </div>
-      <div class="matrix-col-body">
-        <div class="field"><div class="name">Url <span class="type">short</span></div><p class="desc">Per-locale URL slug. Routing + SEO.</p></div>
-        <div class="field"><div class="name">Slug <span class="type">short</span></div><p class="desc">Canonical entry-title slug. Consolidate with Url in v2.</p></div>
-        <div class="field"><div class="name">Meta Title <span class="type">short</span></div><p class="desc">SEO &lt;title&gt; tag.</p></div>
-        <div class="field"><div class="name">Meta Description <span class="type">short</span></div><p class="desc">SEO meta description.</p></div>
-        <div class="field"><div class="name">Canonical Contenful <span class="type">short</span></div><p class="desc">Canonical URL override. Fix the typo in v2.</p></div>
-        <div class="field"><div class="name">Intro Paragraph <span class="type">long</span></div><p class="desc">Opening narrative paragraph.</p></div>
-        <div class="field"><div class="name">Description <span class="type">long</span></div><p class="desc">Long-form PDP narrative.</p></div>
-        <div class="field"><div class="name">USP &amp; Pros/Cons <span class="type">refs</span></div><p class="desc">Merge USP and Pros &amp; Cons into one editorial block type. Pure marketing copy.</p></div>
-        <div class="field"><div class="name">Faq Item <span class="type">refs</span></div><p class="desc">FAQ entries on the PDP.</p></div>
-        <div class="field"><div class="name">Question and answer <span class="type">refs</span></div><p class="desc">Additional Q&amp;A blocks. Review for deprecation in v2.</p></div>
-        <div class="field"><div class="name">Info Icons <span class="type">refs</span></div><p class="desc">Feature icon references shown on PDP.</p></div>
-        <div class="field"><div class="name">Highlight Labels <span class="type">refs</span></div><p class="desc">Marketing badges (NEW, BESTSELLER, etc.).</p></div>
-        <div class="field"><div class="name">Content blocks <span class="type">refs</span></div><p class="desc">Modular content blocks for the PDP.</p></div>
-        <div class="field"><div class="name">Videos (WIP) <span class="type">refs</span></div><p class="desc">Marketing video references.</p></div>
-      </div>
+    <div class="phase-mig p4">
+      <div class="num">Phase 4</div>
+      <h5>Scale the surface</h5>
+      <p>AI generates everything. Gates HARD-FAIL. ~5% sampled human review. FAQ generator runs on a recurring cadence. V2 territory.</p>
     </div>
-
-    <!-- ─── COLUMN 2: BOTH ─── -->
-    <div class="matrix-col both">
-      <div class="matrix-col-head">
-        <div class="cnt">2</div>
-        <div class="badge">Platform + CF override</div>
-        <h3>Both</h3>
-        <p>Platform default, CF can overwrite</p>
-      </div>
-      <div class="matrix-col-body">
-        <div class="field"><div class="name">Title <span class="type">short</span></div><p class="desc">PDP page title. Default is the Platform Catalog product name; the merchant's CF can override per brand or market when they want a different headline.</p><span class="resolved">See spotlight below &darr;</span></div>
-        <div class="field"><div class="name">Product Images <span class="type">media</span></div><p class="desc">Default gallery lives in the Platform Catalog. Merchant CF can hold an override gallery for brand-specific or campaign-specific shots.</p><span class="resolved">See spotlight below &darr;</span></div>
-      </div>
+    <div class="phase-mig p5">
+      <div class="num">Phase 5 &middot; parallel</div>
+      <h5>Earned filter variants</h5>
+      <p>Per-URL Contentful entries for indexed filter pages. Hand-authored meta + H1 + intro + FAQ + SEO text. Daily governance live.</p>
     </div>
-
-    <!-- ─── COLUMN 3: PLATFORM CATALOG ─── -->
-    <div class="matrix-col platform">
-      <div class="matrix-col-head">
-        <div class="cnt">19</div>
-        <div class="badge">Moves to Platform</div>
-        <h3>Platform Catalog</h3>
-        <p>Shared master &mdash; same for every merchant</p>
-      </div>
-      <div class="matrix-col-body">
-        <div class="field"><div class="name">Name <span class="type">short</span></div><p class="desc">Product name. The single source of truth, used by every merchant.</p></div>
-        <div class="field"><div class="name">Product Keys Specs <span class="type">refs</span></div><p class="desc">Structured spec rows (weight, dimensions, material).</p></div>
-        <div class="field"><div class="name">Submission specs <span class="type">refs</span></div><p class="desc">Artwork submission tech specs (DPI, bleed, format).</p></div>
-        <div class="field"><div class="name">Templates <span class="type">refs</span></div><p class="desc">Print / production template references.</p></div>
-        <div class="field"><div class="name">Default Funnel Template <span class="type">short</span></div><p class="desc">Default configurator/funnel template.</p></div>
-        <div class="field"><div class="name">Preset Path <span class="type">list</span></div><p class="desc">Preset configurator dimension path.</p></div>
-        <div class="field"><div class="name">Recommended Path <span class="type">short</span></div><p class="desc">Recommended configurator path.</p></div>
-        <div class="field"><div class="name">Attribute Groups <span class="type">refs</span></div><p class="desc">Configurator attribute structure (Platform-owned).</p></div>
-        <div class="field"><div class="name">Direct Main Category <span class="type">ref</span></div><p class="desc">Primary catalog category.</p></div>
-        <div class="field"><div class="name">Internal Category <span class="type">ref</span></div><p class="desc">Internal catalog taxonomy.</p></div>
-        <div class="field"><div class="name">Other Categories <span class="type">refs</span></div><p class="desc">Additional catalog cross-listings.</p></div>
-        <div class="field"><div class="name">masterProduct <span class="type">ref</span></div><p class="desc">Parent/master product link (variant hierarchy).</p></div>
-        <div class="field"><div class="name">Stock product <span class="type">bool</span></div><p class="desc">Stock product flag &mdash; catalog property.</p></div>
-        <div class="field"><div class="name">Custom Size Dimension <span class="type">short</span></div><p class="desc">Per-product custom dimension override.</p></div>
-        <div class="field"><div class="name">Canva Product Catalog <span class="type">ref</span></div><p class="desc">Canva integration reference.</p></div>
-        <div class="field"><div class="name">Catalog image <span class="type">media</span></div><p class="desc">Catalog/spec image (separate from the merchant-overridable gallery).</p></div>
-        <div class="field"><div class="name">Icon <span class="type">media</span></div><p class="desc">Product icon(s). Catalog-side imagery.</p></div>
-        <div class="field"><div class="name">PDP Configuration <span class="type">ref</span></div><p class="desc">PDP setup config &mdash; catalog-side, not editorial.</p></div>
-        <div class="field"><div class="name">Product info <span class="type">long</span></div><p class="desc">Factual product information. Catalog reference text, not editorial copy.</p></div>
-      </div>
-    </div>
-
-    <!-- ─── COLUMN 4: MERCHANT CATALOG ─── -->
-    <div class="matrix-col merchant">
-      <div class="matrix-col-head">
-        <div class="cnt">7</div>
-        <div class="badge">Moves to Merchant</div>
-        <h3>Merchant Catalog</h3>
-        <p>Per-merchant commerce config</p>
-      </div>
-      <div class="matrix-col-body">
-        <div class="field"><div class="name">Available <span class="type">bool</span></div><p class="desc">Is this product activated in this merchant's shop?</p></div>
-        <div class="field"><div class="name">Unavailable <span class="type">ref</span></div><p class="desc">Availability setting per country / shop within this merchant.</p></div>
-        <div class="field"><div class="name">Promo Discount <span class="type">refs</span></div><p class="desc">Merchant-specific promotional discounts. Part of the merchant's Transfer Pricing arrangement.</p></div>
-        <div class="field"><div class="name">Filter Settings <span class="type">refs</span></div><p class="desc">Filter configuration for this merchant's PLP / search.</p></div>
-        <div class="field"><div class="name">Filter page settings <span class="type">bool</span></div><p class="desc">Per-merchant filter behaviour toggle.</p></div>
-        <div class="field"><div class="name">Product Feed <span class="type">ref</span></div><p class="desc">Per-merchant feed config (each shop has its own Google Shopping feed).</p></div>
-        <div class="field"><div class="name">Search boost <span class="type">bool</span></div><p class="desc">Per-merchant search ranking lever. Or move functionality entirely to Algolia rules &mdash; see Open Questions.</p></div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ─── Open Questions ─── -->
-<section class="section">
-  <div class="section-tag">Open questions</div>
-  <h2>Four fields without a decision yet</h2>
-  <p class="section-lede">These are not catalog-vs-editorial debates &mdash; they're "do we still need this field?" or "where does it logically belong?" questions. Surface them to the team before the matrix is finalised.</p>
-
-  <div class="questions">
-    <div class="question">
-      <h4><span class="qmark">?</span>Meta Robot Content <span class="type">short</span></h4>
-      <p>Per-page indexing directive (e.g. <span class="mono">noindex,follow</span>).</p>
-      <p><strong>The question:</strong> Should this be in Contentful at all? Most products use the same value across all locales. Could be a Platform Catalog default with a CF override only when a merchant specifically needs <span class="mono">noindex</span> for a particular page. Or could leave Contentful entirely and live in a routing / SEO config layer.</p>
-    </div>
-    <div class="question">
-      <h4><span class="qmark">?</span>Search Name <span class="type">short</span></h4>
-      <p>Algolia-friendly product name override.</p>
-      <p><strong>The question:</strong> Do we still need this? With the new model, <em>Title</em> already covers public name (with the Platform default + CF override pattern). Search Name may be redundant. Recommend deprecating unless a concrete use case surfaces.</p>
-    </div>
-    <div class="question">
-      <h4><span class="qmark">?</span>Search Tags <span class="type">list</span></h4>
-      <p>Algolia keywords list.</p>
-      <p><strong>The question:</strong> Stays in Contentful for now, but possibly belongs elsewhere &mdash; Platform Catalog (if keywords are catalog-wide) or Merchant Catalog (if each merchant tunes their own keywords). Worth deciding before migration.</p>
-    </div>
-    <div class="question">
-      <h4><span class="qmark">?</span>Search settings <span class="type">bool</span></h4>
-      <p>Search visibility toggle.</p>
-      <p><strong>The question:</strong> Same as Search Tags &mdash; could stay in CF, but might fit better in Merchant Catalog as a per-merchant search behaviour setting alongside Search boost. Pick one home.</p>
+    <div class="phase-mig p6">
+      <div class="num">Phase 6</div>
+      <h5>Legacy sunset</h5>
+      <p>301/410 redirect plan executed. Old CF space → read-only → archived. Three new sitemaps live. Legacy translation pipeline decommissioned.</p>
     </div>
   </div>
-</section>
-
-<!-- ─── Spotlight: Title + Product Images ─── -->
-<section class="section">
-  <div class="section-tag">Spotlight</div>
-  <h2>How the "Both" pattern works &mdash; Title and Product Images</h2>
-  <p class="section-lede">Two fields share this pattern. Both have a sensible default coming from the Platform Catalog, and both can be overridden by a merchant in their own Contentful when they want their own voice or visuals.</p>
-
-  <div class="diagram-wrap">
-  <svg viewBox="0 0 1040 340" xmlns="http://www.w3.org/2000/svg" role="img">
-    <defs>
-      <marker id="arrSpot" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#008539"/></marker>
-    </defs>
-
-    <!-- Platform source (default) -->
-    <rect x="40" y="70" width="260" height="140" rx="14" fill="#191919"/>
-    <text x="60" y="100" font-family="Inter" font-size="11" font-weight="700" fill="#fff" letter-spacing="0.08em">PLATFORM CATALOG &mdash; DEFAULT</text>
-    <text x="60" y="126" font-family="Inter" font-size="13" font-weight="700" fill="#fff">Title: "Folding Box"</text>
-    <text x="60" y="146" font-family="Inter" font-size="13" font-weight="700" fill="#fff">Product Images: spec shots</text>
-    <text x="60" y="170" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.78)">One source, used by every merchant</text>
-    <text x="60" y="186" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.78)">Always present, never empty</text>
-
-    <!-- Merchant CF override -->
-    <rect x="340" y="70" width="300" height="140" rx="14" fill="#fff" stroke="#f59e0b" stroke-width="2"/>
-    <text x="360" y="100" font-family="Inter" font-size="11" font-weight="700" fill="#78350f" letter-spacing="0.08em">MERCHANT CF &mdash; OPTIONAL OVERRIDE</text>
-    <text x="360" y="126" font-family="Inter" font-size="13" font-weight="700" fill="#191919">Title: "Eco-friendly Mailing Box"</text>
-    <text x="360" y="146" font-family="Inter" font-size="13" font-weight="700" fill="#191919">Product Images: lifestyle shoot</text>
-    <text x="360" y="170" font-family="Inter" font-size="11" fill="#555">Allgifts wants their own headline + photography</text>
-    <text x="360" y="186" font-family="Inter" font-size="11" fill="#555">Set only when the merchant chooses to</text>
-
-    <!-- Gateway -->
-    <rect x="680" y="70" width="320" height="140" rx="14" fill="#008539"/>
-    <text x="700" y="100" font-family="Inter" font-size="11" font-weight="700" fill="#fff" letter-spacing="0.08em">CONTENT GATEWAY &mdash; RESOLVES</text>
-    <text x="700" y="126" font-family="Inter" font-size="13" font-weight="700" fill="#fff">CF override first, then Platform</text>
-    <text x="700" y="150" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.85)">Merchant has an override? Use that.</text>
-    <text x="700" y="168" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.85)">No override? Fall back to Platform default.</text>
-    <text x="700" y="186" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.85)">Resolved per locale, per market.</text>
-
-    <!-- Arrows into gateway -->
-    <line x1="300" y1="130" x2="680" y2="120" stroke="#008539" stroke-width="2" marker-end="url(#arrSpot)"/>
-    <line x1="640" y1="130" x2="680" y2="150" stroke="#008539" stroke-width="2" marker-end="url(#arrSpot)"/>
-
-    <!-- Frontend -->
-    <rect x="380" y="252" width="280" height="64" rx="14" fill="#fff" stroke="#e5e5e5"/>
-    <text x="520" y="276" font-family="Inter" font-size="13" font-weight="700" fill="#191919" text-anchor="middle">Storefront receives one Title + one image set</text>
-    <text x="520" y="296" font-family="Inter" font-size="11" fill="#555" text-anchor="middle">Doesn't know or care whether they came from CF or Platform</text>
-
-    <!-- Arrow to frontend -->
-    <line x1="840" y1="210" x2="660" y2="252" stroke="#008539" stroke-width="2" marker-end="url(#arrSpot)"/>
-  </svg>
-  <div class="diagram-caption">FIG. M-1 &mdash; The Both pattern. Platform Catalog provides defaults that always exist; Merchant CF holds optional overrides; the Gateway picks the most specific available value, per locale and per market.</div>
-  </div>
-
-  <div class="grid-2" style="margin-top:24px">
-    <div class="card">
-      <h4>Why both, not one</h4>
-      <p class="body">Helloprint sells the same physical "Folding Box" as Allgifts and Drukwerkmax. The product is identical. But each merchant might want a different headline or different lifestyle photography to match their brand. That's the override use case: same SKU, different presentation.</p>
-    </div>
-    <div class="card">
-      <h4>The override is the exception</h4>
-      <p class="body">Most products in most merchants won't override anything &mdash; they'll just use the Platform defaults. The override only exists where a merchant cares enough to provide their own value. This keeps Merchant CF spaces lean and avoids forcing every merchant to manage values they don't have a strong opinion on.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ─── What this unlocks ─── -->
-<section class="section">
-  <div class="section-tag">What this unlocks</div>
-  <h2>The new Contentful, by the numbers</h2>
-
-  <table>
-    <thead><tr><th>Dimension</th><th>Today (old space)</th><th>New architecture</th></tr></thead>
-    <tbody>
-      <tr><td>Fields on the product type in CF</td><td>47</td><td>15 editorial + 2 overrides = 17 max</td></tr>
-      <tr><td>Fields shown by default in a merchant's CF entry</td><td>47, most of which they shouldn't touch</td><td>15 &mdash; all editorial, all worth their attention</td></tr>
-      <tr><td>Product entries per merchant</td><td>Shared across all merchants in one space (~14k entries)</td><td>One CF entry per <em>activated</em> product in that merchant's Merchant Catalog. Most merchants will have hundreds, not thousands.</td></tr>
-      <tr><td>Total entries in the CF space</td><td>~400,710 (all content types combined)</td><td>~30&ndash;50k once catalog data is in the Platform Catalog</td></tr>
-      <tr><td>Sources of truth per concept</td><td>2 in sync (CF mirror + catalog)</td><td>1 per concept &mdash; Platform owns shared data, Merchant owns commerce, CF owns editorial</td></tr>
-      <tr><td>What writes back into Contentful from the catalog tier</td><td>~25 fields synced via Contentful Worker on every change</td><td>0 &mdash; CF only holds editorial values and overrides</td></tr>
-      <tr><td>Onboarding a new JV merchant</td><td>New locales, new worker config, new pipeline</td><td>Activate them in the Merchant Catalog. Their CF entries are auto-created with Platform defaults.</td></tr>
-    </tbody>
-  </table>
 
   <div class="callout success" style="margin-top:24px">
-    <div class="title">The shape of a product in the new world</div>
-    <p>A merchant's CF entry for a product has 15 fields that are all editorial decisions worth a human's attention &mdash; plus 2 optional override fields (Title, Product Images) for when the merchant wants to deviate from the Platform default. Everything else is read from the Platform Catalog or Merchant Catalog at runtime by the Content Gateway. No machine-written blobs, no hidden legacy fields, no orphan catalog config.</p>
+    <div class="title">The sequencing logic</div>
+    <p>Phase 0 builds the foundations the rest of the programme depends on. Phase 1 runs alongside it, harvesting legacy signals without blocking on the new architecture being ready. Phase 2 proves the pipeline end-to-end on a single product. Phase 3 codifies the playbook through manual review of the top revenue drivers. Phase 4 scales with gates flipped from soft-warn to hard-fail. Phase 5 runs in parallel to Phase 4 once the pipeline is stable. Phase 6 only starts once nothing reads from the legacy space.</p>
   </div>
 </section>
 
-<!-- ─── What's next ─── -->
+<!-- Kept vs ditched -->
 <section class="section">
-  <div class="section-tag">What's next</div>
-  <h2>The other content types follow the same pattern</h2>
-  <p class="section-lede">Products are the biggest piece &mdash; both in entry count and in the catalog/editorial confusion. Once the pattern is proven on products, the rest of the content types map across with much less drama.</p>
+  <div class="section-tag">Kept vs ditched</div>
+  <h2>What we take from legacy, what we throw away</h2>
+  <p class="section-lede">Hans's "full rebuild" lands here. The legacy content has signal value but no spec value. We keep the signals; we regenerate the prose.</p>
+
+  <div class="kept-ditched">
+    <div class="kd-col kept">
+      <div class="kd-head">Kept from legacy<span class="icon">&check;</span></div>
+      <div class="kd-body">
+        <ul>
+          <li><strong>URL equity</strong> via 301 redirects where backlinks justify</li>
+          <li><strong>Target keywords</strong> lifted from Ahrefs + GSC into the new <span class="mono">targetKeywords</span> field</li>
+          <li><strong>Translation memory</strong> seeded from historic Contentful localised fields</li>
+          <li><strong>Topic insights</strong> for FAQ and SEO text from PAA signals, CS tickets, forum threads</li>
+          <li><strong>Catalog data</strong> (specs, dimensions, materials) &mdash; Factual Content already lives in the Platform Catalog</li>
+          <li><strong>Trustpilot brand-level</strong> aggregate rating &mdash; already integrated, KEEP-tagged per requirements docs</li>
+          <li><strong>Asset library</strong> &mdash; product imagery in PCM and marketing imagery in CF, audited and retained where reusable</li>
+        </ul>
+      </div>
+    </div>
+    <div class="kd-col ditched">
+      <div class="kd-head">Ditched<span class="icon">&times;</span></div>
+      <div class="kd-body">
+        <ul>
+          <li><strong>Old intros</strong> &mdash; regenerated against AEO first-sentence-extractable spec</li>
+          <li><strong>Old product descriptions</strong> &mdash; regenerated against 3-sentence structure and ≤700 char budget</li>
+          <li><strong>Old FAQs</strong> &mdash; replaced with topic-mined 8-bin sets (8–11 questions per page)</li>
+          <li><strong>Old SEO text</strong> &mdash; replaced with 3–6 H3 structured blocks, 60–150 words per H3</li>
+          <li><strong>Old meta titles &amp; descriptions</strong> &mdash; regenerated against char budgets and CTA rules</li>
+          <li><strong>Old USP copy</strong> &mdash; replaced with the three locked sitewide USPs from the PLP doc</li>
+          <li><strong>Old highlight labels</strong> &mdash; replaced with merchandising-driven labels in the new pipeline</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout note" style="margin-top:16px">
+    <div class="title">Why legacy prose can't be salvaged</div>
+    <p>Legacy intros don't pass first-sentence extractability. Legacy descriptions exceed the 700-char budget. Legacy FAQs aren't topic-binned. Legacy SEO text uses forbidden vocab (<span class="mono">elevate</span>, <span class="mono">transform</span>, <span class="mono">unlock</span>, <span class="mono">experience</span>, <span class="mono">discover</span>) and em-dashes throughout. We'd spend more effort retrofitting old content to the spec than regenerating from scratch.</p>
+  </div>
+</section>
+
+<!-- AI Pipeline -->
+<section class="section">
+  <div class="section-tag">AI-native pipeline</div>
+  <h2>The content pipeline that makes this scalable</h2>
+  <p class="section-lede">Five components, sequenced. Signal sources feed per-block generators which output drafts; validators enforce the spec; what passes goes to CF as a tagged draft; humans review at the margin.</p>
+
+  <div class="diagram-wrap">
+  <svg viewBox="0 0 1040 460" xmlns="http://www.w3.org/2000/svg" role="img">
+    <defs>
+      <marker id="arrPipe" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#008539"/></marker>
+    </defs>
+
+    <!-- Signal sources (left column) -->
+    <rect x="20" y="20" width="200" height="200" rx="14" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1.5"/>
+    <text x="40" y="46" font-family="Inter" font-size="11" font-weight="700" fill="#6b21a8" letter-spacing="0.06em">1 &middot; SIGNAL SOURCES</text>
+    <text x="40" y="74" font-family="Inter" font-size="11" fill="#191919">&bull; GSC queries (per locale)</text>
+    <text x="40" y="92" font-family="Inter" font-size="11" fill="#191919">&bull; Google PAA + AlsoAsked</text>
+    <text x="40" y="110" font-family="Inter" font-size="11" fill="#191919">&bull; CS ticket queue</text>
+    <text x="40" y="128" font-family="Inter" font-size="11" fill="#191919">&bull; Forum threads (Reddit, Quora)</text>
+    <text x="40" y="146" font-family="Inter" font-size="11" fill="#191919">&bull; Competitor PDPs</text>
+    <text x="40" y="164" font-family="Inter" font-size="11" fill="#191919">&bull; Ahrefs keyword clusters</text>
+    <text x="40" y="182" font-family="Inter" font-size="11" fill="#191919">&bull; Brand voice rules</text>
+    <text x="40" y="200" font-family="Inter" font-size="11" fill="#191919">&bull; Translation memory</text>
+
+    <!-- Per-block generators -->
+    <rect x="260" y="20" width="220" height="200" rx="14" fill="#fff" stroke="#008539" stroke-width="2"/>
+    <text x="280" y="46" font-family="Inter" font-size="11" font-weight="700" fill="#006B2D" letter-spacing="0.06em">2 &middot; PER-BLOCK GENERATORS</text>
+    <text x="280" y="74" font-family="Inter" font-size="11" fill="#191919">&bull; Intro generator</text>
+    <text x="280" y="92" font-family="Inter" font-size="11" fill="#191919">&bull; Description generator</text>
+    <text x="280" y="110" font-family="Inter" font-size="11" fill="#191919">&bull; FAQ generator</text>
+    <text x="280" y="128" font-family="Inter" font-size="11" fill="#191919">&bull; SEO-text generator</text>
+    <text x="280" y="146" font-family="Inter" font-size="11" fill="#191919">&bull; Reviews-H2 generator</text>
+    <text x="280" y="164" font-family="Inter" font-size="11" fill="#191919">&bull; Meta generator</text>
+    <text x="280" y="190" font-family="Inter" font-size="10" fill="#555" font-style="italic">Each pre-loaded with the</text>
+    <text x="280" y="204" font-family="Inter" font-size="10" fill="#555" font-style="italic">requirements doc rules for that block</text>
+
+    <!-- Validator chain -->
+    <rect x="520" y="20" width="220" height="200" rx="14" fill="#fff" stroke="#f59e0b" stroke-width="2"/>
+    <text x="540" y="46" font-family="Inter" font-size="11" font-weight="700" fill="#92400e" letter-spacing="0.06em">3 &middot; VALIDATOR CHAIN</text>
+    <text x="540" y="74" font-family="Inter" font-size="11" fill="#191919">&bull; Forbidden vocab</text>
+    <text x="540" y="92" font-family="Inter" font-size="11" fill="#191919">&bull; Char budgets</text>
+    <text x="540" y="110" font-family="Inter" font-size="11" fill="#191919">&bull; Link caps</text>
+    <text x="540" y="128" font-family="Inter" font-size="11" fill="#191919">&bull; AEO extractability</text>
+    <text x="540" y="146" font-family="Inter" font-size="11" fill="#191919">&bull; Schema emission</text>
+    <text x="540" y="164" font-family="Inter" font-size="11" fill="#191919">&bull; Cannibalisation score</text>
+    <text x="540" y="182" font-family="Inter" font-size="11" fill="#191919">&bull; Hreflang completeness</text>
+    <text x="540" y="200" font-family="Inter" font-size="10" fill="#555" font-style="italic">Fail → kick back to generator</text>
+
+    <!-- Contentful draft -->
+    <rect x="780" y="20" width="240" height="200" rx="14" fill="#008539"/>
+    <text x="800" y="46" font-family="Inter" font-size="11" font-weight="700" fill="rgba(255,255,255,0.85)" letter-spacing="0.06em">4 &middot; CONTENTFUL DRAFT</text>
+    <text x="800" y="74" font-family="Inter" font-size="13" font-weight="700" fill="#fff">Tagged for review</text>
+    <text x="800" y="100" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.85)">merchant:&lt;merchant&gt;</text>
+    <text x="800" y="118" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.85)">locale:&lt;locale&gt;</text>
+    <text x="800" y="136" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.85)">status:awaiting-review</text>
+    <text x="800" y="162" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.85)">All passed gates listed in</text>
+    <text x="800" y="178" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.85)">draft metadata for auditors</text>
+
+    <!-- Arrows row 1 -->
+    <line x1="220" y1="120" x2="260" y2="120" stroke="#008539" stroke-width="2" marker-end="url(#arrPipe)"/>
+    <line x1="480" y1="120" x2="520" y2="120" stroke="#008539" stroke-width="2" marker-end="url(#arrPipe)"/>
+    <line x1="740" y1="120" x2="780" y2="120" stroke="#008539" stroke-width="2" marker-end="url(#arrPipe)"/>
+
+    <!-- Row 2 — Human review -->
+    <rect x="260" y="280" width="500" height="120" rx="14" fill="#191919"/>
+    <text x="280" y="308" font-family="Inter" font-size="11" font-weight="700" fill="rgba(255,255,255,0.85)" letter-spacing="0.06em">5 &middot; HUMAN REVIEW (at the margin)</text>
+    <text x="280" y="336" font-family="Inter" font-size="12" fill="#fff">Phase 2: 100% of one pilot product</text>
+    <text x="280" y="354" font-family="Inter" font-size="12" fill="#fff">Phase 3: 100% of top-50 products per merchant</text>
+    <text x="280" y="372" font-family="Inter" font-size="12" fill="#fff">Phase 4: ~5% random sample per locale on a recurring cadence (calibration only)</text>
+    <text x="280" y="390" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.6)" font-style="italic">Rejects feed back into prompt + validator calibration. The pipeline learns.</text>
+
+    <!-- Arrow from CF draft down to human review -->
+    <line x1="900" y1="220" x2="900" y2="280" stroke="#008539" stroke-width="2" marker-end="url(#arrPipe)" opacity="0.6"/>
+    <line x1="900" y1="280" x2="760" y2="340" stroke="#008539" stroke-width="2" marker-end="url(#arrPipe)" opacity="0.6"/>
+
+    <!-- Publish -->
+    <rect x="20" y="420" width="1000" height="20" rx="10" fill="#e8f5e9" stroke="#bce6c8"/>
+    <text x="520" y="434" font-family="Inter" font-size="11" font-weight="700" fill="#006B2D" text-anchor="middle">Approved drafts → published to merchant's CF entries → Content Gateway → Storefronts</text>
+
+    <line x1="520" y1="400" x2="520" y2="420" stroke="#008539" stroke-width="2" marker-end="url(#arrPipe)" opacity="0.6"/>
+  </svg>
+  <div class="diagram-caption">FIG. M-2 &mdash; The content pipeline. Signal sources feed per-block generators; the validator chain enforces the spec; passing drafts land in Contentful as merchant-tagged drafts awaiting review; human review is sized to the phase. Rejections feed back into prompt + validator calibration.</div>
+  </div>
+</section>
+
+<!-- Quality gates -->
+<section class="section">
+  <div class="section-tag">Quality gates</div>
+  <h2>What blocks publish, and what only warns</h2>
+  <p class="section-lede">Every gate that is a MUST in the requirements docs becomes a build-time block. Every SHOULD becomes a soft warning. The pipeline runs them all on every generated block before it reaches CF.</p>
+
+  <table class="gates-table">
+    <thead><tr><th>Gate</th><th>Rule</th><th>Severity</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Forbidden vocabulary</strong></td><td>Word-list match. Any of <span class="mono">elevate, transform, unlock, experience (as verb), discover</span> &rarr; fail.</td><td><span class="sev must">MUST</span></td></tr>
+      <tr><td><strong>No em-dashes / pipes</strong></td><td>Character match &rarr; fail. (Hyphens fine; en-dashes for ranges fine.)</td><td><span class="sev must">MUST</span></td></tr>
+      <tr><td><strong>Char budgets</strong></td><td>Intro 30–50 visible words. Description &le;700 chars. Meta description &le;155 chars. Title &le;60 chars.</td><td><span class="sev must">MUST</span></td></tr>
+      <tr><td><strong>Schema validity</strong></td><td>Run through schema.org + Google Rich Results Test &rarr; must pass.</td><td><span class="sev must">MUST</span></td></tr>
+      <tr><td><strong>Internal link caps</strong></td><td>SEO text max 5 / max 1 per H3. FAQ max 4 per block. &rarr; fail when exceeded.</td><td><span class="sev must">MUST</span></td></tr>
+      <tr><td><strong>Cannibalisation score</strong></td><td>Cosine similarity vs sibling pages on target keywords. &rarr; soft-warn if &gt;0.8, fail if &gt;0.92.</td><td><span class="sev mix">MUST/SHOULD</span></td></tr>
+      <tr><td><strong>AEO extractability</strong></td><td>First sentence of intro and each FAQ answer evaluated as a standalone answer (via an LLM judge). &rarr; fail if no.</td><td><span class="sev must">MUST</span></td></tr>
+      <tr><td><strong>Hreflang completeness</strong></td><td>Every locale of the same content has hreflang entries pointing to all siblings + self-canonical. &rarr; fail if any missing.</td><td><span class="sev must">MUST</span></td></tr>
+      <tr><td><strong>URL compliance</strong></td><td>&le;75 chars, kebab-case, locale prefix, no verb on PDPs. &rarr; fail.</td><td><span class="sev must">MUST</span></td></tr>
+      <tr><td><strong>Tone consistency</strong></td><td>LLM-judged tone match to merchant brand voice. &rarr; warn below threshold.</td><td><span class="sev should">SHOULD</span></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- GEO / AEO -->
+<section class="section">
+  <div class="section-tag">GEO / AEO</div>
+  <h2>What we do differently from a "normal" SEO content programme</h2>
+  <p class="section-lede">These are not nice-to-have flourishes. They are the things that make our content land in AI Overviews, SGE, Perplexity citations, ChatGPT browse mode, and the next wave of agent surfaces.</p>
+
+  <div class="geo-grid">
+    <div class="geo-card">
+      <h5>Self-canonical on every page</h5>
+      <p>Including noindex pages. AI crawlers respect canonical but often ignore noindex — preserving canonical integrity preserves URL identity for them.</p>
+    </div>
+    <div class="geo-card">
+      <h5>First-sentence extractability</h5>
+      <p>Intro, every FAQ answer, every SEO-text H3 — first sentence stands alone, answers the question without context. Enforced by an LLM-judged validator.</p>
+    </div>
+    <div class="geo-card">
+      <h5>FAQ schema = exact HTML mirror</h5>
+      <p>Same answers in JSON-LD and in DOM. No "schema-only" content that AI can extract from one place but not the other.</p>
+    </div>
+    <div class="geo-card">
+      <h5>SpeakableSpecification</h5>
+      <p>H1, intro, and the first sentence of each FAQ answer are marked speakable for Google Assistant / Siri / Alexa.</p>
+    </div>
+    <div class="geo-card">
+      <h5>Person schema + rel="me"</h5>
+      <p>Productmanager bylines with LinkedIn rel="me" links. E-E-A-T signal that lifts Brand Radar SoV over 8-week windows.</p>
+    </div>
+    <div class="geo-card">
+      <h5>llms.txt at root</h5>
+      <p>Simple sitemap-like file pointing AI agents to our highest-quality AI-readable surfaces. Cheap to ship. Future-proofs us for the next AI Overviews-style surface.</p>
+    </div>
+  </div>
+</section>
+
+<!-- By the numbers -->
+<section class="section">
+  <div class="section-tag">By the numbers</div>
+  <h2>The scope, sized</h2>
+  <p class="section-lede">Why AI generation is not optional. The shape of the surface forces it.</p>
+
+  <div class="scope-stat">
+    <div class="stat-card">
+      <div class="lbl">Indexable PDPs per merchant</div>
+      <div class="num-big">~5,000</div>
+      <div class="sub">Activated Catalog Products in each Merchant Catalog</div>
+    </div>
+    <div class="stat-card">
+      <div class="lbl">Locales per merchant</div>
+      <div class="num-big">11</div>
+      <div class="sub">en-GB, en-IE, en-US, nl-NL, nl-BE, fr-BE, fr-FR, de-DE, es-ES, it-IT, pt-PT</div>
+    </div>
+    <div class="stat-card">
+      <div class="lbl">Merchants writing</div>
+      <div class="num-big">5</div>
+      <div class="sub">Helloprint Ecommerce, Allgifts, Drukwerkmax, Brandon, WLS</div>
+    </div>
+    <div class="stat-card">
+      <div class="lbl">PDP content sets total</div>
+      <div class="num-big">~275,000</div>
+      <div class="sub">Before deduplication via the Both override pattern</div>
+    </div>
+    <div class="stat-card">
+      <div class="lbl">Content blocks per PDP</div>
+      <div class="num-big">~15</div>
+      <div class="sub">Intro, description, 8–11 FAQs, 3–6 SEO H3s, reviews H2, etc.</div>
+    </div>
+    <div class="stat-card">
+      <div class="lbl">PLPs per merchant</div>
+      <div class="num-big">~200</div>
+      <div class="sub">Category + sub-category hubs</div>
+    </div>
+    <div class="stat-card">
+      <div class="lbl">Earned filter pages per merchant</div>
+      <div class="num-big">~1,000</div>
+      <div class="sub">Indexed filter variants per FLP doc</div>
+    </div>
+    <div class="stat-card">
+      <div class="lbl">Content blocks total (PDPs alone)</div>
+      <div class="num-big">~4M</div>
+      <div class="sub">AI generation makes this scope tractable</div>
+    </div>
+  </div>
+
+  <div class="callout note" style="margin-top:20px">
+    <div class="title">Why human-only authoring would not scale</div>
+    <p>The PDP content surface alone runs into the millions of blocks. Human-only authoring at any realistic team size cannot keep pace with even a single full pass, let alone the ongoing optimisation cadence the requirements docs assume. AI generation with human review at the margin is the only approach that fits the shape of the surface. The architecture in this proposal exists in part to make that possible.</p>
+  </div>
+</section>
+
+<!-- Next steps -->
+<section class="section">
+  <div class="section-tag">Next steps</div>
+  <h2>Three decisions to take</h2>
 
   <div class="grid-3">
     <div class="card">
-      <h4>Pages (PLP, landings, home)</h4>
-      <p class="body">Commercial Content with no catalog overlap. Lift-and-shift into the new CF space with consolidated field names. Estimated: ~2k entries, ~30 fields per page type after consolidation.</p>
+      <h4>Decision 1 — Endorse the principle</h4>
+      <p class="body">Agree that legacy content is corpus, not source-of-truth. We do not migrate prose. We regenerate it against the requirements spec.</p>
     </div>
     <div class="card">
-      <h4>Blocks (hero, media, rich-text)</h4>
-      <p class="body">Pure editorial. Rename the cryptic <span class="mono">homeBlockTypeBJ</span>/<span class="mono">homeBlockTypeBk</span> to descriptive types (<span class="mono">heroBlock</span>, <span class="mono">richTextBlock</span>, etc.). Migrate references.</p>
+      <h4>Decision 2 — Authorise Phase 0</h4>
+      <p class="body">Build the foundations: content models, target_keywords field, indexation governance, build-time gates, AI pipeline scaffold, translation memory seed. Predominantly engineering and content engineering work.</p>
     </div>
     <div class="card">
-      <h4>FAQs, USPs, pros &amp; cons</h4>
-      <p class="body">Small editorial fragments. Migrate as-is &mdash; the structure is already right.</p>
+      <h4>Decision 3 — Pick the pilot product</h4>
+      <p class="body">Suggested: Posters (high traffic, multi-variant). Stakeholders: SEO Lead (Niels), Content team representatives per merchant, AI Lead (Derk), Catalog team rep, and Hans. Phase 2 follows once Phase 0 lands.</p>
     </div>
-    <div class="card">
-      <h4>Theme translations (<span class="mono">themeTemplate</span>)</h4>
-      <p class="body">Leaves CF entirely. Becomes UI strings managed in the Platform Catalog alongside attribute translations, or moves to a dedicated System layer depending on whether it's catalog UI or general UI. Decision pending.</p>
-    </div>
-    <div class="card">
-      <h4>Blog (<span class="mono">pageArticle</span>)</h4>
-      <p class="body">Move to a dedicated Editorial space (or stay in the new CF main space with a brand tag). Distinct lifecycle from product pages, distinct team.</p>
-    </div>
-    <div class="card">
-      <h4>Configurator options &amp; attributes</h4>
-      <p class="body">The bulk of today's 400k entries (<span class="mono">pcmOptionsAttribute</span>, <span class="mono">attributeGroup</span>, <span class="mono">CombbinedOptionsAttribute</span>). All move to the Platform Catalog with the rest of the shared catalog data. Not migrated into the new CF space.</p>
-    </div>
-  </div>
-
-  <div class="callout">
-    <div class="title" style="color:var(--color-ink)">A separate matrix for each content type</div>
-    <p style="color:var(--color-ink)">This tab will gain new sections as we agree on each content type. The next likely one is <strong>pageProduct</strong> &mdash; the PDP wrapper that links to a product reference. After that, blocks and the editorial page types. Same shape, same exercise: every field placed deliberately.</p>
   </div>
 </section>
 
-</div><!-- end #tab-matrix -->
+</div><!-- end #tab-scratch -->
 
-<!-- ═════════════ TAB 3 — SPACES, ROLES & PERMISSIONS ═════════════ -->
-<div id="tab-spaces" class="tab-content">
+<div id="tab-setup" class="tab-content">
 
 <!-- Cover -->
 <section class="matrix-cover">
   <div class="ring"></div>
   <div style="position:relative;z-index:2">
-    <div class="micro" style="color:rgba(255,255,255,0.7);margin-bottom:12px">Implementation &middot; spaces, environments, roles &middot; v1.0 Draft</div>
-    <h1>One shared space,<br/>scoped by merchant tags.</h1>
-    <p class="lede">How Marie at Helloprint Ecommerce, Lisa at Allgifts, and Pieter at Drukwerkmax can all work in the same Contentful workspace without ever stepping on each other's content &mdash; and how a JV partner gets their own clean editorial workspace without us provisioning a new CF space per brand.</p>
+    <div class="micro" style="color:rgba(255,255,255,0.7);margin-bottom:12px">The architecture &middot; three systems, one shared CF space &middot; v1.0 Draft</div>
+    <h1>The new setup &mdash;<br/>three systems, one shared space.</h1>
+    <p class="lede">How the new content architecture works end-to-end. Three systems (Platform Catalog, Merchant Catalog, Contentful) compose at read time via the Content Gateway. One shared Contentful space across all merchants, scoped by merchant tags. Five roles. Four environments. The activation flow that ties them together.</p>
   </div>
 </section>
 
@@ -1983,7 +2053,369 @@ footer .h{width:18px;height:18px;background:var(--color-primary);border-radius:4
   </div>
 </section>
 
-</div><!-- end #tab-spaces -->
+</div><!-- end #tab-setup -->
+
+<div id="tab-implementation-matrix" class="tab-content">
+
+<!-- Cover -->
+<section class="matrix-cover">
+  <div class="ring"></div>
+  <div style="position:relative;z-index:2">
+    <div class="micro" style="color:rgba(255,255,255,0.7);margin-bottom:12px">Implementation &middot; matrix + migration plan &middot; v1.1 Draft</div>
+    <h1>Content matrix &amp; migration plan</h1>
+    <p class="lede">Where every product field lives in the new architecture, and how content actually moves there. The 47-field matrix (Contentful / Platform Catalog / Merchant Catalog / Both), the open questions still to resolve, the "Both" override pattern in detail, the six-phase migration, the AI-native content pipeline, quality gates, and the GEO/AEO contract.</p>
+  </div>
+</section>
+
+<!-- ─── The three systems ─── -->
+<section class="section" style="border-top:none;padding-top:24px">
+  <div class="section-tag">The model</div>
+  <h2>The three systems we're modelling against</h2>
+  <p class="section-lede">Before placing fields, let's name the systems precisely. What we have is a <strong>multi-tenant catalog architecture</strong> with two distinct catalog tiers, plus a per-merchant Commercial Content layer.</p>
+
+  <div class="systems">
+    <div class="sys-card platform">
+      <div class="sys-card-head">
+        <span class="lbl">Tier 1 &middot; shared</span>
+        <h3>Platform Catalog</h3>
+      </div>
+      <div class="sys-card-body">
+        <p><strong>What it is:</strong> Helloprint's master catalog. Every product that <em>could</em> exist in any merchant's shop lives here.</p>
+        <p><strong>What it owns:</strong> Catalog facts that are the same regardless of who's selling &mdash; product master data, attribute structure, technical specs, submission rules, configurator schema, catalog imagery.</p>
+        <p><strong>Who writes to it:</strong> Helloprint's catalog team. One source for all merchants.</p>
+      </div>
+    </div>
+    <div class="sys-card merchant">
+      <div class="sys-card-head">
+        <span class="lbl">Tier 2 &middot; per merchant</span>
+        <h3>Merchant Catalog</h3>
+      </div>
+      <div class="sys-card-body">
+        <p><strong>What it is:</strong> Each merchant's curated selection from the Platform Catalog. Helloprint is a merchant. Allgifts, Drukwerkmax, Quinnstheprinters and every WLS shop are merchants too.</p>
+        <p><strong>What it owns:</strong> Which Catalog Products this merchant has activated, availability per country of delivery, the merchant's <strong>Transfer Pricing</strong> arrangement (product per SKU + shipping + services fee), promos, search and filter rules.</p>
+        <p><strong>Who writes to it:</strong> The merchant. Activating a product here triggers a Contentful entry for it.</p>
+      </div>
+    </div>
+    <div class="sys-card cf">
+      <div class="sys-card-head">
+        <span class="lbl">Tier 3 &middot; per merchant</span>
+        <h3>Contentful</h3>
+      </div>
+      <div class="sys-card-body">
+        <p><strong>What it is:</strong> Commercial Content layer for one merchant's storefront. Each merchant has their own CF entries for the products they've activated in their Merchant Catalog.</p>
+        <p><strong>What it owns:</strong> Page narrative, marketing copy, SEO, brand-specific overrides on default catalog values.</p>
+        <p><strong>Who writes to it:</strong> That merchant's content team.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout success" style="margin-top:24px">
+    <div class="title">The cleanest way to think about it</div>
+    <p>Activating a product in a <strong>Merchant Catalog</strong> creates a corresponding entry in that merchant's <strong>Contentful</strong>. The CF entry inherits defaults from the <strong>Platform Catalog</strong> &mdash; product name, default imagery, technical specs &mdash; and the merchant can override any of them per locale, market or campaign. Deactivating in the Merchant Catalog archives the CF entry. One activation event, one editorial workspace.</p>
+  </div>
+</section>
+
+<!-- ─── Migration arc ─── -->
+<section class="section">
+  <div class="section-tag">Migration plan</div>
+  <h2>Four phases, no big-bang cutover</h2>
+  <p class="section-lede">We don't migrate inside the current Contentful space &mdash; we stand up <strong>new clean CF entries per merchant</strong> alongside it, build out the Platform/Merchant Catalog separation, run both architectures in parallel, and only retire the old space once every frontend has moved across.</p>
+
+  <div class="phases">
+    <div class="phase now">
+      <div class="num">Phase 0 &middot; Today</div>
+      <h3>One bloated space</h3>
+      <p>Current Contentful space holds all 47 product fields, ~400k entries total, mixed catalog + editorial. The catalog tier exists but is mirrored into Contentful. Frontends read via 5 pipelines.</p>
+    </div>
+    <div class="phase build">
+      <div class="num">Phase 1 &middot; Build in parallel</div>
+      <h3>New clean CF + catalog split</h3>
+      <p>Stand up a new CF space with the <strong>15 editorial fields per merchant</strong> + the 2 override fields. Formalise the Platform Catalog (master) vs Merchant Catalog (per-merchant) split. Old space untouched.</p>
+    </div>
+    <div class="phase bridge">
+      <div class="num">Phase 2 &middot; Bridge</div>
+      <h3>Content Gateway up</h3>
+      <p>Build the Content Gateway that composes new CF + Platform Catalog + Merchant Catalog into one GraphQL endpoint. Migrate frontends one by one to read from the gateway.</p>
+    </div>
+    <div class="phase done">
+      <div class="num">Phase 3 &middot; Sunset</div>
+      <h3>Old space deprecated</h3>
+      <p>Once every frontend (storefronts, blog, B2B portal, Algolia indexer) reads exclusively from the gateway, set the old space to read-only, then archive it.</p>
+      <div class="check">&check;</div>
+    </div>
+  </div>
+
+  <div class="callout success" style="margin-top:28px">
+    <div class="title">Why this works without breaking anything</div>
+    <p>The frontends don't migrate from "old CF" to "new CF". They migrate from "old CF + 5 custom pipelines" to "one GraphQL gateway". From the frontend's perspective, the change is replacing many noisy reads with one clean read. The old Contentful space stops being read from naturally, not by force, as each frontend cuts over. When the last one moves, the old space can be deprecated with confidence because nothing depends on it anymore.</p>
+  </div>
+</section>
+
+<!-- ─── The matrix ─── -->
+<section class="section">
+  <div class="section-tag">The matrix</div>
+  <h2>Where every product field lives in the new world</h2>
+  <p class="section-lede">All 47 product fields, each placed in its destination across the three systems. Four fields with unresolved decisions are surfaced separately as Open Questions below the matrix.</p>
+
+  <div class="legend">
+    <div class="legend-item"><span class="legend-dot cf"></span>Contentful &middot; per-merchant editorial</div>
+    <div class="legend-item"><span class="legend-dot both"></span>Both &middot; Platform default + CF override</div>
+    <div class="legend-item"><span class="legend-dot platform"></span>Platform Catalog &middot; shared master</div>
+    <div class="legend-item"><span class="legend-dot merchant"></span>Merchant Catalog &middot; per-merchant commerce</div>
+  </div>
+
+  <div class="matrix">
+
+    <!-- ─── COLUMN 1: CONTENTFUL ─── -->
+    <div class="matrix-col cf">
+      <div class="matrix-col-head">
+        <div class="cnt">15</div>
+        <div class="badge">Stays in CF</div>
+        <h3>Contentful</h3>
+        <p>Per-merchant Commercial Content</p>
+      </div>
+      <div class="matrix-col-body">
+        <div class="field"><div class="name">Url <span class="type">short</span></div><p class="desc">Per-locale URL slug. Routing + SEO.</p></div>
+        <div class="field"><div class="name">Slug <span class="type">short</span></div><p class="desc">Canonical entry-title slug. Consolidate with Url in v2.</p></div>
+        <div class="field"><div class="name">Meta Title <span class="type">short</span></div><p class="desc">SEO &lt;title&gt; tag.</p></div>
+        <div class="field"><div class="name">Meta Description <span class="type">short</span></div><p class="desc">SEO meta description.</p></div>
+        <div class="field"><div class="name">Canonical Contenful <span class="type">short</span></div><p class="desc">Canonical URL override. Fix the typo in v2.</p></div>
+        <div class="field"><div class="name">Intro Paragraph <span class="type">long</span></div><p class="desc">Opening narrative paragraph.</p></div>
+        <div class="field"><div class="name">Description <span class="type">long</span></div><p class="desc">Long-form PDP narrative.</p></div>
+        <div class="field"><div class="name">USP &amp; Pros/Cons <span class="type">refs</span></div><p class="desc">Merge USP and Pros &amp; Cons into one editorial block type. Pure marketing copy.</p></div>
+        <div class="field"><div class="name">Faq Item <span class="type">refs</span></div><p class="desc">FAQ entries on the PDP.</p></div>
+        <div class="field"><div class="name">Question and answer <span class="type">refs</span></div><p class="desc">Additional Q&amp;A blocks. Review for deprecation in v2.</p></div>
+        <div class="field"><div class="name">Info Icons <span class="type">refs</span></div><p class="desc">Feature icon references shown on PDP.</p></div>
+        <div class="field"><div class="name">Highlight Labels <span class="type">refs</span></div><p class="desc">Marketing badges (NEW, BESTSELLER, etc.).</p></div>
+        <div class="field"><div class="name">Content blocks <span class="type">refs</span></div><p class="desc">Modular content blocks for the PDP.</p></div>
+        <div class="field"><div class="name">Videos (WIP) <span class="type">refs</span></div><p class="desc">Marketing video references.</p></div>
+      </div>
+    </div>
+
+    <!-- ─── COLUMN 2: BOTH ─── -->
+    <div class="matrix-col both">
+      <div class="matrix-col-head">
+        <div class="cnt">2</div>
+        <div class="badge">Platform + CF override</div>
+        <h3>Both</h3>
+        <p>Platform default, CF can overwrite</p>
+      </div>
+      <div class="matrix-col-body">
+        <div class="field"><div class="name">Title <span class="type">short</span></div><p class="desc">PDP page title. Default is the Platform Catalog product name; the merchant's CF can override per brand or market when they want a different headline.</p><span class="resolved">See spotlight below &darr;</span></div>
+        <div class="field"><div class="name">Product Images <span class="type">media</span></div><p class="desc">Default gallery lives in the Platform Catalog. Merchant CF can hold an override gallery for brand-specific or campaign-specific shots.</p><span class="resolved">See spotlight below &darr;</span></div>
+      </div>
+    </div>
+
+    <!-- ─── COLUMN 3: PLATFORM CATALOG ─── -->
+    <div class="matrix-col platform">
+      <div class="matrix-col-head">
+        <div class="cnt">19</div>
+        <div class="badge">Moves to Platform</div>
+        <h3>Platform Catalog</h3>
+        <p>Shared master &mdash; same for every merchant</p>
+      </div>
+      <div class="matrix-col-body">
+        <div class="field"><div class="name">Name <span class="type">short</span></div><p class="desc">Product name. The single source of truth, used by every merchant.</p></div>
+        <div class="field"><div class="name">Product Keys Specs <span class="type">refs</span></div><p class="desc">Structured spec rows (weight, dimensions, material).</p></div>
+        <div class="field"><div class="name">Submission specs <span class="type">refs</span></div><p class="desc">Artwork submission tech specs (DPI, bleed, format).</p></div>
+        <div class="field"><div class="name">Templates <span class="type">refs</span></div><p class="desc">Print / production template references.</p></div>
+        <div class="field"><div class="name">Default Funnel Template <span class="type">short</span></div><p class="desc">Default configurator/funnel template.</p></div>
+        <div class="field"><div class="name">Preset Path <span class="type">list</span></div><p class="desc">Preset configurator dimension path.</p></div>
+        <div class="field"><div class="name">Recommended Path <span class="type">short</span></div><p class="desc">Recommended configurator path.</p></div>
+        <div class="field"><div class="name">Attribute Groups <span class="type">refs</span></div><p class="desc">Configurator attribute structure (Platform-owned).</p></div>
+        <div class="field"><div class="name">Direct Main Category <span class="type">ref</span></div><p class="desc">Primary catalog category.</p></div>
+        <div class="field"><div class="name">Internal Category <span class="type">ref</span></div><p class="desc">Internal catalog taxonomy.</p></div>
+        <div class="field"><div class="name">Other Categories <span class="type">refs</span></div><p class="desc">Additional catalog cross-listings.</p></div>
+        <div class="field"><div class="name">masterProduct <span class="type">ref</span></div><p class="desc">Parent/master product link (variant hierarchy).</p></div>
+        <div class="field"><div class="name">Stock product <span class="type">bool</span></div><p class="desc">Stock product flag &mdash; catalog property.</p></div>
+        <div class="field"><div class="name">Custom Size Dimension <span class="type">short</span></div><p class="desc">Per-product custom dimension override.</p></div>
+        <div class="field"><div class="name">Canva Product Catalog <span class="type">ref</span></div><p class="desc">Canva integration reference.</p></div>
+        <div class="field"><div class="name">Catalog image <span class="type">media</span></div><p class="desc">Catalog/spec image (separate from the merchant-overridable gallery).</p></div>
+        <div class="field"><div class="name">Icon <span class="type">media</span></div><p class="desc">Product icon(s). Catalog-side imagery.</p></div>
+        <div class="field"><div class="name">PDP Configuration <span class="type">ref</span></div><p class="desc">PDP setup config &mdash; catalog-side, not editorial.</p></div>
+        <div class="field"><div class="name">Product info <span class="type">long</span></div><p class="desc">Factual product information. Catalog reference text, not editorial copy.</p></div>
+      </div>
+    </div>
+
+    <!-- ─── COLUMN 4: MERCHANT CATALOG ─── -->
+    <div class="matrix-col merchant">
+      <div class="matrix-col-head">
+        <div class="cnt">7</div>
+        <div class="badge">Moves to Merchant</div>
+        <h3>Merchant Catalog</h3>
+        <p>Per-merchant commerce config</p>
+      </div>
+      <div class="matrix-col-body">
+        <div class="field"><div class="name">Available <span class="type">bool</span></div><p class="desc">Is this product activated in this merchant's shop?</p></div>
+        <div class="field"><div class="name">Unavailable <span class="type">ref</span></div><p class="desc">Availability setting per country / shop within this merchant.</p></div>
+        <div class="field"><div class="name">Promo Discount <span class="type">refs</span></div><p class="desc">Merchant-specific promotional discounts. Part of the merchant's Transfer Pricing arrangement.</p></div>
+        <div class="field"><div class="name">Filter Settings <span class="type">refs</span></div><p class="desc">Filter configuration for this merchant's PLP / search.</p></div>
+        <div class="field"><div class="name">Filter page settings <span class="type">bool</span></div><p class="desc">Per-merchant filter behaviour toggle.</p></div>
+        <div class="field"><div class="name">Product Feed <span class="type">ref</span></div><p class="desc">Per-merchant feed config (each shop has its own Google Shopping feed).</p></div>
+        <div class="field"><div class="name">Search boost <span class="type">bool</span></div><p class="desc">Per-merchant search ranking lever. Or move functionality entirely to Algolia rules &mdash; see Open Questions.</p></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── Open Questions ─── -->
+<section class="section">
+  <div class="section-tag">Open questions</div>
+  <h2>Four fields without a decision yet</h2>
+  <p class="section-lede">These are not catalog-vs-editorial debates &mdash; they're "do we still need this field?" or "where does it logically belong?" questions. Surface them to the team before the matrix is finalised.</p>
+
+  <div class="questions">
+    <div class="question">
+      <h4><span class="qmark">?</span>Meta Robot Content <span class="type">short</span></h4>
+      <p>Per-page indexing directive (e.g. <span class="mono">noindex,follow</span>).</p>
+      <p><strong>The question:</strong> Should this be in Contentful at all? Most products use the same value across all locales. Could be a Platform Catalog default with a CF override only when a merchant specifically needs <span class="mono">noindex</span> for a particular page. Or could leave Contentful entirely and live in a routing / SEO config layer.</p>
+    </div>
+    <div class="question">
+      <h4><span class="qmark">?</span>Search Name <span class="type">short</span></h4>
+      <p>Algolia-friendly product name override.</p>
+      <p><strong>The question:</strong> Do we still need this? With the new model, <em>Title</em> already covers public name (with the Platform default + CF override pattern). Search Name may be redundant. Recommend deprecating unless a concrete use case surfaces.</p>
+    </div>
+    <div class="question">
+      <h4><span class="qmark">?</span>Search Tags <span class="type">list</span></h4>
+      <p>Algolia keywords list.</p>
+      <p><strong>The question:</strong> Stays in Contentful for now, but possibly belongs elsewhere &mdash; Platform Catalog (if keywords are catalog-wide) or Merchant Catalog (if each merchant tunes their own keywords). Worth deciding before migration.</p>
+    </div>
+    <div class="question">
+      <h4><span class="qmark">?</span>Search settings <span class="type">bool</span></h4>
+      <p>Search visibility toggle.</p>
+      <p><strong>The question:</strong> Same as Search Tags &mdash; could stay in CF, but might fit better in Merchant Catalog as a per-merchant search behaviour setting alongside Search boost. Pick one home.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Spotlight: Title + Product Images ─── -->
+<section class="section">
+  <div class="section-tag">Spotlight</div>
+  <h2>How the "Both" pattern works &mdash; Title and Product Images</h2>
+  <p class="section-lede">Two fields share this pattern. Both have a sensible default coming from the Platform Catalog, and both can be overridden by a merchant in their own Contentful when they want their own voice or visuals.</p>
+
+  <div class="diagram-wrap">
+  <svg viewBox="0 0 1040 340" xmlns="http://www.w3.org/2000/svg" role="img">
+    <defs>
+      <marker id="arrSpot" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#008539"/></marker>
+    </defs>
+
+    <!-- Platform source (default) -->
+    <rect x="40" y="70" width="260" height="140" rx="14" fill="#191919"/>
+    <text x="60" y="100" font-family="Inter" font-size="11" font-weight="700" fill="#fff" letter-spacing="0.08em">PLATFORM CATALOG &mdash; DEFAULT</text>
+    <text x="60" y="126" font-family="Inter" font-size="13" font-weight="700" fill="#fff">Title: "Folding Box"</text>
+    <text x="60" y="146" font-family="Inter" font-size="13" font-weight="700" fill="#fff">Product Images: spec shots</text>
+    <text x="60" y="170" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.78)">One source, used by every merchant</text>
+    <text x="60" y="186" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.78)">Always present, never empty</text>
+
+    <!-- Merchant CF override -->
+    <rect x="340" y="70" width="300" height="140" rx="14" fill="#fff" stroke="#f59e0b" stroke-width="2"/>
+    <text x="360" y="100" font-family="Inter" font-size="11" font-weight="700" fill="#78350f" letter-spacing="0.08em">MERCHANT CF &mdash; OPTIONAL OVERRIDE</text>
+    <text x="360" y="126" font-family="Inter" font-size="13" font-weight="700" fill="#191919">Title: "Eco-friendly Mailing Box"</text>
+    <text x="360" y="146" font-family="Inter" font-size="13" font-weight="700" fill="#191919">Product Images: lifestyle shoot</text>
+    <text x="360" y="170" font-family="Inter" font-size="11" fill="#555">Allgifts wants their own headline + photography</text>
+    <text x="360" y="186" font-family="Inter" font-size="11" fill="#555">Set only when the merchant chooses to</text>
+
+    <!-- Gateway -->
+    <rect x="680" y="70" width="320" height="140" rx="14" fill="#008539"/>
+    <text x="700" y="100" font-family="Inter" font-size="11" font-weight="700" fill="#fff" letter-spacing="0.08em">CONTENT GATEWAY &mdash; RESOLVES</text>
+    <text x="700" y="126" font-family="Inter" font-size="13" font-weight="700" fill="#fff">CF override first, then Platform</text>
+    <text x="700" y="150" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.85)">Merchant has an override? Use that.</text>
+    <text x="700" y="168" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.85)">No override? Fall back to Platform default.</text>
+    <text x="700" y="186" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.85)">Resolved per locale, per market.</text>
+
+    <!-- Arrows into gateway -->
+    <line x1="300" y1="130" x2="680" y2="120" stroke="#008539" stroke-width="2" marker-end="url(#arrSpot)"/>
+    <line x1="640" y1="130" x2="680" y2="150" stroke="#008539" stroke-width="2" marker-end="url(#arrSpot)"/>
+
+    <!-- Frontend -->
+    <rect x="380" y="252" width="280" height="64" rx="14" fill="#fff" stroke="#e5e5e5"/>
+    <text x="520" y="276" font-family="Inter" font-size="13" font-weight="700" fill="#191919" text-anchor="middle">Storefront receives one Title + one image set</text>
+    <text x="520" y="296" font-family="Inter" font-size="11" fill="#555" text-anchor="middle">Doesn't know or care whether they came from CF or Platform</text>
+
+    <!-- Arrow to frontend -->
+    <line x1="840" y1="210" x2="660" y2="252" stroke="#008539" stroke-width="2" marker-end="url(#arrSpot)"/>
+  </svg>
+  <div class="diagram-caption">FIG. M-1 &mdash; The Both pattern. Platform Catalog provides defaults that always exist; Merchant CF holds optional overrides; the Gateway picks the most specific available value, per locale and per market.</div>
+  </div>
+
+  <div class="grid-2" style="margin-top:24px">
+    <div class="card">
+      <h4>Why both, not one</h4>
+      <p class="body">Helloprint sells the same physical "Folding Box" as Allgifts and Drukwerkmax. The product is identical. But each merchant might want a different headline or different lifestyle photography to match their brand. That's the override use case: same SKU, different presentation.</p>
+    </div>
+    <div class="card">
+      <h4>The override is the exception</h4>
+      <p class="body">Most products in most merchants won't override anything &mdash; they'll just use the Platform defaults. The override only exists where a merchant cares enough to provide their own value. This keeps Merchant CF spaces lean and avoids forcing every merchant to manage values they don't have a strong opinion on.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── What this unlocks ─── -->
+<section class="section">
+  <div class="section-tag">What this unlocks</div>
+  <h2>The new Contentful, by the numbers</h2>
+
+  <table>
+    <thead><tr><th>Dimension</th><th>Today (old space)</th><th>New architecture</th></tr></thead>
+    <tbody>
+      <tr><td>Fields on the product type in CF</td><td>47</td><td>15 editorial + 2 overrides = 17 max</td></tr>
+      <tr><td>Fields shown by default in a merchant's CF entry</td><td>47, most of which they shouldn't touch</td><td>15 &mdash; all editorial, all worth their attention</td></tr>
+      <tr><td>Product entries per merchant</td><td>Shared across all merchants in one space (~14k entries)</td><td>One CF entry per <em>activated</em> product in that merchant's Merchant Catalog. Most merchants will have hundreds, not thousands.</td></tr>
+      <tr><td>Total entries in the CF space</td><td>~400,710 (all content types combined)</td><td>~30&ndash;50k once catalog data is in the Platform Catalog</td></tr>
+      <tr><td>Sources of truth per concept</td><td>2 in sync (CF mirror + catalog)</td><td>1 per concept &mdash; Platform owns shared data, Merchant owns commerce, CF owns editorial</td></tr>
+      <tr><td>What writes back into Contentful from the catalog tier</td><td>~25 fields synced via Contentful Worker on every change</td><td>0 &mdash; CF only holds editorial values and overrides</td></tr>
+      <tr><td>Onboarding a new JV merchant</td><td>New locales, new worker config, new pipeline</td><td>Activate them in the Merchant Catalog. Their CF entries are auto-created with Platform defaults.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout success" style="margin-top:24px">
+    <div class="title">The shape of a product in the new world</div>
+    <p>A merchant's CF entry for a product has 15 fields that are all editorial decisions worth a human's attention &mdash; plus 2 optional override fields (Title, Product Images) for when the merchant wants to deviate from the Platform default. Everything else is read from the Platform Catalog or Merchant Catalog at runtime by the Content Gateway. No machine-written blobs, no hidden legacy fields, no orphan catalog config.</p>
+  </div>
+</section>
+
+<!-- ─── What's next ─── -->
+<section class="section">
+  <div class="section-tag">What's next</div>
+  <h2>The other content types follow the same pattern</h2>
+  <p class="section-lede">Products are the biggest piece &mdash; both in entry count and in the catalog/editorial confusion. Once the pattern is proven on products, the rest of the content types map across with much less drama.</p>
+
+  <div class="grid-3">
+    <div class="card">
+      <h4>Pages (PLP, landings, home)</h4>
+      <p class="body">Commercial Content with no catalog overlap. Lift-and-shift into the new CF space with consolidated field names. Estimated: ~2k entries, ~30 fields per page type after consolidation.</p>
+    </div>
+    <div class="card">
+      <h4>Blocks (hero, media, rich-text)</h4>
+      <p class="body">Pure editorial. Rename the cryptic <span class="mono">homeBlockTypeBJ</span>/<span class="mono">homeBlockTypeBk</span> to descriptive types (<span class="mono">heroBlock</span>, <span class="mono">richTextBlock</span>, etc.). Migrate references.</p>
+    </div>
+    <div class="card">
+      <h4>FAQs, USPs, pros &amp; cons</h4>
+      <p class="body">Small editorial fragments. Migrate as-is &mdash; the structure is already right.</p>
+    </div>
+    <div class="card">
+      <h4>Theme translations (<span class="mono">themeTemplate</span>)</h4>
+      <p class="body">Leaves CF entirely. Becomes UI strings managed in the Platform Catalog alongside attribute translations, or moves to a dedicated System layer depending on whether it's catalog UI or general UI. Decision pending.</p>
+    </div>
+    <div class="card">
+      <h4>Blog (<span class="mono">pageArticle</span>)</h4>
+      <p class="body">Move to a dedicated Editorial space (or stay in the new CF main space with a brand tag). Distinct lifecycle from product pages, distinct team.</p>
+    </div>
+    <div class="card">
+      <h4>Configurator options &amp; attributes</h4>
+      <p class="body">The bulk of today's 400k entries (<span class="mono">pcmOptionsAttribute</span>, <span class="mono">attributeGroup</span>, <span class="mono">CombbinedOptionsAttribute</span>). All move to the Platform Catalog with the rest of the shared catalog data. Not migrated into the new CF space.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="title" style="color:var(--color-ink)">A separate matrix for each content type</div>
+    <p style="color:var(--color-ink)">This tab will gain new sections as we agree on each content type. The next likely one is <strong>pageProduct</strong> &mdash; the PDP wrapper that links to a product reference. After that, blocks and the editorial page types. Same shape, same exercise: every field placed deliberately.</p>
+  </div>
+</section>
+
+</div><!-- end #tab-implementation-matrix -->
 
 <!-- ═════════════ Tab switching JS ═════════════ -->
 <script>
